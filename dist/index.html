@@ -9,11 +9,10 @@
 </head>
 <body class="font-inter">
     <!-- Navbar -->
-    <nav  id="navbar" class="flex justify-around text-xl items-center p-8 fixed bg-transparent w-full ease-linear duration-500">
-        <div>
-            <h4 class="text-2xl md:text-4xl">Logo</h4>
-        </div>
-        <div class="md:flex gap-5 md:visible hidden">
+    <nav  id="navbar" class="flex justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500">
+        <img src="img/logo.png" alt="logo" class="h-16 w-32 rounded-lg shadow-black shadow-md">
+        
+        <div class="md:flex gap-5 md:visible hidden p-8">
             <h5>About Us</h5>
             <h5>Products</h5>
             <h5>Our work</h5>
@@ -29,7 +28,7 @@
         <div class="absolute w-full h-full -z-19 bg-black opacity-20"></div>
 
         <div class="mt-28 md:mt-0 p-16 max-w-6xl flex flex-col gap-5">
-            <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left">Agronegocios Sudamerica SRL</h1>
+            <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left">Agronegocios America</h1>
             <p class="text-2xl md:text-3xl text-white font-semibold text-center md:text-left">Welcome to our website! Here you will find valuable information about the agricultural industry</p>
         </div>
     </header>
@@ -42,8 +41,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-36 md:h-36">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>            
-            <h4 class="font-bold">About Us</h4>
-            <p class="font-light text-1xl text-center">Our goal is to provide you with the latest news, trends, and insights to help you navigate the world of agriculture and achieve success in your agronegocios endeavors. Stay tuned for updates and expert advice from our team of experienced professionals.</p>
+            <h4 class="font-bold">¿Quiénes somos?</h4>
+            <p class="font-light text-1xl text-center">Somos una empresa <strong class="font-bold">argentina</strong> dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad. Nos caracterizan las relaciones comerciales a largo plazo, creemos que es la mejor forma de estimular la competitividad de nuestros clientes. La claridad, responsabilidad y celeridad de nuestra atención nos destacan en un mercado tan complejo y volátil, garantizando el crecimiento y desarrollo en conjunto.</p>
             <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span>Contact</span>
               <svg
@@ -59,7 +58,7 @@
         </section>
 
         <!-- Products -->
-        <section class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11">
+        <section class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
           <h4 class="text-3xl font-bold">Products</h4>
           <ul class="grid grid-cols-1 md:grid-cols-2 w-2/3 md:gap-11">
             <li class="product">
@@ -67,6 +66,9 @@
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Grass</p>
+              <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
@@ -102,6 +104,45 @@
           <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
             <span>Ask about out products</span>
           </button>
+
+          <!-- Modals -->
+          <div id="products-backdrop" class="w-full h-full bg-black z-49 absolute top-0 hidden opacity-0 ease-linear duration-500">
+          </div>
+          <div id="grass-modal" class="bg-slate-50 w-2/3 h-3/4 md:h-2/4 z-50 rounded-md shadow-md shadow-black absolute top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">    
+            <svg id="close-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>        
+            <ul class="grid grid-cols-1 md:grid-cols-3 w-full h-full md:gap-11">
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-2xl font-bold text-black">Grass I</p>
+                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
+                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                </p>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-2xl font-bold text-black">Grass II</p>
+                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
+                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                </p>
+              </li>
+              <li class="product">
+                <div class="circle-black shadow-black shadow-md">
+                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-2xl font-bold text-black">Grass III</p>
+                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
+                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                </p>
+              </li>
+            </ul>
+          </div>  
+
         </section>
 
         <!-- Our Work -->
@@ -270,34 +311,7 @@
           <p>Agronegocios Sudamerica SRL</p>
         </footer>
     </main>
-</body>
 
-<script>
-    const navbar = document.getElementById('navbar');
-    const scrollPosition = () => window.pageYOffset;
-  
-    const addNavbarColor = () => {
-      navbar.classList.add('bg-black');
-      navbar.classList.remove('bg-transparent');
-      navbar.classList.add('text-white');
-      navbar.classList.add('opacity-70');
-    };
-  
-    const removeNavbarColor = () => {
-      navbar.classList.remove('bg-black');
-      navbar.classList.add('bg-transparent');
-      navbar.classList.remove('text-white');
-      navbar.classList.remove('opacity-80');
-    };
-  
-    const handleScroll = () => {
-      if (scrollPosition() > 0) {
-        addNavbarColor();
-      } else {
-        removeNavbarColor();
-      }
-    };
-  
-    window.addEventListener('scroll', handleScroll);
-  </script>
+    <script src="script.js"></script>    
+</body>
 </html>
