@@ -535,16 +535,12 @@ video {
   right: 0px;
 }
 
-.top-0{
-  top: 0px;
-}
-
-.top-28{
-  top: 7rem;
-}
-
 .right-2{
   right: 0.5rem;
+}
+
+.top-0{
+  top: 0px;
 }
 
 .top-2{
@@ -595,10 +591,6 @@ video {
   height: 4rem;
 }
 
-.h-2\/4{
-  height: 50%;
-}
-
 .h-40{
   height: 10rem;
 }
@@ -617,10 +609,6 @@ video {
 
 .h-full{
   height: 100%;
-}
-
-.h-3\/4{
-  height: 75%;
 }
 
 .min-h-screen{
@@ -647,6 +635,10 @@ video {
   width: 8rem;
 }
 
+.w-4\/5{
+  width: 80%;
+}
+
 .w-40{
   width: 10rem;
 }
@@ -661,10 +653,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-4\/5{
-  width: 80%;
 }
 
 .max-w-6xl{
@@ -807,12 +795,17 @@ video {
   padding: 6rem;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .p-8{
   padding: 2rem;
 }
 
-.p-10{
-  padding: 2.5rem;
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-6{
@@ -835,24 +828,16 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-4{
+  padding-bottom: 1rem;
+}
+
 .pt-24{
   padding-top: 6rem;
 }
 
-.pt-8{
-  padding-top: 2rem;
-}
-
 .pt-4{
   padding-top: 1rem;
-}
-
-.pb-2{
-  padding-bottom: 0.5rem;
-}
-
-.pb-4{
-  padding-bottom: 1rem;
 }
 
 .text-center{
@@ -881,6 +866,11 @@ video {
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl{
@@ -913,13 +903,18 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-100{
-  opacity: 1;
+.opacity-0{
+  opacity: 0;
 }
 
 .opacity-20{
@@ -928,14 +923,6 @@ video {
 
 .opacity-70{
   opacity: 0.7;
-}
-
-.opacity-80{
-  opacity: 0.8;
-}
-
-.opacity-0{
-  opacity: 0;
 }
 
 .shadow-lg{
@@ -969,14 +956,6 @@ video {
   transition-duration: 500ms;
 }
 
-.duration-1000{
-  transition-duration: 1000ms;
-}
-
-.duration-300{
-  transition-duration: 300ms;
-}
-
 .ease-linear{
   transition-timing-function: linear;
 }
@@ -984,13 +963,12 @@ video {
 .product{
   margin: auto;
   display: flex;
+  height: 100%;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  justify-content: flex-start;
+  gap: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1012,12 +990,9 @@ video {
 }
 
 .circle-black{
-  height: 15rem;
-  width: 15rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 9999px;
-  border-width: 4px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1027,8 +1002,8 @@ video {
 
 @media (min-width: 768px){
   .circle-black{
-    height: 20rem;
-    width: 20rem;
+    height: 8rem;
+    width: 8rem;
   }
 }
 
@@ -1062,8 +1037,12 @@ video {
     visibility: visible;
   }
 
-  .md\:mt-0{
-    margin-top: 0px;
+  .md\:top-28{
+    top: 7rem;
+  }
+
+  .md\:mt-64{
+    margin-top: 16rem;
   }
 
   .md\:flex{
@@ -1074,12 +1053,8 @@ video {
     height: 9rem;
   }
 
-  .md\:h-3\/4{
-    height: 75%;
-  }
-
-  .md\:h-2\/4{
-    height: 50%;
+  .md\:h-4\/5{
+    height: 80%;
   }
 
   .md\:w-2\/3{
@@ -1094,6 +1069,10 @@ video {
     width: 9rem;
   }
 
+  .md\:w-4\/5{
+    width: 80%;
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1102,16 +1081,24 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .md\:flex-row{
     flex-direction: row;
   }
 
-  .md\:items-center{
-    align-items: center;
-  }
-
   .md\:gap-11{
     gap: 2.75rem;
+  }
+
+  .md\:gap-4{
+    gap: 1rem;
+  }
+
+  .md\:p-8{
+    padding: 2rem;
   }
 
   .md\:text-left{
