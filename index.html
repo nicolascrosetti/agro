@@ -22,12 +22,12 @@
     </nav>
 
     <!-- Header -->
-    <header class="min-h-screen flex relative justify-start items-start md:items-center">
+    <header class="min-h-screen flex relative justify-start items-start">
         <!-- Background -->
         <img class="absolute w-full h-full -z-20 object-cover object-center" src="img/agro.jpg" >
         <div class="absolute w-full h-full -z-19 bg-black opacity-20"></div>
 
-        <div class="mt-28 md:mt-0 p-16 max-w-6xl flex flex-col gap-5">
+        <div class="mt-28 md:mt-64 p-16 max-w-6xl flex flex-col gap-5">
             <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left">Agronegocios America</h1>
             <p class="text-2xl md:text-3xl text-white font-semibold text-center md:text-left">Welcome to our website! Here you will find valuable information about the agricultural industry</p>
         </div>
@@ -65,7 +65,7 @@
               <div class="circle">
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
-              <p class="text-2xl font-bold">Grass</p>
+              <p class="text-2xl font-bold">Semillas Césped</p>
               <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                 <span>Ver Variedades</span>
               </button>
@@ -108,39 +108,285 @@
           <!-- Modals -->
           <div id="products-backdrop" class="w-full h-full bg-black z-48 absolute top-0 hidden opacity-0 ease-linear duration-500">
           </div>
-          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-2/3 h-3/4 md:h-2/4 z-49 rounded-md shadow-md shadow-black absolute top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">    
+          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-4/5 h-auto md:h-4/5 z-49 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">    
             <svg id="close-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>        
-            <ul class="grid grid-cols-1 md:grid-cols-3 w-full h-full md:gap-11">
+            </svg>   
+            <!-- First Page -->
+            <ul id="grass-modal-page-one" class="grid grid-cols-1 md:grid-cols-4 w-full h-full gap-2 md:gap-4 p-4">
+              <!-- First Row -->
               <li class="product">
                 <div class="circle-black">
-                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                  <img src="img/cesped/9variedades.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
                 </div>
-                <p class="text-2xl font-bold text-black">Grass I</p>
-                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
-                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                <p class="text-xl font-bold text-black">9 Variedades</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Distintas especies de semillas de ciclo invernal o estival.
                 </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne, festuca rubra, festuca arundinácea, poa pratensis, poa trivialis, agrostis tenuis, festuca ovina y cynodon dactylon.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA, Canada y Dinamarca.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
               </li>
               <li class="product">
                 <div class="circle-black">
-                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                  <img src="img/cesped/deportivo.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
                 </div>
-                <p class="text-2xl font-bold text-black">Grass II</p>
-                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
-                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                <p class="text-xl font-bold text-black">Deportivo</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Distintas especies de ciclo estival o invernal aptas para campos deportivos o de alto tránsito.
                 </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y cynodon dactylon.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
               </li>
               <li class="product">
-                <div class="circle-black shadow-black shadow-md">
-                  <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                <div class="circle-black">
+                  <img src="img/cesped/plenosol.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
                 </div>
-                <p class="text-2xl font-bold text-black">Grass III</p>
-                <p class="text-lg font-extralight text-center md:w-2/3 text-black">
-                  Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+                <p class="text-xl font-bold text-black">Pleno Sol</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Distintas especies para otoño, invierno y primavera.
                 </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> variedades de lolium perenne y lolium multiflorum de ciclo invernal.                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/mediasombra.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Media sombra</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Distintas variedades de semillas mejoradas aptas para media sombra.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y festuca rubra.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
+              </li>
+              <!-- Second Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/kikuyu.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Kikuyo</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Gramínea perenne de ciclo estival, tiene tallos rastreros (estolones) y hojas anchas color verde claro. Se desarrolla bien en lugares soleados, húmedos, con suelos neutros. Posee buena tolerancia al pisoteo. Es un césped denso, entramado y fuerte.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de pennisetum clandestinum.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
+                  <p><span class="font-bold">Origen:</span> Australia.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/dichondra.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Dichondra</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Dicotiledónea perenne de ciclo estival, de tallos rastreros y hojas color
+                  verde pálido con forma arriñonada, es de bajo crecimiento y no
+                  requiere cortes. Se desarrolla bien en lugares húmedos y sombríos,
+                  así como también en pleno sol con riego. Siembra en primavera.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de dichondra repens.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/bermuda.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Bermuda</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Gramínea perenne de ciclo estival, de tallos (estolones) y raíces
+                  rastreras (rizomas), y de hojas finas de color verde oscuro.
+                  Se desarrolla bien en lugares soleados, secos o húmedos y en
+                  suelos pobres, salinos o alcalinos. Tiene excelente resistencia al
+                  pisoteo y a enfermedades. Para siembra en primavera y verano.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de cynodon dactylon.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/trebolblanco.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Trébol blanco</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Dicotiledónea perenne de ciclo estival, tiene tallos rastreros
+                  y hojas color verde pálido. Se desarrolla bien en lugares húmedos
+                  o secos a pleno sol. Muy usado en el sur del país en mezclas con
+                  rye grass como mejorador de suelos pobres, ya que aporta
+                  nitrógeno al mismo. Siembra en primavera y verano.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de trifolium repens.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div>
+              </li>
+              
+            </ul>
+            <div  id="grass-modal-page-one-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg">
+              <div class="bg-blue-600 text-white rounded-full px-2">1</div>
+              <div>2</div>
+              <div id="to-page-two" class="cursor-pointer">Siguiente</div>
+            </div>
+
+            <!-- Second Page -->
+            <ul id="grass-modal-page-two" class="grid grid-cols-1 md:grid-cols-4 w-full h-full gap-2 md:gap-4 p-4 hidden">
+              <!-- First Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/invierno.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Césped de invierno</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Gramínea de ciclo invernal que se siembra en otoño al voleo
+                  sobre el césped existente. La función es la de tener verde en
+                  invierno y proteger del frío y pisoteo al césped estival ya sea
+                  grama brasilera, bermuda o kikuyo.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de rye grass anual.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1 y 25 kg.</p>
+                  <p><span class="font-bold">Origen:</span> Nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde 30 m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/parques.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Mezcla para parques</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Mezcla rústica para amplias extensiones de semillas
+                  de ciclo invernal y estival.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de rye grass y bermuda.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 10 kg.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/parquessur.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Mezcla para parques Sur</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Mezcla utilizada en el sur del pais ya que contiene especies muy resistentes al frío.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de lolium perenne, lolium multiflorum, festuca arundinacea, festuca rubra, poa pratensis y agrostis tenuis.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 10 kg</p>
+                  <p><span class="font-bold">Origen:</span> USA, Canada y Dinamarca.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/festuca.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Festuca</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  La festuca alta o arundinacea es una gramínea de hoja ancha muy resistente a enfermedades. Tolera lugares húmedos o secos con suelos pobres, salinos o alcalinos, el frío, el calor y la sequía. Se utiliza pura sembrada densamente o en mezclas.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de festuca arundinacea.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 10 kg.</p>
+                  <p><span class="font-bold">Origen:</span> Nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div>
+              </li>
+              <!-- Second Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/perros.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Hierbas para perros y gatos</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Aportan nutrientes a la alimentación de perros y gatos, ayudando a la función digestiva, y a la eliminación de pelos del aparato digestivo.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de Hordeum vulgare, Avena Sativa, Triticum Vulgare, Lolium Multiflorum y Lolium Perenne.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Doypack con Ziploc de 100 g</p>
+                  <p><span class="font-bold">Origen:</span> Argentina</p>
+                  <p><span class="font-bold">Densidad:</span> 50 g por m2.</p>
+                </div>
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cesped/raygrass.jpg" alt="9variedades" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Rye Grass Perenne</p>
+                <p class="text-sm font-extralight text-center text-black">
+                  Muy usado en el sur del país donde se comporta como perenne muchas veces en mezclas junto con trébol blanco. Tolera bien el pisoteo. Apto para zonas húmedas y frías.
+                </p>
+                <p class="text-sm font-extralight text-center text-black">
+                  <span class="font-bold">Contiene</span> semillas de rye grass perenne.
+                </p>
+                <div class="flex flex-col text-sm font-extralight text-center text-black">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 10 kg.</p>
+                  <p><span class="font-bold">Origen:</span> Importado o nacional. </p>
+                  <p><span class="font-bold">Densidad:</span> 5 kg rinden 100 m2.</p>
+                </div>
               </li>
             </ul>
+            <div  id="grass-modal-page-two-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg hidden">
+              <div id="to-page-one" class="cursor-pointer">Anterior</div>
+              <div>1</div>
+              <div class="bg-blue-600 text-white rounded-full px-2">2</div>
+            </div>
+
           </div>  
 
         </section>
@@ -172,22 +418,13 @@
           <h4 class="font-bold text-3xl text-center">Companies That Trust Our Work</h4>
           <ul class="grid gap-16 grid-cols-1  md:grid-cols-3 md:w-2/4">
             <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
+              <img class="w-40 h-40 rounded-md" src="img/companies/cosentino.jpg" alt="company">
             </li>
             <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
+              <img class="w-40 h-40 rounded-md" src="img/companies/greenland.png" alt="company">
             </li>
             <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
-            </li>
-            <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
-            </li>
-            <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
-            </li>
-            <li class="text-center m-auto">
-              <img class="w-40 h-40 rounded-md" src="img/company.png" alt="company">
+              <img class="w-40 h-40 rounded-md" src="img/companies/pronut.png" alt="company">
             </li>
           </ul>
         </section>
