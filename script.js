@@ -12,6 +12,25 @@ const grassModalPageTwo = document.getElementById('grass-modal-page-two');
 const grassModalPageOneNavigation = document.getElementById('grass-modal-page-one-navigation');
 const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-two-navigation');
 
+//navbar links scroll
+window.onload = function() {
+  var links = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(event) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        event.preventDefault();
+        var targetPos = target.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+};
+
+
 const addNavbarColor = () => {
   navbar.classList.add('bg-black');
   navbar.classList.remove('bg-transparent');
@@ -35,6 +54,8 @@ const handleScroll = () => {
 };
 
 window.addEventListener('scroll', handleScroll);
+
+
 
 //Grass Modal
 grassButton.addEventListener('click', () => {
@@ -79,3 +100,4 @@ toPageOne.addEventListener('click', () => {
   grassModalPageTwo.classList.add('hidden');
   grassModalPageTwoNavigation.classList.add('hidden');
 });
+
