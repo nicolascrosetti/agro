@@ -121,7 +121,7 @@
               </p>
             </li>
           </ul>
-          <butto class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
             <a href="#contact-form">Ask about out products</a>
           </button>
 
@@ -330,8 +330,8 @@
             <!-- First Page Navigation -->
             <div  id="grass-modal-page-one-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg">
               <div class="bg-blue-600 text-white rounded-full px-2">1</div>
-              <div class="to-page-two cursor-pointer">2</div>
-              <div class="to-page-two cursor-pointer">Siguiente</div>
+              <div id="to-two-back" class="cursor-pointer z-50">2</div>
+              <div id="to-two-number" class="cursor-pointer z-50">Siguiente</div>
             </div>
             <!-- #endregion -->
 
@@ -462,8 +462,8 @@
             </ul>
             <!-- Second Page Navigation -->
             <div  id="grass-modal-page-two-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg hidden">
-              <div class="to-page-one cursor-pointer">Anterior</div>
-              <div class="to-page-one cursor-pointer">1</div>
+              <div id="to-one-back" class="cursor-pointer z-50">Anterior</div>
+              <div id="to-one-number" class="cursor-pointer z-50">1</div>
               <div class="bg-blue-600 text-white rounded-full px-2">2</div>
             </div>
             <!-- #endregion -->
@@ -479,7 +479,7 @@
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/ourwork.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <h4 class="font-bold text-3xl text-white">Nuestra Filosofía</h4>
+          <h4 class="font-bold text-3xl text-white -z-30">Nuestra Filosofía</h4>
           <ul class="w-11/12 2xl:w-3/4 grid xl:grid-cols-3 gap-5 -z-10">
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Misión</h5>
