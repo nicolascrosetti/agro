@@ -9,8 +9,10 @@ const navbarMobile = document.getElementById('navbarMobile');
 const grassModal = document.getElementById('grass-modal');
 const closeModal = document.getElementById('close-modal');
 const grassButton = document.getElementById('grass-button');
-const toPageOne = document.querySelectorAll('.to-page-one');
-const toPageTwo = document.querySelectorAll('.to-page-two');
+const toOneBack = document.getElementById('to-one-back');
+const toOneNumber = document.getElementById('to-one-number');
+const toTwoBack = document.getElementById('to-two-back');
+const toTwoNumber = document.getElementById('to-two-number');
 //Grass Modal Navigation
 const grassModalPageOne = document.getElementById('grass-modal-page-one');
 const grassModalPageTwo = document.getElementById('grass-modal-page-two');
@@ -85,7 +87,7 @@ let index = 0;
 setInterval(() => {
   index = (index + 1) % images.length;
   backgroundImage.src = images[index];
-}, 10000);
+}, 5000);
 
 
 //#region Grass Modal
@@ -128,27 +130,45 @@ document.addEventListener('keydown', function(event) {
 });
 
 //#region Grass Modal Navigation
-toPageTwo.forEach((button) => {
-  button.addEventListener('click', () => {
-    //Hide first page
-    grassModalPageOne.classList.add('hidden');
-    grassModalPageOneNavigation.classList.add('hidden');
-    //Show second page
-    grassModalPageTwo.classList.remove('hidden');
-    grassModalPageTwoNavigation.classList.remove('hidden');
-  });
+toTwoBack.addEventListener('click', () => {
+  //Hide first page
+  grassModalPageOne.classList.add('hidden');
+  grassModalPageOneNavigation.classList.add('hidden');
+  //Show second page
+  grassModalPageTwo.classList.remove('hidden');
+  grassModalPageTwoNavigation.classList.remove('hidden');
 });
 
-toPageOne.forEach((button) => {
-  button.addEventListener('click', () => {
-    //Show first page
-    grassModalPageOne.classList.remove('hidden');
-    grassModalPageOneNavigation.classList.remove('hidden');
-    //Hide second page
-    grassModalPageTwo.classList.add('hidden');
-    grassModalPageTwoNavigation.classList.add('hidden');
-  });
+toTwoNumber.addEventListener('click', () => {
+  //Hide first page
+  grassModalPageOne.classList.add('hidden');
+  grassModalPageOneNavigation.classList.add('hidden');
+  //Show second page
+  grassModalPageTwo.classList.remove('hidden');
+  grassModalPageTwoNavigation.classList.remove('hidden');
 });
+
+toOneBack.addEventListener('click', () => {
+  //Show first page
+  grassModalPageOne.classList.remove('hidden');
+  grassModalPageOneNavigation.classList.remove('hidden');
+  //Hide second page
+  grassModalPageTwo.classList.add('hidden');
+  grassModalPageTwoNavigation.classList.add('hidden');
+});
+
+toOneNumber.addEventListener('click', () => {
+  //Show first page
+  grassModalPageOne.classList.remove('hidden');
+  grassModalPageOneNavigation.classList.remove('hidden');
+  //Hide second page
+  grassModalPageTwo.classList.add('hidden');
+  grassModalPageTwoNavigation.classList.add('hidden');
+});
+
+  
+
+
 //#endregion
 
 //#endregion
