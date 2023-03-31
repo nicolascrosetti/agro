@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="font-inter">
     <!-- Navbar -->
-    <nav  id="navbar" class="justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500 z-50 py-4 hidden md:flex">
-        <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-30 rounded-md p-2"></a>   
+    <nav  id="navbar" class="justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500 z-40 p-2 hidden md:flex">
+        <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-20 rounded-md p-1"></a>   
         
         <ul class="md:flex gap-5 md:visible hidden p-8">
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#ourwork">Our work</a></li>
-            <li><a href="#companies">Companies</a></li>
-            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contact</a></li>
+            <li><a href="#aboutus">Quienes Somos</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#ourwork">Nuestra Filosofía</a></li>
+            <li><a href="#companies">Empresas</a></li>
+            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
 
     <!-- Mobile Navbar -->
-    <nav id="navbarMobile" class="bg-black fixed h-auto w-full z-50 py-2 flex flex-col items-center justify-between md:hidden">
+    <nav id="navbarMobile" class="bg-black fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between md:hidden">
       <div class="flex items-center justify-around w-full">
         <a href="#header">
           <img src="img/logo.png" alt="logo" class="h-16 w-32 p-2 rounded-md bg-black bg-opacity-30">
@@ -51,20 +52,28 @@
             <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left text-white">Agronegocios America</h1>
             <p class="text-2xl md:text-3xl text-white font-semibold text-center md:text-left">Welcome to our website! Here you will find valuable information about the agricultural industry</p>
         </div>
+        <div class="absolute bottom-0 w-full h-1/3 flex flex-col justify-start items-center">
+          <a href="#aboutus">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-slate-100 cursor-pointer" data-aos="fade-down" data-aos-duration="2000">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg> 
+          </a>
+        </div>
+               
     </header>
 
     <!-- Main Section -->
     <main>
         <!-- About Us -->
         <section id="aboutus" class="bg-slate-50 w-full flex justify-center items-center py-24 relative">
-          <div class="text-black text-2xl md:text-3xl flex flex-col gap-4 p-8 items-center md:w-2/4 z-20">
+          <div class="text-black text-2xl md:text-3xl flex flex-col gap-4 p-8 items-center md:w-2/4 z-20 ease-linear" data-aos="fade-down" data-aos-duration="2000">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-36 md:h-36">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>            
             <h4 class="font-bold">¿Quiénes somos?</h4>
             <p class="font-light text-xl md:text-2xl text-center">Somos una empresa <strong class="font-bold">argentina</strong> dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad. Nos caracterizan las relaciones comerciales a largo plazo, creemos que es la mejor forma de estimular la competitividad de nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destacan en un mercado tan complejo y volátil, garantizando el crecimiento y desarrollo en conjunto.</p>
             <button class="bg-green-500 text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-              <span>Contact</span>
+              <span>Contacto</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -79,9 +88,9 @@
 
         <!-- Products -->
         <section id="products" class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
-          <h4 class="text-3xl font-bold">Products</h4>
+          <h4 class="text-3xl font-bold" data-aos="fade-in">Productos</h4>
           <ul class="grid grid-cols-1 lg:grid-cols-2 w-2/3 lg:gap-32 xl:gap-16 2xl:gap-11">
-            <li class="product">
+            <li class="product" data-aos="fade-right" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
@@ -93,36 +102,45 @@
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
             </li>
-            <li class="product">
+            <li class="product" data-aos="fade-left" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
-              <p class="text-2xl font-bold">Grass</p>
+              <p class="text-2xl font-bold">Producto II</p>
+              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
             </li>
-            <li class="product">
+            <li class="product" data-aos="fade-right" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
-              <p class="text-2xl font-bold">Grass</p>
+              <p class="text-2xl font-bold">Producto III</p>
+              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
             </li>
-            <li class="product">
+            <li class="product" data-aos="fade-left" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
-              <p class="text-2xl font-bold">Grass</p>
+              <p class="text-2xl font-bold">Producto IV</p>
+              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
             </li>
           </ul>
           <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-            <a href="#contact-form">Ask about out products</a>
+            <a href="#contact-form">Consultar Productos</a>
           </button>
 
           <!--#region Modals  -->
@@ -130,7 +148,7 @@
           <div id="products-backdrop" class="w-full h-full bg-black z-48 absolute top-0 hidden opacity-0 ease-linear duration-500">
           </div>
           <!--Grass Modal -->
-          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-49 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
             <!--Close Modal Icon-->    
             <svg id="close-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -178,7 +196,7 @@
               </li>
               <li class="product">
                 <div class="circle-black">
-                  <img src="img/cesped/plenosol.jpg" alt="pleno sol" class="md:w-[128px] md:h-[128px] rounded-full object-cover">
+                  <img src="img/cesped/plenosol.jpg" alt="pleno sol" class="w-[64px] h-[64px] md:w-[128px] md:h-[128px] rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black h-min">Pleno Sol</p>
                 <div class="h-1/3"> 
@@ -477,10 +495,10 @@
         <section id="ourwork" class="bg-transparent w-full flex flex-col gap-8 justify-center items-center py-24 relative">
           <!-- Background -->
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/ourwork.jpg" >
-          <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
+          <div class="absolute w-full h-full -z-20 bg-black bg-opacity-30"></div>
 
-          <h4 class="font-bold text-3xl text-white -z-30">Nuestra Filosofía</h4>
-          <ul class="w-11/12 2xl:w-3/4 grid xl:grid-cols-3 gap-5 -z-10">
+          <h4 class="font-bold text-3xl text-white -z-10" data-aos="fade-in">Nuestra Filosofía</h4>
+          <ul class="w-11/12 2xl:w-3/4 grid xl:grid-cols-3 gap-5 -z-10" data-aos="fade-up" data-aos-duration="1500">
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Misión</h5>
               <br>
@@ -509,8 +527,8 @@
 
         <!-- Companies -->
         <section id="companies" class="bg-green-800 text-white w-full h-auto flex  flex-col gap-16 justify-center items-center p-16">
-          <h4 class="font-bold text-3xl text-center">Companies That Trust Our Work</h4>
-          <ul class="grid gap-16 grid-cols-1  lg:grid-cols-3 md:w-2/4">
+          <h4 class="font-bold text-3xl text-center" data-aos="fade-in">Empresas Que Confían en Nosotros</h4>
+          <ul class="grid gap-16 grid-cols-1  lg:grid-cols-3 md:w-2/4" data-aos="zoom-in" data-aos-duration="2000">
             <li class="text-center m-auto">
               <img class="w-40 h-40 rounded-md" src="img/companies/cosentino.jpg" alt="company">
             </li>
@@ -531,7 +549,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
-              <h5 class="text-2xl font-bold">Location</h5>
+              <h5 class="text-2xl font-bold">Ubicación</h5>
               <div class="text-center font-light">
                 <p>Fake Street 123</p>
                 <p>Buenos Aires, Argentina</p>
@@ -541,10 +559,10 @@
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>              
-              <h5 class="text-2xl font-bold">Business Hours</h5>
+              <h5 class="text-2xl font-bold">Horarios</h5>
               <div class="text-center font-light">
                 <p>Lunes a viernes</p>
-                <p>10:00 hs to 18:00 hs</p>
+                <p>10:00 hs a 18:00 hs</p>
               </div>
               
             </li>
@@ -552,7 +570,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>              
-              <h5 class="text-2xl font-bold">Contact</h5>
+              <h5 class="text-2xl font-bold">Contacto</h5>
               <div class="text-center font-light">
                 <p>+54 9 11 22334455</p>
                 <p>mail@gmail.com</p>
@@ -563,80 +581,87 @@
           <img class="absolute w-full bottom-0 z-10 object-cover object-center opacity-20" src="img/contact.png" >
         </section>
 
-        <div class="flex gap-5 w-full justify-center items-center bg-blue-600 py-8">
-          <!-- Facebook -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-          </svg>
-           <!-- Messenger -->
-          <svg
-            class="h10 w-10"
-            fill="currentColor"
-            viewbox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fill-rule="evenodd"
-            clip-rule="evenodd">
-            <path
-              d="M12 0c-6.627 0-12 4.975-12 11.111 0 3.497 1.745 6.616 4.472 8.652v4.237l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111 0-6.136-5.373-11.111-12-11.111zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z" />
-          </svg>
-          <!-- Twitter -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-          </svg>
-          <!-- Instagram -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10"
-            fill="currentColor"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-          </svg>
-           <!-- Linkedin -->
-           <svg
-           xmlns="http://www.w3.org/2000/svg"
-           class="h-10 w-10"
-           fill="currentColor"
-           viewBox="0 0 24 24">
-           <path
-             d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-          </svg>
-        </div>
+        <!-- Social Networks -->
+        <section class="w-full bg-blue-600 py-8">
+          <div class="flex gap-5 justify-center items-center" data-aos="fade-in" data-aos-duration="2000">
+            <!-- Facebook -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg>
+             <!-- Messenger -->
+            <svg
+              class="h10 w-10"
+              fill="currentColor"
+              viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill-rule="evenodd"
+              clip-rule="evenodd">
+              <path
+                d="M12 0c-6.627 0-12 4.975-12 11.111 0 3.497 1.745 6.616 4.472 8.652v4.237l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111 0-6.136-5.373-11.111-12-11.111zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z" />
+            </svg>
+            <!-- Twitter -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+            <!-- Instagram -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+             <!-- Linkedin -->
+             <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="h-10 w-10"
+             fill="currentColor"
+             viewBox="0 0 24 24">
+             <path
+               d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+            </svg>
+          </div>
+      </section>
 
         <!-- Concact Form -->
         <section id="contact-form" class="bg-transparent flex items-center justify-center p-24 relative">
           <img class="absolute w-full h-full -z-50 object-cover object-center blur-[1px]" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-4 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg">
+          <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-4 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
+            <div class="flex justify-center text-center">
+              <img src="img/logo.png" alt="logo" class="h-10 w-20 absolute top-8 left-6 opacity-0 md:opacity-100">
+              <h4 class="text-2xl md:text-3xl font-inter font-extralight">Agronegocios America</h4>
+            </div>
             <div class="flex flex-col">
-              <label for="name">Name</label>
+              <label for="name">Nombre</label>
               <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2">
             </div>
             <div class="flex flex-col">
-              <label for="name">Email Adress</label>
+              <label for="name">Email</label>
               <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2">
             </div>
             <div class="flex flex-col">
-              <label for="name">Subject</label>
+              <label for="name">Asunto</label>
               <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2">
             </div>
             <div class="flex flex-col">
-              <label for="message">Message</label>
+              <label for="message">Mensaje</label>
               <textarea id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1"></textarea>
             </div>
             <button class="bg-green-500 w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-              <span class="text-center m-auto">Send</span>
+              <span class="text-center m-auto">Enviar</span>
             </button>
           </form>
         </section>
@@ -647,6 +672,10 @@
         </footer>
     </main>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>    
 </body>
 </html>
