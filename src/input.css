@@ -8,7 +8,7 @@
     @apply w-full m-auto flex flex-col items-center justify-start h-full text-white gap-2;
 }
 .circle{
-    @apply w-60 h-60 md:w-80 md:h-80 rounded-full border-white border-4;
+    @apply w-60 h-60 md:w-80 md:h-80 rounded-full border-white border-4 caret-transparent;
 }
 .circle-black{
     @apply w-16 h-16 md:w-32 md:h-32 rounded-full shadow-gray-600 shadow-lg;

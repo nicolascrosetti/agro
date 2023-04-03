@@ -1,4 +1,5 @@
 const navbar = document.getElementById('navbar');
+const navlogo = document.getElementById('navlogo');
 const scrollPosition = () => window.pageYOffset;
 const productsBackdrop = document.getElementById('products-backdrop');
 //mobile navbar
@@ -45,6 +46,32 @@ const addNavbarColor = () => {
   navbar.classList.add('opacity-70');
 };
 
+const hideNavbar = () => {
+  navbar.classList.add('opacity-0');
+  navbar.classList.remove('z-40');
+  navbar.classList.add('-z-50');
+}
+
+const showNavbar = () => {
+  navbar.classList.remove('opacity-0');
+  navbar.classList.add('z-40');
+  navbar.classList.remove('-z-50');
+}
+
+const showNavlogo = () => {
+  navlogo.classList.remove('opacity-0');
+  navlogo.classList.add('opacity-50');
+  navlogo.classList.remove('-z-50');
+  navlogo.classList.add('z-50');
+}
+
+const hideNavlogo = () => {
+  navlogo.classList.add('opacity-0');
+  navlogo.classList.remove('opacity-50');
+  navlogo.classList.add('-z-50');
+  navlogo.classList.remove('z-50');
+}
+
 const removeNavbarColor = () => {
   navbar.classList.remove('bg-black');
   navbar.classList.add('bg-transparent');
@@ -54,13 +81,26 @@ const removeNavbarColor = () => {
 
 const handleScroll = () => {
   if (scrollPosition() > 0) {
-    addNavbarColor();
+    showNavlogo();
+    hideNavbar();
+    removeNavbarColor();
   } else {
     removeNavbarColor();
+    showNavbar();
+    hideNavlogo();
   }
 };
 
 window.addEventListener('scroll', handleScroll);
+
+navlogo.addEventListener('click', () => {
+  addNavbarColor();
+  showNavbar();
+  window.setTimeout(() => {
+    hideNavlogo();
+  }, 100);
+  
+});
 //#endregion
 
 //#region mobile navbar
@@ -135,7 +175,9 @@ toTwoBack.addEventListener('click', () => {
   grassModalPageOne.classList.add('hidden');
   grassModalPageOneNavigation.classList.add('hidden');
   //Show second page
+  grassModalPageTwo.classList.add('grid');
   grassModalPageTwo.classList.remove('hidden');
+  grassModalPageTwoNavigation.classList.add('flex');
   grassModalPageTwoNavigation.classList.remove('hidden');
 });
 
@@ -172,4 +214,6 @@ toOneNumber.addEventListener('click', () => {
 //#endregion
 
 //#endregion
+
+
 

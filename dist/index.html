@@ -7,8 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/custom.css">
 </head>
-<body class="font-inter">
+<body class="font-inter relative">
     <!-- Navbar -->
     <nav  id="navbar" class="justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500 z-40 p-2 hidden md:flex">
         <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-20 rounded-md p-1"></a>   
@@ -21,6 +22,11 @@
             <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
+    <div id="navlogo" class="hidden md:flex justify-center items-center h-20 w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 right-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>      
+    </div>
 
     <!-- Mobile Navbar -->
     <nav id="navbarMobile" class="bg-black fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between md:hidden">
@@ -49,7 +55,7 @@
         <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
 
         <div class="mt-28 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 px-4 py-8 max-w-6xl flex flex-col gap-5">
-            <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left text-white">Agronegocios America</h1>
+            <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left text-white" >Agronegocios America</h1>
             <p class="text-2xl md:text-3xl text-white font-semibold text-center md:text-left">Welcome to our website! Here you will find valuable information about the agricultural industry</p>
         </div>
         <div class="absolute bottom-0 w-full h-1/3 flex flex-col justify-start items-center">
@@ -92,7 +98,31 @@
           <ul class="grid grid-cols-1 lg:grid-cols-2 w-2/3 lg:gap-32 xl:gap-16 2xl:gap-11">
             <li class="product" data-aos="fade-right" data-aos-duration="2000">
               <div class="circle">
-                <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                <img src="img/products/legumes.jpg" alt="legumes" class="w-full h-full rounded-full object-cover">
+              </div>
+              <p class="text-2xl font-bold">Legumbres</p>
+              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
+              <p class="text-lg font-extralight text-center md:w-2/3">
+                Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+              </p>
+            </li>
+            <li class="product" data-aos="fade-left" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/cereals.jpg" alt="cereals" class="w-full h-full rounded-full object-cover">
+              </div>
+              <p class="text-2xl font-bold">Cereales</p>
+              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <span>Ver Variedades</span>
+              </button>
+              <p class="text-lg font-extralight text-center md:w-2/3">
+                Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
+              </p>
+            </li>
+            <li class="product" data-aos="fade-right" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Semillas Césped</p>
               <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
@@ -104,33 +134,9 @@
             </li>
             <li class="product" data-aos="fade-left" data-aos-duration="2000">
               <div class="circle">
-                <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
               </div>
-              <p class="text-2xl font-bold">Producto II</p>
-              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
-              </button>
-              <p class="text-lg font-extralight text-center md:w-2/3">
-                Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
-              </p>
-            </li>
-            <li class="product" data-aos="fade-right" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
-              </div>
-              <p class="text-2xl font-bold">Producto III</p>
-              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
-              </button>
-              <p class="text-lg font-extralight text-center md:w-2/3">
-                Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
-              </p>
-            </li>
-            <li class="product" data-aos="fade-left" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
-              </div>
-              <p class="text-2xl font-bold">Producto IV</p>
+              <p class="text-2xl font-bold">Nutrición Animal</p>
               <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                 <span>Ver Variedades</span>
               </button>
@@ -354,7 +360,7 @@
             <!-- #endregion -->
 
             <!-- #region Second Page -->
-            <ul id="grass-modal-page-two" class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 w-full h-full gap-6 p-4 hidden">
+            <ul id="grass-modal-page-two" class="grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 w-full h-full gap-6 p-4 hidden">
               <!-- #region First Row -->
               <li class="product md:hidden 2xl:flex">
                 <div class="circle-black">
@@ -479,7 +485,7 @@
               <!-- #rendregion -->
             </ul>
             <!-- Second Page Navigation -->
-            <div  id="grass-modal-page-two-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg hidden">
+            <div  id="grass-modal-page-two-navigation" class="w-full justify-center text-blue-600 gap-5 font-semibold text-lg hidden">
               <div id="to-one-back" class="cursor-pointer z-50">Anterior</div>
               <div id="to-one-number" class="cursor-pointer z-50">1</div>
               <div class="bg-blue-600 text-white rounded-full px-2">2</div>
