@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="styles/custom.css">
 </head>
 <body class="font-inter relative">
-    <!-- Navbar -->
+    <!-- #region Navbar -->
     <nav  id="navbar" class="justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500 z-40 p-2 hidden md:flex">
-        <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-20 rounded-md p-1"></a>   
-        
+        <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-10 rounded-md p-1"></a>     
         <ul class="md:flex gap-5 md:visible hidden p-8">
             <li><a href="#aboutus">Quienes Somos</a></li>
             <li><a href="#products">Productos</a></li>
@@ -22,11 +21,24 @@
             <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
-    <div id="navlogo" class="hidden md:flex justify-center items-center h-20 w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 right-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
+    <div id="navlogo" class="hidden md:flex justify-center items-center h-20 w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>      
     </div>
+    <div id="drawer-nav" class="bg-gray-900 text-white h-screen w-1/5 fixed -z-50 opacity-0 transition ease-linear duration-200">
+        <ul class="flex flex-col gap-5 md:visible p-8">
+            <a href="#header"><img src="img/logo.png" alt="logo" class="h-11 w-20 bg-black bg-opacity-10 rounded-md p-1"></a>   
+            <li><a href="#aboutus">Quienes Somos</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#ourwork">Nuestra Filosofía</a></li>
+            <li><a href="#companies">Empresas</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </div>
+    <div id="drawer-backdrop" class="w-screen h-screen z-40 bg-black opacity-50 fixed hidden"></div>
+
+    <!-- #endregion -->
 
     <!-- Mobile Navbar -->
     <nav id="navbarMobile" class="bg-black fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between md:hidden">
@@ -47,7 +59,6 @@
       </ul>
     </nav>
     
-
     <!-- Header -->
     <header id="header" class="min-h-screen flex relative justify-start items-start">
         <!-- Background -->
@@ -95,15 +106,17 @@
         <!-- Products -->
         <section id="products" class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
           <h4 class="text-3xl font-bold" data-aos="fade-in">Productos</h4>
-          <ul class="grid grid-cols-1 lg:grid-cols-2 w-2/3 lg:gap-32 xl:gap-16 2xl:gap-11">
+          <ul class="grid grid-cols-1 lg:grid-cols-2 w-2/3 gap-8 lg:gap-32 xl:gap-16 2xl:gap-11">
             <li class="product" data-aos="fade-right" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/products/legumes.jpg" alt="legumes" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Legumbres</p>
-              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
-              </button>
+              <a href="#products">
+                <button id="legums-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                  Ver Variedades
+                </button>
+              </a>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
@@ -113,9 +126,11 @@
                 <img src="img/products/cereals.jpg" alt="cereals" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Cereales</p>
-              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
-              </button>
+              <a href="#products">
+                <button id="cereals-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                  Ver Variedades
+                </button>
+              </a>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
@@ -125,9 +140,11 @@
                 <img src="img/products/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Semillas Césped</p>
-              <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
-              </button>
+              <a href="#products">
+                <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                  Ver Variedades
+                </button>
+              </a>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
               </p>
@@ -138,7 +155,7 @@
               </div>
               <p class="text-2xl font-bold">Nutrición Animal</p>
               <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-                <span>Ver Variedades</span>
+                <a href="#products">Ver Variedades</a>
               </button>
               <p class="text-lg font-extralight text-center md:w-2/3">
                 Our grass seeds are carefully selected and processed to ensure maximum yield, disease resistance, and adaptability to different climates and soils.
@@ -354,8 +371,12 @@
             <!-- First Page Navigation -->
             <div  id="grass-modal-page-one-navigation" class="w-full flex justify-center text-blue-600 gap-5 font-semibold text-lg">
               <div class="bg-blue-600 text-white rounded-full px-2">1</div>
-              <div id="to-two-back" class="cursor-pointer z-50">2</div>
-              <div id="to-two-number" class="cursor-pointer z-50">Siguiente</div>
+              <a href="#products">
+                <div id="to-two-back" class="cursor-pointer z-50">2</div>
+              </a>
+              <a href="#products">
+                <div id="to-two-number" class="cursor-pointer z-50">Siguiente</div>
+              </a>
             </div>
             <!-- #endregion -->
 
@@ -486,13 +507,285 @@
             </ul>
             <!-- Second Page Navigation -->
             <div  id="grass-modal-page-two-navigation" class="w-full justify-center text-blue-600 gap-5 font-semibold text-lg hidden">
-              <div id="to-one-back" class="cursor-pointer z-50">Anterior</div>
-              <div id="to-one-number" class="cursor-pointer z-50">1</div>
+              <a href="#products">
+                <div id="to-one-back" class="cursor-pointer z-50">Anterior</div>
+              </a>
+              <a href="#products">
+                <div id="to-one-number" class="cursor-pointer z-50">1</div>
+              </a>
               <div class="bg-blue-600 text-white rounded-full px-2">2</div>
             </div>
             <!-- #endregion -->
 
           </div>  
+          <!--Lentils Modal -->
+          <div id="legums-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+            <!--Close Modal Icon-->    
+            <svg id="close-legums-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>   
+            <!-- #region First Page -->
+            <ul id="legums-modal-page-one" class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 w-full h-full gap-8 p-4">
+              <!-- #region First Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/lentils.jpg" alt="lentils" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Lentejas</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies de semillas de ciclo invernal o estival.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne, festuca rubra, festuca arundinácea, poa pratensis, poa trivialis, agrostis tenuis, festuca ovina y cynodon dactylon.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA, Canada y Dinamarca.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/alubia-beans.jpg" alt="alubia beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Alubia</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies de ciclo estival o invernal aptas para campos deportivos o de alto tránsito.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y cynodon dactylon.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/light-red-kidney-beans.jpg" alt="light red kidney beans" class="w-[64px] h-[64px] md:w-[128px] md:h-[128px] rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black h-min">Porotos Colorados Claros</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies para otoño, invierno y primavera.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> variedades de lolium perenne y lolium multiflorum de ciclo invernal.                
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/cranberry-beans.jpg" alt="cranberry beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Cranberry</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas variedades de semillas mejoradas aptas para media sombra.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y festuca rubra.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <!-- #endregion -->
+              <!-- #region Second Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/black-beans.jpg" alt="black beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Negros</p>
+                <!-- <div class="h-2/5">
+                  <p class="text-sm font-extralight text-center text-black">
+                    Gramínea perenne de ciclo estival, tiene tallos rastreros (estolones) y hojas anchas color verde claro. Se desarrolla bien en lugares soleados, húmedos, con suelos neutros. Posee buena tolerancia al pisoteo. Es un césped denso, entramado y fuerte.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de pennisetum clandestinum.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
+                  <p><span class="font-bold">Origen:</span> Australia.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/dark-red-kidney-beans.jpg" alt="dark red kidney beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Colorados Oscuros</p>
+                <!-- <div class="h-2/5">
+                  <p class="text-sm font-extralight text-center text-black">
+                    Dicotiledónea perenne de ciclo estival, de tallos rastreros y hojas color
+                    verde pálido con forma arriñonada, es de bajo crecimiento y no
+                    requiere cortes. Se desarrolla bien en lugares húmedos y sombríos,
+                    así como también en pleno sol con riego. Siembra en primavera.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de dichondra repens.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/mung-beans.jpg" alt="mung beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Mung</p>
+                <!-- <div class="h-2/5">
+                  <p class="text-sm font-extralight text-center text-black">
+                    Gramínea perenne de ciclo estival, de tallos (estolones) y raíces
+                    rastreras (rizomas), y de hojas finas de color verde oscuro.
+                    Se desarrolla bien en lugares soleados, secos o húmedos y en
+                    suelos pobres, salinos o alcalinos. Tiene excelente resistencia al
+                    pisoteo y a enfermedades. Para siembra en primavera y verano.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de cynodon dactylon.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/legums/adzuki-beans.jpg" alt="adzuki beans" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Porotos Aduki</p>
+                <!-- <div class="h-2/5">
+                  <p class="text-sm font-extralight text-center text-black">
+                    Dicotiledónea perenne de ciclo estival, tiene tallos rastreros
+                    y hojas color verde pálido. Se desarrolla bien en lugares húmedos
+                    o secos a pleno sol. Muy usado en el sur del país en mezclas con
+                    rye grass como mejorador de suelos pobres, ya que aporta
+                    nitrógeno al mismo. Siembra en primavera y verano.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de trifolium repens.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
+                </div> -->
+              </li>
+              <!-- #endregion -->
+            </ul>
+            <!-- #endregion -->
+          </div> 
+          <!--Cereals Modal -->
+          <div id="cereals-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+            <!--Close Modal Icon-->    
+            <svg id="close-cereals-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>   
+            <!-- #region First Page -->
+            <ul id="cereals-modal-page-one" class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 w-full h-full gap-8 p-4">
+              <!-- #region First Row -->
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cereals/wheat.jpg" alt="wheat" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Trigo</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies de semillas de ciclo invernal o estival.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne, festuca rubra, festuca arundinácea, poa pratensis, poa trivialis, agrostis tenuis, festuca ovina y cynodon dactylon.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA, Canada y Dinamarca.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cereals/soy.jpg" alt="soy" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Soja</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies de ciclo estival o invernal aptas para campos deportivos o de alto tránsito.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y cynodon dactylon.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> USA.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cereals/chia.jpg" alt="chia" class="w-[64px] h-[64px] md:w-[128px] md:h-[128px] rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black h-min">Chia</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas especies para otoño, invierno y primavera.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> variedades de lolium perenne y lolium multiflorum de ciclo invernal.                
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <li class="product">
+                <div class="circle-black">
+                  <img src="img/cereals/popcorn.jpg" alt="popcorn" class="w-full h-full rounded-full object-cover">
+                </div>
+                <p class="text-xl font-bold text-black">Maíz Pisingallo</p>
+                <!-- <div class="h-1/3"> 
+                  <p class="text-sm font-extralight text-center text-black">
+                    Distintas variedades de semillas mejoradas aptas para media sombra.
+                  </p>
+                  <p class="text-sm font-extralight text-center text-black">
+                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y festuca rubra.
+                  </p>
+                </div>
+                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
+                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
+                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
+                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
+                </div> -->
+              </li>
+              <!-- #endregion -->
+            </ul>
+            <!-- #endregion -->
+          </div>   
+
           <!--#endregion -->
 
         </section>
@@ -504,16 +797,16 @@
           <div class="absolute w-full h-full -z-20 bg-black bg-opacity-30"></div>
 
           <h4 class="font-bold text-3xl text-white -z-10" data-aos="fade-in">Nuestra Filosofía</h4>
-          <ul class="w-11/12 2xl:w-3/4 grid xl:grid-cols-3 gap-5 -z-10" data-aos="fade-up" data-aos-duration="1500">
+          <ul class="w-4/5 md:w-11/12 2xl:w-3/4 grid xl:grid-cols-3 gap-5 -z-10" data-aos="fade-up" data-aos-duration="1500">
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Misión</h5>
               <br>
-              <p class="text-lg font-thin">Proveer de productos agrícolas de calidad en cada una de nuestras operaciones, brindando soluciones logísticas integrales para incrementar la competitividad de nuestros clientes y satisfacerlos con profesionalismo a través de nuestros servicios de comercio exterior y seguimiento en todas las etapas del proceso.</p>
+              <p class="text-base md:text-lg font-thin">Proveer de productos agrícolas de calidad en cada una de nuestras operaciones, brindando soluciones logísticas integrales para incrementar la competitividad de nuestros clientes y satisfacerlos con profesionalismo a través de nuestros servicios de comercio exterior y seguimiento en todas las etapas del proceso.</p>
             </li>
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Visión</h5>
               <br>
-              <p class="text-lg font-thin">Somos una empresa innovadora, que trabaja incansablemente por satisfacer la demanda de valor de nuestros clientes.
+              <p class="text-base md:text-lg font-thin">Somos una empresa innovadora, que trabaja incansablemente por satisfacer la demanda de valor de nuestros clientes.
                 Aspiramos a consolidarnos como un referente en todas las áreas de comercio exterior en las que operamos.
                 Creemos que las relaciones humanas son el bien más importante de una sociedad, cuidarlas es nuestro mayor compromiso.
               </p>
@@ -521,7 +814,7 @@
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Valores</h5>
               <br>
-              <p class="text-lg font-thin">Trabajo honesto y profesional.
+              <p class="text-base md:text-lg font-thin">Trabajo honesto y profesional.
                 Crecimiento y mejora continua en base a tres pilares: innovación, eficiencia y transparencia.
                 Compromiso con el éxito de nuestros clientes, prestando especial atención a sus requerimientos específicos para lograr una relación comercial duradera y prolifera.
                 El cumplimiento de la totalidad los requisitos legales vigentes.
@@ -645,7 +938,7 @@
           <img class="absolute w-full h-full -z-50 object-cover object-center blur-[1px]" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-4 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
+          <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-1 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-10 w-20 absolute top-8 left-6 opacity-0 md:opacity-100">
               <h4 class="text-2xl md:text-3xl font-inter font-extralight">Agronegocios America</h4>
