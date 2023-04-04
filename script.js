@@ -1,5 +1,7 @@
 const navbar = document.getElementById('navbar');
 const navlogo = document.getElementById('navlogo');
+const drawerNav = document.getElementById('drawer-nav');
+const drawerBackdrop = document.getElementById('drawer-backdrop');
 const scrollPosition = () => window.pageYOffset;
 const productsBackdrop = document.getElementById('products-backdrop');
 //mobile navbar
@@ -58,6 +60,18 @@ const showNavbar = () => {
   navbar.classList.remove('-z-50');
 }
 
+const showDrawer = () => {
+  drawerNav.classList.remove('opacity-0');
+  drawerNav.classList.add('z-50');
+  drawerNav.classList.remove('-z-50');
+}
+
+const hideDrawer = () => {
+  drawerNav.classList.add('opacity-0');
+  drawerNav.classList.remove('z-50');
+  drawerNav.classList.add('-z-50');
+}
+
 const showNavlogo = () => {
   navlogo.classList.remove('opacity-0');
   navlogo.classList.add('opacity-50');
@@ -84,6 +98,8 @@ const handleScroll = () => {
     showNavlogo();
     hideNavbar();
     removeNavbarColor();
+    hideDrawer();
+    drawerBackdrop.classList.add('hidden');
   } else {
     removeNavbarColor();
     showNavbar();
@@ -94,13 +110,20 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll);
 
 navlogo.addEventListener('click', () => {
-  addNavbarColor();
-  showNavbar();
+  showDrawer();
+  drawerBackdrop.classList.remove('hidden');
   window.setTimeout(() => {
     hideNavlogo();
   }, 100);
   
 });
+
+drawerBackdrop.addEventListener('click', () => {
+  hideDrawer();
+  drawerBackdrop.classList.add('hidden');
+  showNavlogo();
+});
+
 //#endregion
 
 //#region mobile navbar
@@ -215,5 +238,90 @@ toOneNumber.addEventListener('click', () => {
 
 //#endregion
 
+//#region Legums Modal
+const legumsModal = document.getElementById('legums-modal');
+const closeLegumsModal = document.getElementById('close-legums-modal');
+const legumsButton = document.getElementById('legums-button');
 
+legumsButton.addEventListener('click', () => {
+  productsBackdrop.classList.remove('hidden');
+  legumsModal.classList.remove('hidden');
+  legumsModal.classList.add('flex');
 
+  window.setTimeout(() => {
+    legumsModal.classList.remove('opacity-0');
+    productsBackdrop.classList.remove('opacity-0');
+    productsBackdrop.classList.add('opacity-70');
+  }, 1);
+});
+
+closeLegumsModal.addEventListener('click', () => {
+    legumsModal.classList.add('opacity-0');
+    productsBackdrop.classList.remove('opacity-70');
+    productsBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      productsBackdrop.classList.add('hidden');
+      legumsModal.classList.add('hidden');
+    }, 500);
+  
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    legumsModal.classList.add('opacity-0');
+    productsBackdrop.classList.remove('opacity-70');
+    productsBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      productsBackdrop.classList.add('hidden');
+      legumsModal.classList.add('hidden');
+    }, 500);
+  }
+});
+//#endregion
+
+//#region Cereals Modal
+const cerealsModal = document.getElementById('cereals-modal');
+const closeCerealsModal = document.getElementById('close-cereals-modal');
+const cerealsButton = document.getElementById('cereals-button');
+
+cerealsButton.addEventListener('click', () => {
+  productsBackdrop.classList.remove('hidden');
+  cerealsModal.classList.remove('hidden');
+  cerealsModal.classList.add('flex');
+
+  window.setTimeout(() => {
+    cerealsModal.classList.remove('opacity-0');
+    productsBackdrop.classList.remove('opacity-0');
+    productsBackdrop.classList.add('opacity-70');
+  }, 1);
+});
+
+closeCerealsModal.addEventListener('click', () => {
+    cerealsModal.classList.add('opacity-0');
+    productsBackdrop.classList.remove('opacity-70');
+    productsBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      productsBackdrop.classList.add('hidden');
+      cerealsModal.classList.add('hidden');
+    }, 500);
+  
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    cerealsModal.classList.add('opacity-0');
+    productsBackdrop.classList.remove('opacity-70');
+    productsBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      productsBackdrop.classList.add('hidden');
+      cerealsModal.classList.add('hidden');
+    }, 500);
+  }
+});
+//#endregion
