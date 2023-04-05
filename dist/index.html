@@ -35,7 +35,7 @@
             <li><a href="#companies">Empresas</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
-        <div class="text-lg absolute bottom-5 w-full text-center italic">"Veloz y Confiable"</div>
+        <div class="text-xl mt-32 w-full text-center italic font-bold">"Veloz y Confiable"</div>
     </div>
     <div id="drawer-backdrop" class="w-screen h-screen z-40 bg-black opacity-50 fixed hidden"></div>
 
@@ -114,7 +114,7 @@
               </div>
               <p class="text-2xl font-bold">Legumbres</p>
               <a href="#products">
-                <button id="legums-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <button id="legums-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -125,7 +125,7 @@
               </div>
               <p class="text-2xl font-bold">Cereales</p>
               <a href="#products">
-                <button id="cereals-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <button id="cereals-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -136,7 +136,7 @@
               </div>
               <p class="text-2xl font-bold">Semillas Césped</p>
               <a href="#products">
-                <button id="grass-button" class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <button id="grass-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -146,12 +146,12 @@
                 <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Nutrición Animal</p>
-              <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+              <button class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 <a href="#products">Ver Variedades</a>
               </button>
             </li>
           </ul>
-          <br>
+          <div class="mt-10">
           <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
             <a href="#contact-form">Consultar Productos</a>
           </button>
@@ -508,7 +508,7 @@
             <!-- #endregion -->
 
           </div>  
-          <!--Lentils Modal -->
+          <!--Legums Modal -->
           <div id="legums-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
             <!--Close Modal Icon-->    
             <svg id="close-legums-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
@@ -522,76 +522,64 @@
                   <img src="img/legums/lentils.jpg" alt="lentils" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Lentejas</p>
-                <!-- <div class="h-1/3"> 
-                  <p class="text-sm font-extralight text-center text-black">
-                    Distintas especies de semillas de ciclo invernal o estival.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne, festuca rubra, festuca arundinácea, poa pratensis, poa trivialis, agrostis tenuis, festuca ovina y cynodon dactylon.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
-                  <p><span class="font-bold">Origen:</span> USA, Canada y Dinamarca.</p>
-                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Noviembre - Diciembre
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/alubia-beans.jpg" alt="alubia beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Alubia</p>
-                <!-- <div class="h-1/3"> 
-                  <p class="text-sm font-extralight text-center text-black">
-                    Distintas especies de ciclo estival o invernal aptas para campos deportivos o de alto tránsito.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y cynodon dactylon.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
-                  <p><span class="font-bold">Origen:</span> USA.</p>
-                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/light-red-kidney-beans.jpg" alt="light red kidney beans" class="w-[64px] h-[64px] md:w-[128px] md:h-[128px] rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black h-min">Porotos Colorados Claros</p>
-                <!-- <div class="h-1/3"> 
-                  <p class="text-sm font-extralight text-center text-black">
-                    Distintas especies para otoño, invierno y primavera.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> variedades de lolium perenne y lolium multiflorum de ciclo invernal.                
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
-                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
-                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/cranberry-beans.jpg" alt="cranberry beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Cranberry</p>
-                <!-- <div class="h-1/3"> 
-                  <p class="text-sm font-extralight text-center text-black">
-                    Distintas variedades de semillas mejoradas aptas para media sombra.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de lolium multiflorum, lolium perenne y festuca rubra.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Bolsas de 1/2, 1 y 10 kilos.</p>
-                  <p><span class="font-bold">Origen:</span> Importado y nacional.</p>
-                  <p><span class="font-bold">Densidad:</span> 1 kg rinde de 20 a 30 m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <!-- #endregion -->
               <!-- #region Second Row -->
@@ -600,87 +588,64 @@
                   <img src="img/legums/black-beans.jpg" alt="black beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Negros</p>
-                <!-- <div class="h-2/5">
-                  <p class="text-sm font-extralight text-center text-black">
-                    Gramínea perenne de ciclo estival, tiene tallos rastreros (estolones) y hojas anchas color verde claro. Se desarrolla bien en lugares soleados, húmedos, con suelos neutros. Posee buena tolerancia al pisoteo. Es un césped denso, entramado y fuerte.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de pennisetum clandestinum.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
-                  <p><span class="font-bold">Origen:</span> Australia.</p>
-                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/dark-red-kidney-beans.jpg" alt="dark red kidney beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Colorados Oscuros</p>
-                <!-- <div class="h-2/5">
-                  <p class="text-sm font-extralight text-center text-black">
-                    Dicotiledónea perenne de ciclo estival, de tallos rastreros y hojas color
-                    verde pálido con forma arriñonada, es de bajo crecimiento y no
-                    requiere cortes. Se desarrolla bien en lugares húmedos y sombríos,
-                    así como también en pleno sol con riego. Siembra en primavera.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de dichondra repens.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Doypack de 50 g.</p>
-                  <p><span class="font-bold">Origen:</span> USA.</p>
-                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/mung-beans.jpg" alt="mung beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Mung</p>
-                <!-- <div class="h-2/5">
-                  <p class="text-sm font-extralight text-center text-black">
-                    Gramínea perenne de ciclo estival, de tallos (estolones) y raíces
-                    rastreras (rizomas), y de hojas finas de color verde oscuro.
-                    Se desarrolla bien en lugares soleados, secos o húmedos y en
-                    suelos pobres, salinos o alcalinos. Tiene excelente resistencia al
-                    pisoteo y a enfermedades. Para siembra en primavera y verano.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de cynodon dactylon.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
-                  <p><span class="font-bold">Origen:</span> USA.</p>
-                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <li class="product">
                 <div class="circle-black">
                   <img src="img/legums/adzuki-beans.jpg" alt="adzuki beans" class="w-full h-full rounded-full object-cover">
                 </div>
                 <p class="text-xl font-bold text-black">Porotos Aduki</p>
-                <!-- <div class="h-2/5">
-                  <p class="text-sm font-extralight text-center text-black">
-                    Dicotiledónea perenne de ciclo estival, tiene tallos rastreros
-                    y hojas color verde pálido. Se desarrolla bien en lugares húmedos
-                    o secos a pleno sol. Muy usado en el sur del país en mezclas con
-                    rye grass como mejorador de suelos pobres, ya que aporta
-                    nitrógeno al mismo. Siembra en primavera y verano.
-                  </p>
-                  <p class="text-sm font-extralight text-center text-black">
-                    <span class="font-bold">Contiene</span> semillas de trifolium repens.
-                  </p>
-                </div>
-                <div class="flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg">
-                  <p><span class="font-bold">Presentación:</span> Doypack de 100 g.</p>
-                  <p><span class="font-bold">Origen:</span> USA.</p>
-                  <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
-                </div> -->
+                <ul class="flex flex-col text-sm font-extralighT text-black items-center w-3/4 bg-gray-200 p-4 rounded-lg list-disc"> 
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Período de producción:</span>
+                    <br>
+                    Marzo / <span class="font-bold">Cosecha:</span> Junio - Julio
+                  </li>
+                  <li class="text-sm font-extralight text-black w-11/12">
+                    <span class="font-bold">Calidad:</span> Grade I, Grade II, Off grade, Split, Feed.
+                  </li>
+                </ul>
               </li>
               <!-- #endregion -->
             </ul>
@@ -791,12 +756,12 @@
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Misión</h5>
               <br>
-              <p class="text-base md:text-lg font-thin">Proveer de productos agrícolas de calidad en cada una de nuestras operaciones, brindando soluciones logísticas integrales para incrementar la competitividad de nuestros clientes y satisfacerlos con profesionalismo a través de nuestros servicios de comercio exterior y seguimiento en todas las etapas del proceso.</p>
+              <p class="text-base md:text-lg font-normal">Proveer de productos agrícolas de calidad en cada una de nuestras operaciones, brindando soluciones logísticas integrales para incrementar la competitividad de nuestros clientes y satisfacerlos con profesionalismo a través de nuestros servicios de comercio exterior y seguimiento en todas las etapas del proceso.</p>
             </li>
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Visión</h5>
               <br>
-              <p class="text-base md:text-lg font-thin">Somos una empresa innovadora, que trabaja incansablemente por satisfacer la demanda de valor de nuestros clientes.
+              <p class="text-base md:text-lg font-normal">Somos una empresa innovadora, que trabaja incansablemente por satisfacer la demanda de valor de nuestros clientes.
                 Aspiramos a consolidarnos como un referente en todas las áreas de comercio exterior en las que operamos.
                 Creemos que las relaciones humanas son el bien más importante de una sociedad, cuidarlas es nuestro mayor compromiso.
               </p>
@@ -804,7 +769,7 @@
             <li class="text-center rounded-md shadow-lg shadow-black p-4 bg-slate-50">
               <h5 class="text-2xl font-bold">Valores</h5>
               <br>
-              <p class="text-base md:text-lg font-thin">Trabajo honesto y profesional.
+              <p class="text-base md:text-lg font-normal">Trabajo honesto y profesional.
                 Crecimiento y mejora continua en base a tres pilares: innovación, eficiencia y transparencia.
                 Compromiso con el éxito de nuestros clientes, prestando especial atención a sus requerimientos específicos para lograr una relación comercial duradera y prolifera.
                 El cumplimiento de la totalidad los requisitos legales vigentes.
@@ -871,7 +836,7 @@
         </section>
 
         <!-- Social Networks -->
-        <section class="w-full bg-blue-600 py-8">
+        <section class="w-full bg-black text-white py-8">
           <div class="flex gap-5 justify-center items-center" data-aos="fade-in" data-aos-duration="2000">
             <!-- Facebook -->
             <svg
@@ -931,7 +896,7 @@
           <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-1 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-10 w-20 absolute top-8 left-6 opacity-0 md:opacity-100">
-              <h4 class="text-2xl md:text-3xl font-inter font-extralight">AgroAmericano S.R.L.</h4>
+              <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
             </div>
             <div class="flex flex-col">
               <label for="name">Nombre</label>
