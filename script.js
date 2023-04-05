@@ -209,7 +209,9 @@ toTwoNumber.addEventListener('click', () => {
   grassModalPageOne.classList.add('hidden');
   grassModalPageOneNavigation.classList.add('hidden');
   //Show second page
+  grassModalPageTwo.classList.add('grid');
   grassModalPageTwo.classList.remove('hidden');
+  grassModalPageTwoNavigation.classList.add('flex');
   grassModalPageTwoNavigation.classList.remove('hidden');
 });
 
