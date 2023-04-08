@@ -40,6 +40,22 @@ window.onload = function() {
   }
 };
 
+//#region language
+/* const englishButton = document.getElementById('english-button');
+const spanishButton = document.getElementById('spanish-button');
+const english = document.getElementById('english');
+const spanish = document.getElementById('spanish');
+
+englishButton.addEventListener('click', () => {
+  spanish.classList.add('hidden');
+  english.classList.remove('hidden');
+});
+
+spanishButton.addEventListener('click', () => {
+  english.classList.add('hidden');
+  spanish.classList.remove('hidden');
+});
+ */
 //#region navbar
 const addNavbarColor = () => {
   navbar.classList.add('bg-black');
