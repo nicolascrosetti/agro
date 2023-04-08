@@ -1,0 +1,41 @@
+.triad-blue{
+    background-color: #5D22C5;
+}
+
+.main-green{
+    background-color: #5BC34A;
+}
+.base-green{
+    background-color: 	#AFE4A6;
+}
+.accent-green-p{
+    background-color: #1AAD2D;
+}
+.accent-blue-p{
+    background-color: #49348B;
+}
+.black-green{
+    background-color: #418B34;
+}
+
+
+#drawer-nav{
+    height: 100%;
+}
+#drawer-backdrop{
+    height: 100%;
+}
+
+@media screen {
+    @media only screen and (max-width: 768px) {
+    html, body {
+      overflow: auto;
+    }
+    #drawer-nav{
+        overflow: scroll;
+    }
+    #drawer-backdrop{
+        overflow: scroll;  
+    }
+    }
+}

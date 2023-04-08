@@ -121,28 +121,53 @@ navlogo.addEventListener('click', () => {
 drawerBackdrop.addEventListener('click', () => {
   hideDrawer();
   drawerBackdrop.classList.add('hidden');
-  showNavlogo();
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    // Do something for small screens
+    handleMobileScroll();
+  } else {
+    // Do something for larger screens
+    showNavlogo();
+  }
 });
 
 //#endregion
 
 //#region mobile navbar
-mobileNavButton.addEventListener('click', () => {
-  mobileNav.classList.toggle('hidden');
 
-  window.setTimeout(() => {
-    mobileNav.classList.toggle('opacity-0');
-  }, 1);
-});
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 0) {
-    navbarMobile.classList.add('opacity-50');
+const hideNavbarMobile = () => {
+  navbarMobile.classList.add('opacity-0');
+  navbarMobile.classList.remove('z-40');
+  navbarMobile.classList.add('-z-50');
+}
+
+const showNavbarMobile = () => {
+  navbarMobile.classList.remove('opacity-0');
+  navbarMobile.classList.add('z-40');
+  navbarMobile.classList.remove('-z-50');
+}
+
+const handleMobileScroll = () => {
+  if (scrollPosition() > 0) {
+    showNavlogo();
+    hideNavbarMobile();
+    hideDrawer();
+    drawerBackdrop.classList.add('hidden');
   } else {
-    navbarMobile.classList.remove('opacity-50');
+    showNavbarMobile();
+    hideNavlogo();
   }
+};
+
+window.addEventListener('scroll', handleMobileScroll);
+
+mobileNavButton.addEventListener('click', () => {
+  showDrawer();
+  drawerBackdrop.classList.remove('hidden');
+  hideNavbarMobile();
 });
 //#endregion
 
+//#region background images
 const backgroundImage = document.getElementById('background-image');
 const images = ['img/agro.jpg', 'img/agro2.jpg', 'img/agro3.jpg'];
 let index = 0;
@@ -151,6 +176,7 @@ setInterval(() => {
   index = (index + 1) % images.length;
   backgroundImage.src = images[index];
 }, 5000);
+//#endregion
 
 
 //#region Grass Modal
