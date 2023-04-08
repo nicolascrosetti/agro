@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
     <title>Document</title>
     <link rel="stylesheet" href="output.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,12 +21,12 @@
             <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
-    <div id="navlogo" class="hidden md:flex justify-center items-center h-20 w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white">
+    <div id="navlogo" class="flex justify-center items-center h-10 w-10 md:h-20 md:w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-5 md:left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-12 md:h-12 text-white">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>      
     </div>
-    <div id="drawer-nav" class="bg-gray-900 text-white h-screen w-1/5 fixed -z-50 opacity-0 transition ease-linear duration-200">
+    <div id="drawer-nav" class="bg-gray-900 text-white w-1/2 md:w-1/5 fixed -z-50 opacity-0 transition ease-linear duration-200">
         <ul class="flex flex-col gap-5 md:visible p-8">
             <a href="#header"><img src="img/logo.png" alt="logo" class="h-11 w-20 bg-black bg-opacity-10 rounded-md p-1"></a>   
             <li><a href="#aboutus">Quienes Somos</a></li>
@@ -37,27 +37,20 @@
         </ul>
         <div class="text-xl mt-32 w-full text-center italic font-bold">"Veloz y Confiable"</div>
     </div>
-    <div id="drawer-backdrop" class="w-screen h-screen z-40 bg-black opacity-50 fixed hidden"></div>
+    <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
 
     <!-- #endregion -->
 
     <!-- Mobile Navbar -->
     <nav id="navbarMobile" class="bg-black fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between md:hidden">
       <div class="flex items-center justify-around w-full">
-        <a href="#header">
-          <img src="img/logo.png" alt="logo" class="h-16 w-32 p-2 rounded-md bg-black bg-opacity-30">
-        </a>
         <svg id="mobile-nav-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:hidden cursor-pointer text-white">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>   
+        </svg>
+        <a href="#header">
+          <img src="img/logo.png" alt="logo" class="h-16 w-32 p-2 rounded-md bg-black bg-opacity-30">
+        </a>   
       </div>
-      <ul id="mobile-nav" class="hidden flex-col text-center gap-5 text-xl opacity-0 ease-linear duration-100 w-full bg-black">
-        <li class="p-1"><a href="#aboutus" class="text-white hover:text-gray-400">About Us</a></li>
-        <li class="p-1 border-gray-700 border-y-[1px]"><a href="#products" class="text-white hover:text-gray-400">Products</a></li>
-        <li class="p-1"><a href="#ourwork" class="text-white hover:text-gray-400">Our work</a></li>
-        <li class="p-1 border-gray-700 border-y-[1px]"><a href="#companies" class="text-white hover:text-gray-400">Companies</a></li>
-        <li class="p-1"><a href="#contact" class="text-white hover:text-gray-400">Contact</a></li>
-      </ul>
     </nav>
     
     <!-- Header -->
@@ -90,7 +83,7 @@
             </svg>            
             <h4 class="font-bold">¿Quiénes somos?</h4>
             <p class="font-light text-xl md:text-2xl text-center">Somos una empresa <strong class="font-bold">argentina</strong> dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad. Nos caracterizan las relaciones comerciales a largo plazo, creemos que es la mejor forma de estimular la competitividad de nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destacan en un mercado tan complejo y volátil, garantizando el crecimiento y desarrollo en conjunto.</p>
-            <button class="bg-green-500 text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+            <button class="main-green text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span>Contacto</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +107,7 @@
               </div>
               <p class="text-2xl font-bold">Legumbres</p>
               <a href="#products">
-                <button id="legums-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button id="legums-button" class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -125,7 +118,7 @@
               </div>
               <p class="text-2xl font-bold">Cereales</p>
               <a href="#products">
-                <button id="cereals-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button id="cereals-button" class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -136,7 +129,7 @@
               </div>
               <p class="text-2xl font-bold">Semillas Césped</p>
               <a href="#products">
-                <button id="grass-button" class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button id="grass-button" class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   Ver Variedades
                 </button>
               </a>
@@ -146,19 +139,19 @@
                 <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
               </div>
               <p class="text-2xl font-bold">Nutrición Animal</p>
-              <button class="bg-blue-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+              <button class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 <a href="#products">Ver Variedades</a>
               </button>
             </li>
           </ul>
           <div class="mt-10">
-          <button class="bg-green-500 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          <button class="main-green text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
             <a href="#contact-form">Consultar Productos</a>
           </button>
 
           <!--#region Modals  -->
           <!--Backdrop -->
-          <div id="products-backdrop" class="w-full h-full bg-black z-48 absolute top-0 hidden opacity-0 ease-linear duration-500">
+          <div id="products-backdrop" class="w-screen h-full bg-black z-48 absolute top-0 hidden opacity-0 ease-linear duration-500">
           </div>
           <!--Grass Modal -->
           <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
@@ -334,7 +327,7 @@
                   <p><span class="font-bold">Densidad:</span> 10 g por m².</p>
                 </div>
               </li>
-              <li class="product sm:hidden md:flex 2xl:hidden">
+              <li class="!hidden product md:!flex 2xl:!hidden">
                 <div class="circle-black">
                   <img src="img/cesped/invierno.png" alt="9variedades" class="w-full h-full rounded-full object-cover">
                 </div>
@@ -780,7 +773,7 @@
         </section>
 
         <!-- Companies -->
-        <section id="companies" class="bg-green-800 text-white w-full h-auto flex  flex-col gap-16 justify-center items-center p-16">
+        <section id="companies" class="black-green text-white w-full h-auto flex  flex-col gap-16 justify-center items-center p-16">
           <h4 class="font-bold text-3xl text-center" data-aos="fade-in">Empresas Que Confían en Nosotros</h4>
           <ul class="grid gap-16 grid-cols-1  lg:grid-cols-3 md:w-2/4" data-aos="zoom-in" data-aos-duration="2000">
             <li class="text-center m-auto">
@@ -832,11 +825,11 @@
             </li>
           </ul>
 
-          <img class="absolute w-full bottom-0 z-10 object-cover object-center opacity-20" src="img/contact.png" >
+          <img class="absolute w-full h-1/5 bottom-0 z-10 object-cover object-center opacity-20" src="img/contact.png" >
         </section>
 
         <!-- Social Networks -->
-        <section class="w-full bg-black text-white py-8">
+        <section class="w-full accent-blue-p text-white py-8">
           <div class="flex gap-5 justify-center items-center" data-aos="fade-in" data-aos-duration="2000">
             <!-- Facebook -->
             <svg
@@ -889,11 +882,11 @@
       </section>
 
         <!-- Concact Form -->
-        <section id="contact-form" class="bg-transparent flex items-center justify-center p-24 relative">
+        <section id="contact-form" class="bg-transparent flex items-center justify-center relative w-full py-8">
           <img class="absolute w-full h-full -z-50 object-cover object-center blur-[1px]" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="contact-form" action="#" class="flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 px-1 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
+          <form id="contact-form" action="#" class="w-5/6 md:w-1/2 2xl:w-2/5 px-8 flex flex-col text-md font-bold gap-5 bg-slate-50 py-4 md:py-24 md:px-32 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-10 w-20 absolute top-8 left-6 opacity-0 md:opacity-100">
               <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
@@ -914,7 +907,7 @@
               <label for="message">Mensaje</label>
               <textarea id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1"></textarea>
             </div>
-            <button class="bg-green-500 w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+            <button class="main-green w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span class="text-center m-auto">Enviar</span>
             </button>
           </form>
