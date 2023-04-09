@@ -41,21 +41,38 @@ window.onload = function() {
 };
 
 //#region language
-/* const englishButton = document.getElementById('english-button');
+const englishButton = document.getElementById('english-button');
 const spanishButton = document.getElementById('spanish-button');
-const english = document.getElementById('english');
-const spanish = document.getElementById('spanish');
+const dataLanguage = document.querySelectorAll('[data-language]')
 
 englishButton.addEventListener('click', () => {
-  spanish.classList.add('hidden');
-  english.classList.remove('hidden');
+  dataLanguage.forEach((element) => {
+    spanishButton.classList.remove('text-blue-400');
+    englishButton.classList.add('text-blue-400');
+
+    if(element.getAttribute('data-language') == 'spanish'){
+      element.classList.add('hidden');
+    }
+    if(element.getAttribute('data-language') == 'english'){
+      element.classList.remove('hidden');
+    }
+  });
 });
 
 spanishButton.addEventListener('click', () => {
-  english.classList.add('hidden');
-  spanish.classList.remove('hidden');
+  englishButton.classList.remove('text-blue-400');
+  spanishButton.classList.add('text-blue-400');
+
+  dataLanguage.forEach((element) => {
+    if(element.getAttribute('data-language') == 'english'){
+      element.classList.add('hidden');
+    }
+    if(element.getAttribute('data-language') == 'spanish'){
+      element.classList.remove('hidden');
+    }
+  });
 });
- */
+ 
 //#region navbar
 const addNavbarColor = () => {
   navbar.classList.add('bg-black');

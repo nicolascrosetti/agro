@@ -14,17 +14,42 @@
     <!-- #region Navbar -->
     <nav  id="navbar" class="justify-around text-xl items-center fixed bg-transparent w-full ease-linear duration-500 z-40 p-2 hidden md:flex">
         <a href="#header"><img src="img/logo.png" alt="logo" class="h-16 w-32 bg-black bg-opacity-10 rounded-md p-1"></a>     
-        <ul class="md:flex gap-5 md:visible hidden p-8">
-            <li><a href="#aboutus">Quienes Somos</a></li>
-            <li><a href="#products">Productos</a></li>
-            <li><a href="#ourwork">Nuestra Filosofía</a></li>
-            <li><a href="#companies">Empresas</a></li>
-            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500"><a href="#contact">Contacto</a></li>
+        <ul class="md:flex gap-5 md:visible hidden p-8 text-white">
+            <li>
+              <a href="#aboutus">
+                <span data-language="spanish">Quienes Somos</span>
+                <span data-language="english" class="hidden">About Us</span>
+              </a>
+            </li>
+            <li>
+              <a href="#products">
+                <span data-language="spanish">Productos</span>
+                <span data-language="english" class="hidden">Products</span>
+              </a>
+            </li>
+            <li>
+              <a href="#ourwork">
+                <span data-language="spanish">Nuestra Filosofía</span>
+                <span data-language="english" class="hidden">Our Philosophy</span>
+              </a>
+            </li>
+            <li>
+              <a href="#companies">
+                <span data-language="spanish">Empresas</span>
+                <span data-language="english" class="hidden">Companies</span>
+              </a>
+            </li>
+            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500">
+              <a href="#contact">
+                <span data-language="spanish">Contacto</span>
+                <span data-language="english" class="hidden">Contact</span>
+              </a>
+            </li>
         </ul>
-        <!-- <ul class="md:flex gap-5 md:visible hidden p-8 absolute right-5">
+        <ul class="md:flex gap-5 md:visible hidden p-8 xl:absolute xl:right-5 text-white">
           <li id="english-button" class="cursor-pointer">EN</li>
-          <li id="spanish-button" class="text-blue-900">ES</li>
-        </ul> -->
+          <li id="spanish-button" class="cursor-pointer text-blue-400">ES</li>
+        </ul>
     </nav>
     <div id="navlogo" class="flex justify-center items-center h-10 w-10 md:h-20 md:w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-5 md:left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-12 md:h-12 text-white">
@@ -59,14 +84,17 @@
     </nav>
     
     <!-- Header -->
-    <header id="header" class="min-h-screen flex relative justify-start items-start">
+    <header id="header" class="min-h-screen flex relative md:justify-start md:items-start">
         <!-- Background -->
         <img id="background-image" class="absolute w-full h-full -z-50 object-cover object-center" src="img/agro.jpg" >  
         <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
 
-        <div class="mt-28 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 px-4 py-8 max-w-6xl flex flex-col gap-5">
+        <div class="mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 px-4 py-8 max-w-6xl flex flex-col gap-5">
             <h1 class="text-4xl  md:text-6xl font-bold text-center md:text-left text-white" >AgroAmericano S.R.L.</h1>
-            <p class="text-3xl md:text-4xl text-white font-semibold text-center md:text-left italic">Veloz y Confiable</p>
+            <p class="text-3xl md:text-4xl text-white font-semibold text-center md:text-left italic">
+              <span data-language="spanish">Veloz y Confiable</span>
+              <span data-language="english" class="hidden">Fast and Reliable</span>
+            </p>
         </div>
         <div class="absolute bottom-0 w-full h-1/3 flex flex-col justify-start items-center">
           <a href="#aboutus">
@@ -86,8 +114,22 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-36 md:h-36">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>            
-            <h4 class="font-bold">¿Quiénes somos?</h4>
-            <p class="font-light text-xl md:text-2xl text-center">Somos una empresa <strong class="font-bold">argentina</strong> dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad. Nos caracterizan las relaciones comerciales a largo plazo, creemos que es la mejor forma de estimular la competitividad de nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destacan en un mercado tan complejo y volátil, garantizando el crecimiento y desarrollo en conjunto.</p>
+            <h4 class="font-bold">
+              <span data-language="spanish">¿Quiénes somos?</span>
+              <span data-language="english" class="hidden">About Us</span>
+            </h4>
+            <p class="font-light text-xl md:text-2xl text-center">
+              <span data-language="spanish">
+                Somos una empresa <strong class="font-bold">argentina</strong> dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad. 
+                Nos caracterizan las relaciones comerciales a largo plazo, creemos que es la mejor forma de estimular la competitividad de nuestros clientes.
+                La transparencia, responsabilidad y celeridad de nuestra atención que nos destaca,  garantiza el crecimiento y desarrollo en conjunto.
+              </span>
+              <span data-language="english" class="hidden">
+                We are an <strong class="font-bold">Argentinian</strong> company dedicated to selling high-quality agricultural products. 
+                We pride ourselves on establishing long-term business relationships, as we believe it is the best way to encourage our clients' competitiveness. 
+                Our transparency, accountability, and promptness set us apart and ensure mutual growth and development.
+              </span>
+            </p>
             <button class="main-green text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span>Contacto</span>
               <svg
@@ -105,7 +147,7 @@
         <!-- Products -->
         <section id="products" class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
           <h4 class="text-3xl font-bold" data-aos="fade-in">Productos</h4>
-          <ul class="grid grid-cols-1 lg:grid-cols-2 w-2/3 gap-8 lg:gap-32 xl:gap-16 2xl:gap-11">
+          <ul class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-32 xl:gap-24 2xl:gap-32">
             <li class="product" data-aos="fade-right" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/products/legumes.jpg" alt="legumes" class="w-full h-full rounded-full object-cover">
@@ -117,7 +159,7 @@
                 </button>
               </a>
             </li>
-            <li class="product" data-aos="fade-left" data-aos-duration="2000">
+            <li class="product" data-aos="fade-up" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/products/cereals.jpg" alt="cereals" class="w-full h-full rounded-full object-cover">
               </div>
@@ -128,7 +170,7 @@
                 </button>
               </a>
             </li>
-            <li class="product" data-aos="fade-right" data-aos-duration="2000">
+            <li class="product" data-aos="fade-left" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/products/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
               </div>
@@ -139,7 +181,7 @@
                 </button>
               </a>
             </li>
-            <li class="product" data-aos="fade-left" data-aos-duration="2000">
+            <!-- <li class="product" data-aos="fade-left" data-aos-duration="2000">
               <div class="circle">
                 <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
               </div>
@@ -147,7 +189,7 @@
               <button class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 <a href="#products">Ver Variedades</a>
               </button>
-            </li>
+            </li> -->
           </ul>
           <div class="mt-10">
           <button class="main-green text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
