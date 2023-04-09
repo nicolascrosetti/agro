@@ -185,7 +185,7 @@ mobileNavButton.addEventListener('click', () => {
 
 //#region background images
 const backgroundImage = document.getElementById('background-image');
-const images = ['img/agro.jpg', 'img/agro2.jpg', 'img/agro3.jpg'];
+const images = ['img/agro.jpg', 'img/agro2.jpg', 'img/agro3.jpg', 'img/agro4.jpg', 'img/agro5.jpg'];
 let index = 0;
 
 setInterval(() => {
