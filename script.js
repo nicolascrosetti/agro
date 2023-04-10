@@ -41,37 +41,47 @@ window.onload = function() {
 };
 
 //#region language
-const englishButton = document.getElementById('english-button');
-const spanishButton = document.getElementById('spanish-button');
+const englishButton = document.querySelectorAll('.english-button');
+const spanishButton = document.querySelectorAll('.spanish-button');
 const dataLanguage = document.querySelectorAll('[data-language]')
 
-englishButton.addEventListener('click', () => {
-  dataLanguage.forEach((element) => {
-    spanishButton.classList.remove('text-blue-400');
-    englishButton.classList.add('text-blue-400');
+englishButton.forEach((enButton) => {
+  spanishButton.forEach((esButton) => {
+    enButton.addEventListener('click', () => {
+      dataLanguage.forEach((element) => {
+        esButton.classList.remove('text-blue-400');
+        enButton.classList.add('text-blue-400');
+      
+        if(element.getAttribute('data-language') == 'spanish'){
+          element.classList.add('hidden');
+        }
+        if(element.getAttribute('data-language') == 'english'){
+          element.classList.remove('hidden');
+        }
+      });
+    });
 
-    if(element.getAttribute('data-language') == 'spanish'){
-      element.classList.add('hidden');
-    }
-    if(element.getAttribute('data-language') == 'english'){
-      element.classList.remove('hidden');
-    }
+    esButton.addEventListener('click', () => {
+      console.log("es button clicked");
+      dataLanguage.forEach((element) => {
+        enButton.classList.remove('text-blue-400');
+        esButton.classList.add('text-blue-400');
+      
+        if(element.getAttribute('data-language') == 'spanish'){
+          element.classList.remove('hidden');
+        }
+        if(element.getAttribute('data-language') == 'english'){
+          element.classList.add('hidden');
+        }
+      });
+    });
   });
 });
+//#endregion
 
-spanishButton.addEventListener('click', () => {
-  englishButton.classList.remove('text-blue-400');
-  spanishButton.classList.add('text-blue-400');
 
-  dataLanguage.forEach((element) => {
-    if(element.getAttribute('data-language') == 'english'){
-      element.classList.add('hidden');
-    }
-    if(element.getAttribute('data-language') == 'spanish'){
-      element.classList.remove('hidden');
-    }
-  });
-});
+  
+
  
 //#region navbar
 const addNavbarColor = () => {
