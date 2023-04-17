@@ -1295,7 +1295,7 @@ video {
 .product {
   margin: auto;
   display: flex;
-  height: auto;
+  height: 100%;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -1307,10 +1307,7 @@ video {
 
 .grassProduct {
   height: auto;
-  width: 100%;
-  gap: 0.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  padding: 0px;
 }
 
 .circle {
