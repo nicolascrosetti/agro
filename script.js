@@ -107,9 +107,15 @@ const showDrawer = () => {
   drawerNav.classList.remove('opacity-0');
   drawerNav.classList.add('z-50');
   drawerNav.classList.remove('-z-50');
+  setTimeout(() => {
+    drawerNav.style.transform = 'translateX(0)';
+  }, 50);
 }
 
 const hideDrawer = () => {
+  setTimeout(() => {
+    drawerNav.style.transform = 'translateX(-100%)';
+  }, 50);
   drawerNav.classList.add('opacity-0');
   drawerNav.classList.remove('z-50');
   drawerNav.classList.add('-z-50');
