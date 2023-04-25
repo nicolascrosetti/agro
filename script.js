@@ -78,10 +78,6 @@ englishButton.forEach((enButton) => {
   });
 });
 //#endregion
-
-
-  
-
  
 //#region navbar
 const addNavbarColor = () => {
@@ -226,7 +222,6 @@ setInterval(() => {
   backgroundImage.src = images[index];
 }, 5000);
 //#endregion
-
 
 //#region Grass Modal
 grassButton.addEventListener('click', () => {
