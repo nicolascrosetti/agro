@@ -142,11 +142,9 @@ const handleScroll = () => {
   if (scrollPosition() > 0) {
     showNavlogo();
     hideNavbar();
-    removeNavbarColor();
     hideDrawer();
     drawerBackdrop.classList.add('hidden');
   } else {
-    removeNavbarColor();
     showNavbar();
     hideNavlogo();
   }
@@ -395,5 +393,23 @@ document.addEventListener('keydown', function(event) {
       cerealsModal.classList.add('hidden');
     }, 500);
   }
+});
+//#endregion
+
+//#region Philosophy Cards
+const philosophySquares = document.querySelectorAll('.philosophy-square');
+const cardsTextOne = document.querySelectorAll('.card-text-one');
+const cardsTextTwo = document.querySelectorAll('.card-text-two');
+
+philosophySquares.forEach((philosophySquare, i) => {
+  philosophySquare.addEventListener('click', () => {
+    philosophySquare.classList.toggle('rotate');
+    window.setTimeout(() => {
+      cardsTextOne[i].classList.toggle('rotate');
+      cardsTextTwo[i].classList.toggle('rotate');
+      cardsTextOne[i].classList.toggle('hidden');
+      cardsTextTwo[i].classList.toggle('hidden');
+    }, 200);
+  });
 });
 //#endregion
