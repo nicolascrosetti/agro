@@ -3,6 +3,7 @@ const navbar = document.getElementById('navbar');
 const navlogo = document.getElementById('navlogo');
 const drawerNav = document.getElementById('drawer-nav');
 const drawerBackdrop = document.getElementById('drawer-backdrop');
+const drawerItems = document.querySelectorAll('.drawer-item');
 const scrollPosition = () => window.pageYOffset;
 const productsBackdrop = document.getElementById('products-backdrop');
 //mobile navbar
@@ -143,8 +144,6 @@ const handleScroll = () => {
   if (scrollPosition() > 0) {
     showNavlogo();
     hideNavbar();
-    hideDrawer();
-    drawerBackdrop.classList.add('hidden');
   } else {
     showNavbar();
     hideNavlogo();
@@ -174,6 +173,14 @@ drawerBackdrop.addEventListener('click', () => {
   }
 });
 
+drawerItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    console.log('drawer item clicked');
+    hideDrawer();
+    drawerBackdrop.classList.add('hidden');
+  })
+});
+
 //#endregion
 
 //#region mobile navbar
@@ -194,8 +201,6 @@ const handleMobileScroll = () => {
   if (scrollPosition() > 0) {
     showNavlogo();
     hideNavbarMobile();
-    hideDrawer();
-    drawerBackdrop.classList.add('hidden');
   } else {
     showNavbarMobile();
     hideNavlogo();
@@ -397,11 +402,40 @@ philosophySquares.forEach((philosophySquare, i) => {
   philosophySquare.addEventListener('click', () => {
     philosophySquare.classList.toggle('rotate');
     window.setTimeout(() => {
-      cardsTextOne[i].classList.toggle('rotate');
-      cardsTextTwo[i].classList.toggle('rotate');
+      /* cardsTextOne[i].classList.toggle('rotate');
+      cardsTextTwo[i].classList.toggle('rotate'); */
       cardsTextOne[i].classList.toggle('hidden');
       cardsTextTwo[i].classList.toggle('hidden');
     }, 200);
   });
 });
+//#endregion
+
+//#region Drawer Sections Color
+const sections = document.querySelectorAll('section');
+
+function setActiveLink() {
+  const scrollPosition = window.scrollY;
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollPosition >= sectionTop - sectionHeight * 0.25 && scrollPosition < sectionTop + sectionHeight - sectionHeight * 0.25) {
+      const currentId = section.getAttribute('id');
+      // const currentLink = document.querySelector(`a[href="#${currentId}"]`);
+      // const drawerItems= document.querySelectorAll('.nav-link');
+
+      drawerItems.forEach(link => {
+        link.classList.remove('text-blue-500');
+
+        if(link.getAttribute('href') == `#${currentId}`){
+          link.classList.add('text-blue-500');
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener('scroll', setActiveLink);
 //#endregion
