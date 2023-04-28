@@ -25,7 +25,9 @@
 .transitionCus {
   transition: transform 0.5s ease-in-out;
 }
-
+.height100{
+    height: 100%;
+}
 #drawer-nav{
     height: 100%;
     transform: translateX(-100%);

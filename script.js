@@ -1,3 +1,4 @@
+const bodyBackdrop = document.getElementById('body-backdrop');
 const navbar = document.getElementById('navbar');
 const navlogo = document.getElementById('navlogo');
 const drawerNav = document.getElementById('drawer-nav');
@@ -223,24 +224,22 @@ setInterval(() => {
 
 //#region Grass Modal
 grassButton.addEventListener('click', () => {
-  productsBackdrop.classList.remove('hidden');
+  bodyBackdrop.classList.remove('hidden');
   grassModal.classList.remove('hidden');
   grassModal.classList.add('flex');
 
   window.setTimeout(() => {
     grassModal.classList.remove('opacity-0');
-    productsBackdrop.classList.remove('opacity-0');
-    productsBackdrop.classList.add('opacity-70');
+    bodyBackdrop.classList.remove('opacity-0');
   }, 1);
 });
 
 closeModal.addEventListener('click', () => {
     grassModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       grassModal.classList.add('hidden');
     }, 500);
   
@@ -250,11 +249,10 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
     grassModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       grassModal.classList.add('hidden');
     }, 500);
   }
@@ -314,24 +312,22 @@ const closeLegumsModal = document.getElementById('close-legums-modal');
 const legumsButton = document.getElementById('legums-button');
 
 legumsButton.addEventListener('click', () => {
-  productsBackdrop.classList.remove('hidden');
+  bodyBackdrop.classList.remove('hidden');
   legumsModal.classList.remove('hidden');
   legumsModal.classList.add('flex');
 
   window.setTimeout(() => {
     legumsModal.classList.remove('opacity-0');
-    productsBackdrop.classList.remove('opacity-0');
-    productsBackdrop.classList.add('opacity-70');
+    bodyBackdrop.classList.remove('opacity-0');
   }, 1);
 });
 
 closeLegumsModal.addEventListener('click', () => {
     legumsModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       legumsModal.classList.add('hidden');
     }, 500);
   
@@ -341,11 +337,10 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
     legumsModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       legumsModal.classList.add('hidden');
     }, 500);
   }
@@ -358,24 +353,22 @@ const closeCerealsModal = document.getElementById('close-cereals-modal');
 const cerealsButton = document.getElementById('cereals-button');
 
 cerealsButton.addEventListener('click', () => {
-  productsBackdrop.classList.remove('hidden');
+  bodyBackdrop.classList.remove('hidden');
   cerealsModal.classList.remove('hidden');
   cerealsModal.classList.add('flex');
 
   window.setTimeout(() => {
     cerealsModal.classList.remove('opacity-0');
-    productsBackdrop.classList.remove('opacity-0');
-    productsBackdrop.classList.add('opacity-70');
+    bodyBackdrop.classList.remove('opacity-0');
   }, 1);
 });
 
 closeCerealsModal.addEventListener('click', () => {
     cerealsModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       cerealsModal.classList.add('hidden');
     }, 500);
   
@@ -385,11 +378,10 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
     cerealsModal.classList.add('opacity-0');
-    productsBackdrop.classList.remove('opacity-70');
-    productsBackdrop.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
 
     window.setTimeout(() => {
-      productsBackdrop.classList.add('hidden');
+      bodyBackdrop.classList.add('hidden');
       cerealsModal.classList.add('hidden');
     }, 500);
   }
