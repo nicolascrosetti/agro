@@ -51,10 +51,14 @@ const dataLanguage = document.querySelectorAll('[data-language]')
 englishButton.forEach((enButton) => {
   spanishButton.forEach((esButton) => {
     enButton.addEventListener('click', () => {
-      dataLanguage.forEach((element) => {
-        esButton.classList.remove('text-blue-400');
-        enButton.classList.add('text-blue-400');
-      
+      englishButton.forEach((btn) => {
+        btn.classList.add('text-blue-400');
+      });
+      spanishButton.forEach((btn) => {
+        btn.classList.remove('text-blue-400');
+      });
+
+      dataLanguage.forEach((element) => {     
         if(element.getAttribute('data-language') == 'spanish'){
           element.classList.add('hidden');
         }
@@ -65,11 +69,15 @@ englishButton.forEach((enButton) => {
     });
 
     esButton.addEventListener('click', () => {
-      console.log("es button clicked");
-      dataLanguage.forEach((element) => {
-        enButton.classList.remove('text-blue-400');
-        esButton.classList.add('text-blue-400');
-      
+      englishButton.forEach((btn) => {
+        btn.classList.remove('text-blue-400');
+      });
+      spanishButton.forEach((btn) => {
+        btn.classList.add('text-blue-400');
+      });
+
+
+      dataLanguage.forEach((element) => {     
         if(element.getAttribute('data-language') == 'spanish'){
           element.classList.remove('hidden');
         }
@@ -186,6 +194,14 @@ closeDrawer.addEventListener('click', () => {
   }
 });
 
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    hideDrawer();
+    drawerBackdrop.classList.add('hidden');
+    showNavlogo();
+  }
+});
 
 drawerItems.forEach((item) => {
   item.addEventListener('click', () => {
