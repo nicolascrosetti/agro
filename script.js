@@ -6,6 +6,7 @@ const drawerBackdrop = document.getElementById('drawer-backdrop');
 const drawerItems = document.querySelectorAll('.drawer-item');
 const scrollPosition = () => window.pageYOffset;
 const productsBackdrop = document.getElementById('products-backdrop');
+const closeDrawer = document.getElementById('close-drawer');
 //mobile navbar
 const mobileNavButton = document.getElementById('mobile-nav-button');
 const mobileNav = document.getElementById('mobile-nav');
@@ -173,6 +174,19 @@ drawerBackdrop.addEventListener('click', () => {
   }
 });
 
+closeDrawer.addEventListener('click', () => {
+  hideDrawer();
+  drawerBackdrop.classList.add('hidden');
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    // Do something for small screens
+    handleMobileScroll();
+  } else {
+    // Do something for larger screens
+    showNavlogo();
+  }
+});
+
+
 drawerItems.forEach((item) => {
   item.addEventListener('click', () => {
     console.log('drawer item clicked');
@@ -217,14 +231,39 @@ mobileNavButton.addEventListener('click', () => {
 //#endregion
 
 //#region background images
-const backgroundImage = document.getElementById('background-image');
+/* const backgroundImage = document.getElementById('background-image');
 const images = ['img/agro.jpg', 'img/agro2.jpg', 'img/agro3.jpg', 'img/agro4.jpg', 'img/agro5.jpg'];
 let index = 0;
 
 setInterval(() => {
   index = (index + 1) % images.length;
   backgroundImage.src = images[index];
+}, 5000); */
+
+const backgroundImageSecondary = document.getElementById('background-image-secondary');
+const imagesSecondary = ['img/agro2.jpg', 'img/agro3.jpg', 'img/agro4.jpg', 'img/agro5.jpg','img/agro.jpg'];
+let indexSecondary = 0;
+
+const backgroundImage = document.getElementById('background-image');
+const images = ['img/agro.jpg', 'img/agro2.jpg', 'img/agro3.jpg', 'img/agro4.jpg', 'img/agro5.jpg'];
+let index = 0;
+
+setInterval(() => {
+  index = (index + 1) % images.length;
+  backgroundImage.style.opacity = '0';
+  setTimeout(() => {
+    backgroundImage.src = images[index];
+    backgroundImage.style.opacity = '1';
+
+    setTimeout(() => {
+      indexSecondary = (indexSecondary + 1) % imagesSecondary.length;
+      backgroundImageSecondary.src = imagesSecondary[indexSecondary];
+    }, 1000)
+  }, 1000);
 }, 5000);
+
+
+
 //#endregion
 
 //#region Grass Modal
@@ -413,6 +452,7 @@ philosophySquares.forEach((philosophySquare, i) => {
 
 //#region Drawer Sections Color
 const sections = document.querySelectorAll('section');
+const drawerLinks = document.querySelectorAll('.drawer-link');
 
 function setActiveLink() {
   const scrollPosition = window.scrollY;
@@ -426,7 +466,7 @@ function setActiveLink() {
       // const currentLink = document.querySelector(`a[href="#${currentId}"]`);
       // const drawerItems= document.querySelectorAll('.nav-link');
 
-      drawerItems.forEach(link => {
+      drawerLinks.forEach(link => {
         link.classList.remove('text-blue-500');
 
         if(link.getAttribute('href') == `#${currentId}`){
