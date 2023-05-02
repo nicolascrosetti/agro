@@ -17,6 +17,12 @@
         <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] w-28 rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
         <ul class="md:flex gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
             <li class="hover:text-blue-500">
+              <a href="#header">
+                <span data-language="spanish">Inicio</span>
+                <span data-language="english" class="hidden">Quienes Somos</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
               <a href="#aboutus">
                 <span data-language="spanish">Quienes Somos</span>
                 <span data-language="english" class="hidden">About Us</span>
@@ -64,25 +70,33 @@
       </svg>      
     </div>
     <div id="drawer-nav" class="bg-gray-900 text-white w-3/5 md:w-1/3 lg:w-1/5 fixed -z-50 opacity-0">
-        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow shadow-black drawer-item">
-            <a href="#header" class="drawer-item"><img src="img/logo.png" alt="logo" class="h-14 w-20 bg-black bg-opacity-10 rounded-md p-1 hover:transform hover:scale-110 transition duration-500"></a>   
-            <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item">
+        <!--Close Drawer Icon-->     
+        <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>         
+        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow shadow-black">
+            <img src="img/logo.png" alt="logo" class="h-14 w-20 bg-black bg-opacity-10 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
+            <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
+              <span data-language="spanish">Inicio</span>
+              <span data-language="english" class="hidden">Home</span>
+            </a></li>  
+            <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item drawer-link">
               <span data-language="spanish">Quienes Somos</span>
               <span data-language="english" class="hidden">About Us</span>
             </a></li>
-            <li class="hover:text-blue-500"><a href="#products" class="drawer-item">
+            <li class="hover:text-blue-500"><a href="#products" class="drawer-item drawer-link">
               <span data-language="spanish">Productos</span>
               <span data-language="english" class="hidden">Products</span>
             </a></li>
-            <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item">
+            <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item drawer-link">
               <span data-language="spanish">Filosofía</span>
               <span data-language="english" class="hidden">Philosophy</span>
             </a></li>
-            <li class="hover:text-blue-500"><a href="#companies" class="drawer-item">
+            <li class="hover:text-blue-500"><a href="#companies" class="drawer-item drawer-link">
               <span data-language="spanish">Clientes</span>
               <span data-language="english" class="hidden">Clients</span>
             </a></li>
-            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 hover:text-blue-500"><a href="#contact-form" class="drawer-item">
+            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
               <span data-language="spanish">Contacto</span>
               <span data-language="english" class="hidden">Contact</span>
             </a></li>
@@ -117,7 +131,7 @@
     <!-- #endregion -->
 
     <!-- Mobile Navbar -->
-    <nav id="navbarMobile" class="bg-transparent fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between lg:hidden">
+    <nav id="navbarMobile" class="bg-black bg-opacity-80 fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between lg:hidden ease-linear duration-300">
       <div class="flex items-center justify-around w-full">
         <svg id="mobile-nav-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:hidden cursor-pointer text-white">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -129,15 +143,20 @@
     </nav>
     
     <!-- Header -->
-    <header id="header" class="min-h-screen flex relative justify-center items-center text-shadow shadow-gray-500">
+    <header>
+      <section id="header" class="min-h-screen flex relative justify-center items-center text-shadow shadow-gray-500">
         <!-- Background -->
-        <img id="background-image" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro.jpg" >  
+        <!-- <img id="background-image" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro.jpg" >   -->
+        <img id="background-image-secondary" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro2.jpg" >
+        <img id="background-image" class="absolute w-full h-full -z-40 object-cover md:object-fill object-center transition-opacity duration-1000" src="img/agro.jpg" >
+
+
         <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
 
         <!-- mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 -->
         <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center">
             <h1 class="text-4xl  md:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
-            <p class="text-3xl md:text-4xl text-white font-semibold italic text-cente">
+            <p class="text-3xl md:text-4xl text-white font-semibold italic text-center">
               <span data-language="spanish" class="text-shadow shadow-black">Trabajando para su progreso</span>
               <span data-language="english" class="text-shadow shadow-black hidden">Working for your progress</span>
             </p>
@@ -150,7 +169,9 @@
           </a>
         </div>
                
+      </section>
     </header>
+  
 
     <!-- Main Section -->
     <main>
@@ -1365,7 +1386,7 @@
             <span data-language="spanish">Nuestra Filosofía</span>
             <span data-language="english" class="hidden">Our Philosophy</span>
           </h4>
-          <ul class="w-4/5 md:w-11/12 2xl:w-3/4 h-80 grid xl:grid-cols-3 gap-5 z-10" data-aos="fade-up" data-aos-duration="1500">
+          <ul class="w-4/5 md:w-11/12 2xl:w-3/4 h-auto md:h-80 grid xl:grid-cols-3 gap-5 z-10" data-aos="fade-up" data-aos-duration="1500">
             <li class="rounded-md shadow-lg shadow-black p-4 bg-slate-50 transitionCus cursor-pointer flex justify-center items-center relative philosophy-square">
               <div class="w-full h-full hover:bg-blue-600 hover:bg-opacity-20 duration-500 absolute z-20"></div>
               <h5 class="text-3xl font-bold text-center card-text-one">
@@ -1566,8 +1587,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black flex items-center justify-around p-8 text-white">
-      <div class="flex flex-col">
+    <footer class="bg-black flex flex-col md:flex-row items-center justify-around p-8 text-white">
+      <div class="flex flex-col items-center">
         <p>+54 9 11 22334455</p>
         <p>mail@gmail.com</p>
       </div>
