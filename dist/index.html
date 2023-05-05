@@ -14,14 +14,8 @@
     <div id="body-backdrop" class="z-40 bg-black absolute top-0 w-screen height100 bg-opacity-80 hidden opacity-0 ease-linear duration-300" ></div>
     <!-- #region Navbar -->
     <nav  id="navbar" class="justify-around text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
-        <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] w-28 rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
+        <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
         <ul class="md:flex gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
-            <li class="hover:text-blue-500">
-              <a href="#header">
-                <span data-language="spanish">Inicio</span>
-                <span data-language="english" class="hidden">Quienes Somos</span>
-              </a>
-            </li>
             <li class="hover:text-blue-500">
               <a href="#aboutus">
                 <span data-language="spanish">Quienes Somos</span>
@@ -54,11 +48,11 @@
             </li>
         </ul>
         <ul class="md:flex gap-2 md:visible hidden xl:absolute xl:right-3 2xl:right-11 text-white">
-          <li class="english-button cursor-pointer flex items-center gap-1">
+          <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
             EN
             <img src="img/english.ico" alt="english" class="h-6 w-6">
           </li>
-          <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400">
+          <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
             ES
             <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
           </li>
@@ -74,8 +68,24 @@
         <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>         
-        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow shadow-black">
-            <img src="img/logo.png" alt="logo" class="h-14 w-20 bg-black bg-opacity-10 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
+        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow text-lg shadow-black">
+            <div class="w-full flex items-center justify-center">
+              <img src="img/logo.png" alt="logo" class="h-20 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
+            </div>
+            <div class="text-lg w-full text-center italic font-bold">
+              <span data-language="spanish">"Trabajando para su progreso"</span>
+              <span data-language="english" class="hidden">"Working for your progress"</span>
+            </div>
+            <ul class="gap-5 p-2 text-white flex justify-center mb-6">
+              <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
+                EN
+                <img src="img/english.ico" alt="english" class="h-6 w-6">
+              </li>
+              <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
+                ES
+                <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
+              </li>
+            </ul>
             <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
               <span data-language="spanish">Inicio</span>
               <span data-language="english" class="hidden">Home</span>
@@ -96,25 +106,12 @@
               <span data-language="spanish">Clientes</span>
               <span data-language="english" class="hidden">Clients</span>
             </a></li>
-            <li class="bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
+            <!-- bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 -->
+            <li class="hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
               <span data-language="spanish">Contacto</span>
               <span data-language="english" class="hidden">Contact</span>
             </a></li>
-            <ul class="gap-5 p-2 text-white flex justify-center">
-              <li class="english-button cursor-pointer flex items-center gap-1">
-                EN
-                <img src="img/english.ico" alt="english" class="h-6 w-6">
-              </li>
-              <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400">
-                ES
-                <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
-              </li>
-            </ul>
         </ul>
-        <div class="text-xl mt-32 w-full text-center italic font-bold">
-          <span data-language="spanish">"Trabajando para su progreso"</span>
-          <span data-language="english" class="hidden">"Working for your progress"</span>
-        </div>
     </div>
     <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
      <!-- Whastapp Fixed Icon -->
@@ -155,6 +152,7 @@
 
         <!-- mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 -->
         <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center">
+            <img src="img/logonowords.png" alt="agroamericano" class="h-20 png-shadow hover:transform hover:scale-125 transition duration-500">
             <h1 class="text-4xl  md:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
             <p class="text-3xl md:text-4xl text-white font-semibold italic text-center">
               <span data-language="spanish" class="text-shadow shadow-black">Trabajando para su progreso</span>
@@ -1546,7 +1544,7 @@
 
           <form id="contact-form" action="#" class="w-5/6 md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
-              <img src="img/logo.png" alt="logo" class="h-20 w-28 absolute top-0 left-0 opacity-0 md:opacity-100 bg-black bg-opacity-80 p-1 rounded-tl-md rounded-br-md">
+              <img src="img/logo.png" alt="logo" class="h-20 absolute top-0 left-0 opacity-0 md:opacity-100 bg-black bg-opacity-80 p-1 rounded-tl-md rounded-br-md">
               <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
             </div>
             <div class="flex flex-col">
