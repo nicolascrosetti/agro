@@ -17,6 +17,10 @@
 .black-green{
     background-color: #327725;
 }
+.png-shadow{
+    -webkit-filter: drop-shadow(3px 3px 3px #222);
+    filter: drop-shadow(3px 3px 3px #222);
+}
 
 .rotate {
     transform: rotateX(360deg);
