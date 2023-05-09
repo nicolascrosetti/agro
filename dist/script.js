@@ -448,6 +448,47 @@ document.addEventListener('keydown', function(event) {
 });
 //#endregion
 
+//#region Nuts and Seeds Modal
+const nutsandseedsModal = document.getElementById('nutsandseeds-modal');
+const closeNutsandseedsModal = document.getElementById('close-nutsandseeds-modal');
+const nutsandseedsButton = document.getElementById('nutsandseeds-button');
+
+nutsandseedsButton.addEventListener('click', () => {
+  bodyBackdrop.classList.remove('hidden');
+  nutsandseedsModal.classList.remove('hidden');
+  nutsandseedsModal.classList.add('flex');
+
+  window.setTimeout(() => {
+    nutsandseedsModal.classList.remove('opacity-0');
+    bodyBackdrop.classList.remove('opacity-0');
+  }, 1);
+});
+
+closeNutsandseedsModal.addEventListener('click', () => {
+    nutsandseedsModal.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      bodyBackdrop.classList.add('hidden');
+      nutsandseedsModal.classList.add('hidden');
+    }, 500);
+  
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    nutsandseedsModal.classList.add('opacity-0');
+    bodyBackdrop.classList.add('opacity-0');
+
+    window.setTimeout(() => {
+      bodyBackdrop.classList.add('hidden');
+      nutsandseedsModal.classList.add('hidden');
+    }, 500);
+  }
+});
+//#endregion
+
 //#region Philosophy Cards
 const philosophySquares = document.querySelectorAll('.philosophy-square');
 const cardsTextOne = document.querySelectorAll('.card-text-one');
