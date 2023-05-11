@@ -292,45 +292,6 @@ setInterval(() => {
 
 //#endregion
 
-//#region carrousel
-const carousel = document.getElementById('carousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const items = document.querySelectorAll('.carousel-item');
-
-let currentIndex = 0;
-const borderWidth = 2; // Ancho del borde en píxeles
-const slideWidth = items[0].clientWidth + (2 * borderWidth);
-
-prevBtn.addEventListener('click', () => {
-  if (currentIndex === 0) {
-    // carousel.style.transform = `translateX(0)`;
-    currentIndex = items.length - 3;
-    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  } else {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  }
-});
-
-nextBtn.addEventListener('click', () => {
-  console.log("items lenght: "+items.length+" current index: "+currentIndex);
-  currentIndex = (currentIndex + 1) % items.length;
-  if (currentIndex === items.length - 2) {
-    // carousel.style.transform = `translateX(0)`;
-    currentIndex = 0;
-    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  } else {
-    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  }
-});
-
-
-
-
-
-//#endregion
-
 //#region Grass Modal
 grassButton.addEventListener('click', () => {
   bodyBackdrop.classList.remove('hidden');
