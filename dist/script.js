@@ -30,6 +30,7 @@ window.onload = function() {
   new Glide('.glide', {
     type: 'carousel',
     perView: 3,
+    focusAt: 'center',
     breakpoints: {
       768: {
         perView: 1
@@ -52,6 +53,79 @@ window.onload = function() {
     });
   }
 };
+
+
+/* const targetImages = document.querySelectorAll('.target-image');
+
+targetImages.forEach(function(targetImage) {
+  targetImage.addEventListener('mouseenter', function() {
+    // Obtener las coordenadas y dimensiones de la imagen
+    const imageRect = targetImage.getBoundingClientRect();
+    const imageX = imageRect.left + window.scrollX;
+    const imageY = imageRect.top + window.scrollY;
+    const imageWidth = imageRect.width;
+    const imageHeight = imageRect.height;
+
+    // Crear el div rojo con las mismas dimensiones que la imagen
+    const redDiv = document.createElement('div');
+    redDiv.classList.add('red-div');
+    redDiv.style.left = `${imageX}px`;
+    redDiv.style.top = `${imageY}px`;
+    redDiv.style.width = `${imageWidth}px`;
+    redDiv.style.height = `${imageHeight}px`;
+
+    // Agregar el div rojo al cuerpo del documento
+    document.body.appendChild(redDiv);
+
+    redDiv.addEventListener('mouseleave', function() {
+      redDiv.remove();
+    });
+  });
+});
+ */
+
+
+const glideArrows = document.querySelectorAll('.glide__arrows');
+
+setTimeout(function() {
+  const targetImages = document.querySelectorAll('.target-image');
+
+  targetImages.forEach(function(targetImage) {
+    targetImage.addEventListener('mouseover', function(event) {
+      const src = event.target.getAttribute('src');
+      const imageRect = event.target.getBoundingClientRect();
+      const imageX = imageRect.left + window.scrollX;
+      const imageY = imageRect.top + window.scrollY;
+      const imageWidth = imageRect.width;
+      const imageHeight = imageRect.height;
+  
+      // Crear la nueva imagen con las mismas propiedades que la imagen original
+      const newImage = document.createElement('img');
+      newImage.classList.add('hover-image');
+      newImage.src = src;
+      newImage.style.position = 'absolute';
+      newImage.style.left = `${imageX}px`;
+      newImage.style.top = `${imageY}px`;
+      newImage.style.width = `${imageWidth}px`;
+      newImage.style.height = `${imageHeight}px`;
+  
+      // Agregar la nueva imagen al cuerpo del documento
+      document.body.appendChild(newImage);
+  
+      newImage.addEventListener('mouseleave', function() {
+        setTimeout(function() {
+          newImage.remove();
+        }, 300);
+      });
+    });
+  });
+}, 500);
+
+
+
+
+
+
 
 //#region language
 const englishButton = document.querySelectorAll('.english-button');
