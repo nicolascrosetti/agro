@@ -53,12 +53,16 @@
   border: 2px solid white;
   border-radius: 6px;
   cursor: pointer;
-  z-index: 10;
+  /* transform: scale(1.5); */
 
 }
-.hover-image:hover {
-  transform: scale(1.5);
+
+.hover-image-scaled{
+    transform: scale(1.5);
 }
+/* .hover-image:hover {
+  transform: scale(1.5);
+} */
   
   
   

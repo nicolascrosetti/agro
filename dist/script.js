@@ -84,10 +84,92 @@ targetImages.forEach(function(targetImage) {
 });
  */
 
+let isMouseEnterNewImage = false;
+let isNewImage = false;
+let isMouseEnterTrack = false;
 
-const glideArrows = document.querySelectorAll('.glide__arrows');
+const glideCarrousel = document.querySelector('.glide__track');
+glideCarrousel.addEventListener('mouseenter', () => {
+  console.log('triggered');
+  isMouseEnterTrack = true;
 
-setTimeout(function() {
+  if(!isNewImage){
+  //seleccionar slide del medio
+  const activeSlide = document.querySelector('.glide__slide--active img');
+  //obtener src, coordenadas y width y height de slide del medio
+  const src = activeSlide.getAttribute('src');
+  const imageRect = activeSlide.getBoundingClientRect();
+  const imageX = imageRect.left + window.scrollX;
+  const imageY = imageRect.top + window.scrollY;
+  const imageWidth = imageRect.width;
+  const imageHeight = imageRect.height;
+
+  //crear la nueva imagen con las mismas propiedades que la imagen original
+  const newImage = document.createElement('img');
+  newImage.classList.add('hover-image');
+  newImage.src = src;
+  newImage.style.position = 'absolute';
+  newImage.style.left = `${imageX}px`;
+  newImage.style.top = `${imageY}px`;
+  newImage.style.width = `${imageWidth}px`;
+  newImage.style.height = `${imageHeight}px`;
+
+  console.log(newImage);
+
+  setTimeout(() => {
+    newImage.classList.add('hover-image-scaled');
+  }, 100);
+
+  // Agregar la nueva imagen al cuerpo del documento
+  document.body.appendChild(newImage);
+
+  newImage.addEventListener('mouseenter', () =>{
+    console.log('adentro de nueva imagen');
+    isMouseEnterNewImage = true;
+  });
+
+  newImage.addEventListener('mouseleave', () =>{
+    console.log('fuera de nueva imagen');
+    isMouseEnterNewImage = false;
+
+    setTimeout(() => {
+      if(isMouseEnterTrack){
+        console.log('salio de nueva imagen pero sigue en track');
+      }else{
+        console.log('eliminar al salir de nueva imagen');
+        newImage.classList.remove('hover-image-scaled');
+        setTimeout(() => {
+          newImage.remove();
+        }, 500);
+        isNewImage = false;
+      }
+    }, 100);
+  });
+
+  isNewImage = true;
+  }
+});
+
+glideCarrousel.addEventListener('mouseleave', () => {
+  isMouseEnterTrack = false;
+
+  setTimeout(() => {
+    if (isMouseEnterNewImage) {
+      console.log('moouse entro en nueva imagen!');
+    }else{
+      console.log('eliminar');
+      const newImage = document.querySelector('.hover-image');
+      newImage.classList.remove('hover-image-scaled');
+      setTimeout(() => {
+        newImage.remove();
+      }, 500);
+      isNewImage = false;
+    }
+  }, 100);
+});
+
+
+/* setTimeout(function() {
   const targetImages = document.querySelectorAll('.target-image');
 
   targetImages.forEach(function(targetImage) {
@@ -119,7 +201,7 @@ setTimeout(function() {
       });
     });
   });
-}, 500);
+}, 500); */
 
 
 
