@@ -115,7 +115,7 @@ setTimeout(function() {
       newImage.addEventListener('mouseleave', function() {
         setTimeout(function() {
           newImage.remove();
-        }, 300);
+        }, 500);
       });
     });
   });
