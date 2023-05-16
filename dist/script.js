@@ -54,41 +54,14 @@ window.onload = function() {
   }
 };
 
-
-/* const targetImages = document.querySelectorAll('.target-image');
-
-targetImages.forEach(function(targetImage) {
-  targetImage.addEventListener('mouseenter', function() {
-    // Obtener las coordenadas y dimensiones de la imagen
-    const imageRect = targetImage.getBoundingClientRect();
-    const imageX = imageRect.left + window.scrollX;
-    const imageY = imageRect.top + window.scrollY;
-    const imageWidth = imageRect.width;
-    const imageHeight = imageRect.height;
-
-    // Crear el div rojo con las mismas dimensiones que la imagen
-    const redDiv = document.createElement('div');
-    redDiv.classList.add('red-div');
-    redDiv.style.left = `${imageX}px`;
-    redDiv.style.top = `${imageY}px`;
-    redDiv.style.width = `${imageWidth}px`;
-    redDiv.style.height = `${imageHeight}px`;
-
-    // Agregar el div rojo al cuerpo del documento
-    document.body.appendChild(redDiv);
-
-    redDiv.addEventListener('mouseleave', function() {
-      redDiv.remove();
-    });
-  });
-});
- */
-
+//#region carrousel
 let isMouseEnterNewImage = false;
 let isNewImage = false;
 let isMouseEnterTrack = false;
 
-const glideCarrousel = document.querySelector('.glide__track');
+const glideCarrousel = document.querySelector('#gallery');
+const glideArrows = document.querySelectorAll('.glide__arrows');
+
 glideCarrousel.addEventListener('mouseenter', () => {
   console.log('triggered');
   isMouseEnterTrack = true;
@@ -113,8 +86,6 @@ glideCarrousel.addEventListener('mouseenter', () => {
   newImage.style.top = `${imageY}px`;
   newImage.style.width = `${imageWidth}px`;
   newImage.style.height = `${imageHeight}px`;
-
-  console.log(newImage);
 
   setTimeout(() => {
     newImage.classList.add('hover-image-scaled');
@@ -168,20 +139,36 @@ glideCarrousel.addEventListener('mouseleave', () => {
   }, 100);
 });
 
+glideArrows.forEach((arrow) => {
+  arrow.addEventListener('click', () => {
 
-/* setTimeout(function() {
-  const targetImages = document.querySelectorAll('.target-image');
+    const removeCurrentImage = () => {
+      const newImage = document.querySelector('.hover-image');
 
-  targetImages.forEach(function(targetImage) {
-    targetImage.addEventListener('mouseover', function(event) {
-      const src = event.target.getAttribute('src');
-      const imageRect = event.target.getBoundingClientRect();
+      if(newImage){
+        //eliminar imagen actual
+        console.log('eliminar al clickear flecha');
+        newImage.classList.remove('hover-image-scaled');
+        setTimeout(() => {
+          newImage.remove();
+        }, 500);
+        isNewImage = false;
+      }
+    }
+    const createNewImage = () =>{
+      //reemplazarla por imagen siguiente
+    if(!isNewImage){
+      //seleccionar slide del medio
+      const activeSlide = document.querySelector('.glide__slide--active img');
+      //obtener src, coordenadas y width y height de slide del medio
+      const src = activeSlide.getAttribute('src');
+      const imageRect = activeSlide.getBoundingClientRect();
       const imageX = imageRect.left + window.scrollX;
       const imageY = imageRect.top + window.scrollY;
       const imageWidth = imageRect.width;
       const imageHeight = imageRect.height;
-  
-      // Crear la nueva imagen con las mismas propiedades que la imagen original
+    
+      //crear la nueva imagen con las mismas propiedades que la imagen original
       const newImage = document.createElement('img');
       newImage.classList.add('hover-image');
       newImage.src = src;
@@ -190,24 +177,50 @@ glideCarrousel.addEventListener('mouseleave', () => {
       newImage.style.top = `${imageY}px`;
       newImage.style.width = `${imageWidth}px`;
       newImage.style.height = `${imageHeight}px`;
-  
-      // Agregar la nueva imagen al cuerpo del documento
-      document.body.appendChild(newImage);
-  
-      newImage.addEventListener('mouseleave', function() {
-        setTimeout(function() {
-          newImage.remove();
-        }, 500);
+    
+      setTimeout(() => {
+        document.body.appendChild(newImage);
+        setTimeout(() => {  
+          newImage.classList.add('hover-image-scaled');
+        }, 100);
+      }, 100);
+
+      // Agregar la nueva imagen al cuerpo del documento  
+      newImage.addEventListener('mouseenter', () =>{
+        console.log('adentro de nueva imagen');
+        isMouseEnterNewImage = true;
       });
-    });
+    
+      newImage.addEventListener('mouseleave', () =>{
+        console.log('fuera de nueva imagen');
+        isMouseEnterNewImage = false;
+    
+        setTimeout(() => {
+          if(isMouseEnterTrack){
+            console.log('salio de nueva imagen pero sigue en track');
+          }else{
+            console.log('eliminar al salir de nueva imagen');
+            newImage.classList.remove('hover-image-scaled');
+            setTimeout(() => {
+              newImage.remove();
+              isNewImage = false;
+            }, 200);
+          }
+        }, 100);
+      });
+    
+      isNewImage = true;
+      }
+    }
+    removeCurrentImage();
+    setTimeout(() => {
+      createNewImage();
+    }, 400);
+    
   });
-}, 500); */
+});
 
-
-
-
-
-
+//#endregion
 
 //#region language
 const englishButton = document.querySelectorAll('.english-button');
