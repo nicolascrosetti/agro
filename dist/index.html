@@ -14,327 +14,14 @@
 </head>
 <body class="font-inter relative">
     <div id="body-backdrop" class="z-40 bg-black absolute top-0 w-screen height100 bg-opacity-80 hidden opacity-0 ease-linear duration-300" ></div>
-    <!-- #region Navbar -->
-    <nav  id="navbar" class="justify-around text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
-        <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
-        <ul class="md:flex gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
-            <li class="hover:text-blue-500">
-              <a href="#aboutus">
-                <span data-language="spanish">Quienes Somos</span>
-                <span data-language="english" class="hidden">About Us</span>
-              </a>
-            </li>
-            <li class="hover:text-blue-500">
-              <a href="#products">
-                <span data-language="spanish">Productos</span>
-                <span data-language="english" class="hidden">Products</span>
-              </a>
-            </li>
-            <li class="hover:text-blue-500">
-              <a href="#ourwork">
-                <span data-language="spanish">Filosofía</span>
-                <span data-language="english" class="hidden">Philosophy</span>
-              </a>
-            </li>
-            <li class="hover:text-blue-500">
-              <a href="#companies">
-                <span data-language="spanish">Clientes</span>
-                <span data-language="english" class="hidden">Clients</span>
-              </a>
-            </li>
-            <li class="hover:text-blue-500">
-              <a href="#gallery">
-                <span data-language="spanish">Galeria</span>
-                <span data-language="english" class="hidden">Gallery</span>
-              </a>
-            </li>
-            <li class="hover:text-blue-500">
-              <a href="#contact-form">
-                <span data-language="spanish">Contacto</span>
-                <span data-language="english" class="hidden">Contact</span>
-              </a>
-            </li>
-        </ul>
-        <ul class="md:flex gap-2 md:visible hidden xl:absolute xl:right-3 2xl:right-11 text-white">
-          <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
-            EN
-            <img src="img/english.ico" alt="english" class="h-6 w-6">
-          </li>
-          <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
-            ES
-            <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
-          </li>
-        </ul>
-    </nav>
-    <div id="navlogo" class="flex justify-center items-center h-10 w-10 md:h-20 md:w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-5 md:left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-12 md:h-12 text-white">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>      
-    </div>
-    <div id="drawer-nav" class="bg-gray-900 text-white w-3/5 md:w-1/3 lg:w-1/5 fixed -z-50 opacity-0">
-        <!--Close Drawer Icon-->     
-        <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>         
-        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow text-lg shadow-black">
-            <div class="w-full flex items-center justify-center">
-              <img src="img/logo.png" alt="logo" class="h-20 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
-            </div>
-            <div class="text-lg w-full text-center italic font-bold">
-              <span data-language="spanish">"Trabajando para su progreso"</span>
-              <span data-language="english" class="hidden">"Working for your progress"</span>
-            </div>
-            <ul class="gap-5 p-2 text-white flex justify-center mb-6">
-              <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
-                EN
-                <img src="img/english.ico" alt="english" class="h-6 w-6">
-              </li>
-              <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
-                ES
-                <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
-              </li>
-            </ul>
-            <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
-              <span data-language="spanish">Inicio</span>
-              <span data-language="english" class="hidden">Home</span>
-            </a></li>  
-            <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item drawer-link">
-              <span data-language="spanish">Quienes Somos</span>
-              <span data-language="english" class="hidden">About Us</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#products" class="drawer-item drawer-link">
-              <span data-language="spanish">Productos</span>
-              <span data-language="english" class="hidden">Products</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item drawer-link">
-              <span data-language="spanish">Filosofía</span>
-              <span data-language="english" class="hidden">Philosophy</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#companies" class="drawer-item drawer-link">
-              <span data-language="spanish">Clientes</span>
-              <span data-language="english" class="hidden">Clients</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#gallery" class="drawer-item drawer-link">
-              <span data-language="spanish">Galería</span>
-              <span data-language="english" class="hidden">Gallery</span>
-            </a></li>
-            <!-- bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 -->
-            <li class="hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
-              <span data-language="spanish">Contacto</span>
-              <span data-language="english" class="hidden">Contact</span>
-            </a></li>
-        </ul>
-    </div>
-    <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
-     <!-- Whastapp Fixed Icon -->
-    <div class="fixed bottom-6 right-3 h-11 w-11 md:bottom-11 md:right-11 md:h-16 md:w-16 p-2 md:p-3 cursor-pointer main-green text-white text-base md:text-lg rounded-full flex items-center shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 z-40 hover:transform hover:scale-125 transition duration-500">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-14 w-14"
-        fill="currentColor"
-        viewBox="0 0 24 24">
-        <path
-          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-      </svg>
-    </div>
-    <!-- #endregion -->
-
-    <!-- Mobile Navbar -->
-    <nav id="navbarMobile" class="bg-black bg-opacity-80 fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between lg:hidden ease-linear duration-300">
-      <div class="flex items-center justify-around w-full">
-        <svg id="mobile-nav-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:hidden cursor-pointer text-white">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-        <a href="#header">
-          <img src="img/logo.png" alt="logo" class="h-16 rounded-md bg-black bg-opacity-10 p-1">
-        </a>   
+    <div id="modals" class="bg-black min-h-screen h-auto py-12 hidden justify-center items-start relative">
+      <div class="absolute top-0 h-auto w-full z-10 flex flex-col">
+        <img src="img/modals/twosections.png" alt="" class="hidden xl:block">
       </div>
-    </nav>
-    
-    <!-- Header -->
-    <header>
-      <section id="header" class="min-h-screen flex flex-col relative justify-center items-center text-shadow shadow-gray-500">
-        <!-- Background -->
-        <!-- <img id="background-image" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro.jpg" >   -->
-        <img id="background-image-secondary" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro2.jpg" >
-        <img id="background-image" class="absolute w-full h-full -z-40 object-cover md:object-fill object-center transition-opacity duration-1000" src="img/agro.jpg" >
 
-
-        <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
-
-        <!-- mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 -->
-        <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center mt-24">
-            <img src="img/logonowords.png" alt="agroamericano" class="h-20 png-shadow hover:transform hover:scale-125 transition duration-500">
-            <h1 class="text-4xl  md:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
-            <p class="text-3xl md:text-4xl text-white font-semibold italic text-center">
-              <span data-language="spanish" class="text-shadow shadow-black">Trabajando para su progreso</span>
-              <span data-language="english" class="text-shadow shadow-black hidden">Working for your progress</span>
-            </p>
-        </div>
-        <div class="w-full md:mt-5 h-auto flex flex-col justify-start items-center">
-          <a href="#aboutus" class="hover:transform hover:scale-125 transition duration-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-slate-100 cursor-pointer" data-aos="fade-down" data-aos-duration="2000">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg> 
-          </a>
-        </div>
-               
-      </section>
-    </header>
-  
-
-    <!-- Main Section -->
-    <main>
-        <!-- About Us -->
-        <section id="aboutus" class="bg-slate-50 w-full flex justify-center items-center py-24 relative text-shadow shadow-gray-500">
-          <div class="text-black text-2xl md:text-3xl flex flex-col gap-4 p-8 items-center md:w-3/4 lg:w-2/4 z-20 ease-linear" data-aos="fade-down" data-aos-duration="2000">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-36 md:h-36 hover:transform hover:scale-125 transition duration-500">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>            
-            <h4 class="font-bold">
-              <span data-language="spanish">¿Quiénes somos?</span>
-              <span data-language="english" class="hidden">About Us</span>
-            </h4>
-            <p class="font-light text-lg md:text-2xl text-center">
-              <span data-language="spanish">
-                Somos una empresa <strong class="font-bold">argentina</strong>, radicada en Buenos Aires, dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad.
-                Nuestra amplia red de socios productores nos permite establecer relaciones comerciales solidas y duraderas con nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destaca,
-                garantizando el crecimiento y desarrollo en conjunto.
-              </span>
-              <span data-language="english" class="hidden">
-                We are an <strong class="font-bold">Argentinian</strong> company, based in Buenos Aires, dedicated to the commercialization of agricultural products with the highest quality standards. 
-                Our extensive network of producer partners allows us to establish solid and lasting commercial relationships with our clients. 
-                The transparency, responsibility, and promptness of our service set us apart, ensuring mutual growth and development.
-              </span>
-            </p>
-            <button class="base-green text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-              <span>Contacto</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-              </svg>
-            </button>
-          </div>
-        </section>
-
-        <!-- Products -->
-        <section id="products" class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
-          <h4 class="text-2xl md:text-3xl font-bold text-shadow shadow-gray-500" data-aos="fade-in">
-            <span data-language="spanish">Productos</span>
-            <span data-language="english" class="hidden">Products</span>
-          </h4>
-          <ul class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-8 lg:gap-32 xl:gap-24">
-            <li class="product" data-aos="fade-right" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/products/legumes.jpg" alt="legumes" class="w-full h-full rounded-full object-cover">
-                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
-              </div>
-              <p class="text-xl md:text-2xl font-bold">
-                <span data-language="spanish">Legumbres</span>
-                <span data-language="english" class="hidden">Legums</span>
-              </p>
-              <a href="#products">
-                <button id="legums-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                  <span data-language="spanish">Ver Variedades</span>
-                  <span data-language="english" class="hidden">Explore Varieties</span>
-                </button>
-              </a>
-            </li>
-            <li class="product" data-aos="fade-up" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/products/cereals.jpg" alt="cereals" class="w-full h-full rounded-full object-cover">
-                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
-              </div>
-              <p class="text-xl md:text-2xl font-bold">
-                <span data-language="spanish">Cereales</span>
-              <span data-language="english" class="hidden">Cereals</span>
-              </p>
-              <a href="#products">
-                <button id="cereals-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                  <span data-language="spanish">Ver Variedades</span>
-                  <span data-language="english" class="hidden">Explore Varieties</span>
-                </button>
-              </a>
-            </li>
-            <li class="product" data-aos="fade-up" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/products/nutsandseeds.jpeg" alt="nuts and seeds" class="w-full h-full rounded-full object-covers">
-                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
-              </div>
-              <p class="text-xl md:text-2xl font-bold">
-                <span data-language="spanish">Oleaginosas</span>
-              <span data-language="english" class="hidden">Nuts and Seeds</span>
-              </p>
-              <a href="#products">
-                <button id="nutsandseeds-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                  <span data-language="spanish">Ver Variedades</span>
-                  <span data-language="english" class="hidden">Explore Varieties</span>
-                </button>
-              </a>
-            </li>
-            <li class="product" data-aos="fade-left" data-aos-duration="2000">
-              <div class="circle">
-                <span data-language="spanish">
-                  <img src="img/nuevo.png" alt="nuevo" class="absolute top-0 left-0 w-32 h-32 png-shadow">
-                </span>
-                <span data-language="english" class="hidden">
-                  <img src="img/new.png" alt="nuevo" class="absolute top-0 left-0 w-32 h-32 png-shadow">
-                </span>
-                
-                <!-- <span class="absolute top-10 right-5 inline-flex items-center rounded-md bg-red-300 px-4 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-700/10 shadow-md shadow-black">
-                  <span data-language="spanish">Nuevo!</span>
-                  <span data-language="english" class="hidden">New!</span>
-                </span> -->
-                <!-- <div class="absolute top-2 left-2">
-                  <div class="relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-24 h-24 text-red-500 ring-1 ring-inset ring-red-700/10 png-shadow">
-                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
-                    </svg>  
-                    <p class="absolute left-0 right-0 ml-auto mr-auto top-10 text-center text-sm font-medium text-white">
-                      <span data-language="spanish">Nuevo!</span>
-                      <span data-language="english" class="hidden">New!</span>
-                    </p>
-                  </div>
-                </div>  -->                                                       
-                <img src="img/products/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
-                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
-              </div>
-              <p class="text-xl md:text-2xl font-bold">
-                <span data-language="spanish">Semillas Césped</span>
-                <span data-language="english" class="hidden">Grass Seeds</span>
-              </p>
-              <a href="#grass-modal">
-                <button id="grass-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                  <span data-language="spanish">Ver Variedades</span>
-                  <span data-language="english" class="hidden">Explore Varieties</span>
-                </button>
-              </a>
-            </li>
-            <!-- <li class="product" data-aos="fade-left" data-aos-duration="2000">
-              <div class="circle">
-                <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
-              </div>
-              <p class="text-2xl font-bold">Nutrición Animal</p>
-              <button class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                <a href="#products">Ver Variedades</a>
-              </button>
-            </li> -->
-          </ul>
-          <div class="mt-10">
-          <button class="base-green text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-            <a href="#contact-form">
-              <span data-language="spanish">Consultar Productos</span>
-              <span data-language="english" class="hidden">Ask About Our Products</span>
-            </a>
-          </button>
-
-          <!--#region Modals  -->
+      <!--#region Modals  -->
           <!--Grass Modal -->
-          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+          <div id="grass-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black hidden opacity-0 ease-linear duration-500 relative">
             <!--Close Modal Icon-->    
             <svg id="close-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1050,7 +737,7 @@
 
           </div>  
           <!--Legums Modal -->
-          <div id="legums-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+          <div id="legums-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black hidden opacity-0 ease-linear duration-500 relative">
             <!--Close Modal Icon-->    
             <svg id="close-legums-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1305,7 +992,7 @@
             <!-- #endregion -->
           </div> 
           <!--Cereals Modal -->
-          <div id="cereals-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+          <div id="cereals-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black hidden opacity-0 ease-linear duration-500 relative">
             <!--Close Modal Icon-->    
             <svg id="close-cereals-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1369,7 +1056,7 @@
             <!-- #endregion -->
           </div>   
           <!--Nuts and Seeds Modal -->
-          <div id="nutsandseeds-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black absolute top-2 md:top-28 xl:top-6 2xl:top-28 left-0 right-0 mr-auto ml-auto hidden opacity-0 ease-linear duration-500">
+          <div id="nutsandseeds-modal" class="bg-slate-50 w-4/5 md:w-11/12 h-auto xl:h-11/12 2xl:4/5 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black hidden opacity-0 ease-linear duration-500 relative">
             <!--Close Modal Icon-->    
             <svg id="close-nutsandseeds-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -1432,13 +1119,330 @@
             </ul>
             <!-- #endregion -->
           </div>  
+    <!--#endregion -->
+    </div>
+    <div id="body">
+    <!-- #region Navbar -->
+    <nav  id="navbar" class="justify-around text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
+        <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
+        <ul class="md:flex gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
+            <li class="hover:text-blue-500">
+              <a href="#aboutus">
+                <span data-language="spanish">Quienes Somos</span>
+                <span data-language="english" class="hidden">About Us</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
+              <a href="#products">
+                <span data-language="spanish">Productos</span>
+                <span data-language="english" class="hidden">Products</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
+              <a href="#ourwork">
+                <span data-language="spanish">Filosofía</span>
+                <span data-language="english" class="hidden">Philosophy</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
+              <a href="#companies">
+                <span data-language="spanish">Clientes</span>
+                <span data-language="english" class="hidden">Clients</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
+              <a href="#gallery">
+                <span data-language="spanish">Galeria</span>
+                <span data-language="english" class="hidden">Gallery</span>
+              </a>
+            </li>
+            <li class="hover:text-blue-500">
+              <a href="#contact-form">
+                <span data-language="spanish">Contacto</span>
+                <span data-language="english" class="hidden">Contact</span>
+              </a>
+            </li>
+        </ul>
+        <ul class="md:flex gap-2 md:visible hidden xl:absolute xl:right-3 2xl:right-11 text-white">
+          <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
+            EN
+            <img src="img/english.ico" alt="english" class="h-6 w-6">
+          </li>
+          <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
+            ES
+            <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
+          </li>
+        </ul>
+    </nav>
+    <div id="navlogo" class="flex justify-center items-center h-10 w-10 md:h-20 md:w-20 rounded-full border-white bg-black border-2 opacity-0  transition ease-linear duration-500 top-5 left-5 md:left-10 fixed -z-50 cursor-pointer hover:bg-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-12 md:h-12 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>      
+    </div>
+    <div id="drawer-nav" class="bg-gray-900 text-white w-3/5 md:w-1/3 lg:w-1/5 fixed -z-50 opacity-0">
+        <!--Close Drawer Icon-->     
+        <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>         
+        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow text-lg shadow-black">
+            <div class="w-full flex items-center justify-center">
+              <img src="img/logo.png" alt="logo" class="h-20 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
+            </div>
+            <div class="text-lg w-full text-center italic font-bold">
+              <span data-language="spanish">"Trabajando para su progreso"</span>
+              <span data-language="english" class="hidden">"Working for your progress"</span>
+            </div>
+            <ul class="gap-5 p-2 text-white flex justify-center mb-6">
+              <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
+                EN
+                <img src="img/english.ico" alt="english" class="h-6 w-6">
+              </li>
+              <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
+                ES
+                <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
+              </li>
+            </ul>
+            <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
+              <span data-language="spanish">Inicio</span>
+              <span data-language="english" class="hidden">Home</span>
+            </a></li>  
+            <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item drawer-link">
+              <span data-language="spanish">Quienes Somos</span>
+              <span data-language="english" class="hidden">About Us</span>
+            </a></li>
+            <li class="hover:text-blue-500"><a href="#products" class="drawer-item drawer-link">
+              <span data-language="spanish">Productos</span>
+              <span data-language="english" class="hidden">Products</span>
+            </a></li>
+            <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item drawer-link">
+              <span data-language="spanish">Filosofía</span>
+              <span data-language="english" class="hidden">Philosophy</span>
+            </a></li>
+            <li class="hover:text-blue-500"><a href="#companies" class="drawer-item drawer-link">
+              <span data-language="spanish">Clientes</span>
+              <span data-language="english" class="hidden">Clients</span>
+            </a></li>
+            <li class="hover:text-blue-500"><a href="#gallery" class="drawer-item drawer-link">
+              <span data-language="spanish">Galería</span>
+              <span data-language="english" class="hidden">Gallery</span>
+            </a></li>
+            <!-- bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 -->
+            <li class="hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
+              <span data-language="spanish">Contacto</span>
+              <span data-language="english" class="hidden">Contact</span>
+            </a></li>
+        </ul>
+    </div>
+    <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
+     <!-- Whastapp Fixed Icon -->
+    <div class="fixed bottom-6 right-3 h-11 w-11 md:bottom-11 md:right-11 md:h-16 md:w-16 p-2 md:p-3 cursor-pointer main-green text-white text-base md:text-lg rounded-full flex items-center shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 z-40 hover:transform hover:scale-125 transition duration-500">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-14 w-14"
+        fill="currentColor"
+        viewBox="0 0 24 24">
+        <path
+          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+      </svg>
+    </div>
+    <!-- #endregion -->
 
-          <!--#endregion -->
+    <!-- Mobile Navbar -->
+    <nav id="navbarMobile" class="bg-black bg-opacity-80 fixed h-auto w-full z-40 py-2 flex flex-col items-center justify-between lg:hidden ease-linear duration-300">
+      <div class="flex items-center justify-around w-full">
+        <svg id="mobile-nav-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:hidden cursor-pointer text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <a href="#header">
+          <img src="img/logo.png" alt="logo" class="h-16 rounded-md bg-black bg-opacity-10 p-1">
+        </a>   
+      </div>
+    </nav>
+    
+    <!-- Header -->
+    <header>
+      <section id="header" class="min-h-screen flex flex-col relative justify-center items-center text-shadow shadow-gray-500">
+        <!-- Background -->
+        <!-- <img id="background-image" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro.jpg" >   -->
+        <img id="background-image-secondary" class="absolute w-full h-full -z-50 object-cover md:object-fill object-center" src="img/agro2.jpg" >
+        <img id="background-image" class="absolute w-full h-full -z-40 object-cover md:object-fill object-center transition-opacity duration-1000" src="img/agro.jpg" >
 
+
+        <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
+
+        <!-- mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 -->
+        <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center mt-24">
+            <img src="img/logonowords.png" alt="agroamericano" class="h-20 png-shadow hover:transform hover:scale-125 transition duration-500">
+            <h1 class="text-4xl  md:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
+            <p class="text-3xl md:text-4xl text-white font-semibold italic text-center">
+              <span data-language="spanish" class="text-shadow shadow-black">Trabajando para su progreso</span>
+              <span data-language="english" class="text-shadow shadow-black hidden">Working for your progress</span>
+            </p>
+        </div>
+        <div class="w-full md:mt-5 h-auto flex flex-col justify-start items-center">
+          <a href="#aboutus" class="hover:transform hover:scale-125 transition duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-slate-100 cursor-pointer" data-aos="fade-down" data-aos-duration="2000">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg> 
+          </a>
+        </div>
+               
+      </section>
+    </header>
+  
+    <!-- Main Section -->
+    <main>
+        <!-- About Us -->
+        <section id="aboutus" class="bg-slate-50 w-full flex justify-center items-center py-24 relative">
+          <div class="border-gradient-black50-to-black0 h-2 w-full absolute top-0"></div>
+          <div class="text-black text-2xl md:text-3xl flex flex-col gap-4 p-8 items-center md:w-3/4 lg:w-2/4 z-20 ease-linear" data-aos="fade-down" data-aos-duration="2000">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-36 md:h-36 hover:transform hover:scale-125 transition duration-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>            
+            <h4 class="font-bold text-shadow shadow-gray-500">
+              <span data-language="spanish">¿Quiénes somos?</span>
+              <span data-language="english" class="hidden">About Us</span>
+            </h4>
+            <p class="font-light text-lg md:text-2xl text-center">
+              <span data-language="spanish">
+                Somos una empresa <strong class="font-bold">argentina</strong>, radicada en Buenos Aires, dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad.
+                Nuestra amplia red de socios productores nos permite establecer relaciones comerciales solidas y duraderas con nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destaca,
+                garantizando el crecimiento y desarrollo en conjunto.
+              </span>
+              <span data-language="english" class="hidden">
+                We are an <strong class="font-bold">Argentinian</strong> company, based in Buenos Aires, dedicated to the commercialization of agricultural products with the highest quality standards. 
+                Our extensive network of producer partners allows us to establish solid and lasting commercial relationships with our clients. 
+                The transparency, responsibility, and promptness of our service set us apart, ensuring mutual growth and development.
+              </span>
+            </p>
+            <button class="base-green text-white p-2 text-base md:text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+              <span>Contacto</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+              </svg>
+            </button>
+          </div>
+          <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
         </section>
-
+        <!-- Products -->
+        <section id="products" class="bg-black text-white w-full h-auto flex flex-col gap-11 justify-center items-center py-11 relative">
+          <h4 class="text-2xl md:text-3xl font-bold text-shadow shadow-gray-500" data-aos="fade-in">
+            <span data-language="spanish">Productos</span>
+            <span data-language="english" class="hidden">Products</span>
+          </h4>
+          <ul class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-8 lg:gap-32 xl:gap-24">
+            <li class="product" data-aos="fade-right" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/legumes.jpg" alt="legumes" class="w-full h-full rounded-full object-cover">
+                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
+              </div>
+              <p class="text-xl md:text-2xl font-bold">
+                <span data-language="spanish">Legumbres</span>
+                <span data-language="english" class="hidden">Legums</span>
+              </p>
+              <a href="#products">
+                <button id="legums-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <span data-language="spanish">Ver Variedades</span>
+                  <span data-language="english" class="hidden">Explore Varieties</span>
+                </button>
+              </a>
+            </li>
+            <li class="product" data-aos="fade-up" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/cereals.jpg" alt="cereals" class="w-full h-full rounded-full object-cover">
+                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
+              </div>
+              <p class="text-xl md:text-2xl font-bold">
+                <span data-language="spanish">Cereales</span>
+              <span data-language="english" class="hidden">Cereals</span>
+              </p>
+              <a href="#products">
+                <button id="cereals-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <span data-language="spanish">Ver Variedades</span>
+                  <span data-language="english" class="hidden">Explore Varieties</span>
+                </button>
+              </a>
+            </li>
+            <li class="product" data-aos="fade-up" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/nutsandseeds.jpeg" alt="nuts and seeds" class="w-full h-full rounded-full object-covers">
+                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
+              </div>
+              <p class="text-xl md:text-2xl font-bold">
+                <span data-language="spanish">Oleaginosas</span>
+              <span data-language="english" class="hidden">Nuts and Seeds</span>
+              </p>
+              <a href="#products">
+                <button id="nutsandseeds-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <span data-language="spanish">Ver Variedades</span>
+                  <span data-language="english" class="hidden">Explore Varieties</span>
+                </button>
+              </a>
+            </li>
+            <li class="product" data-aos="fade-left" data-aos-duration="2000">
+              <div class="circle">
+                <span data-language="spanish">
+                  <img src="img/nuevo.png" alt="nuevo" class="absolute top-0 left-0 w-32 h-32 png-shadow">
+                </span>
+                <span data-language="english" class="hidden">
+                  <img src="img/new.png" alt="nuevo" class="absolute top-0 left-0 w-32 h-32 png-shadow">
+                </span>
+                
+                <!-- <span class="absolute top-10 right-5 inline-flex items-center rounded-md bg-red-300 px-4 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-700/10 shadow-md shadow-black">
+                  <span data-language="spanish">Nuevo!</span>
+                  <span data-language="english" class="hidden">New!</span>
+                </span> -->
+                <!-- <div class="absolute top-2 left-2">
+                  <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-24 h-24 text-red-500 ring-1 ring-inset ring-red-700/10 png-shadow">
+                      <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>  
+                    <p class="absolute left-0 right-0 ml-auto mr-auto top-10 text-center text-sm font-medium text-white">
+                      <span data-language="spanish">Nuevo!</span>
+                      <span data-language="english" class="hidden">New!</span>
+                    </p>
+                  </div>
+                </div>  -->                                                       
+                <img src="img/products/grass.jpg" alt="grass" class="w-full h-full rounded-full object-cover">
+                <div class="w-full h-full rounded-full hover:bg-black hover:bg-opacity-40 duration-500 absolute top-0 left-0"></div>
+              </div>
+              <p class="text-xl md:text-2xl font-bold">
+                <span data-language="spanish">Semillas Césped</span>
+                <span data-language="english" class="hidden">Grass Seeds</span>
+              </p>
+              <a href="#grass-modal">
+                <button id="grass-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <span data-language="spanish">Ver Variedades</span>
+                  <span data-language="english" class="hidden">Explore Varieties</span>
+                </button>
+              </a>
+            </li>
+            <!-- <li class="product" data-aos="fade-left" data-aos-duration="2000">
+              <div class="circle">
+                <img src="img/products/animals.jpg" alt="animals" class="w-full h-full rounded-full object-cover">
+              </div>
+              <p class="text-2xl font-bold">Nutrición Animal</p>
+              <button class="accent-blue-p text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <a href="#products">Ver Variedades</a>
+              </button>
+            </li> -->
+          </ul>
+          <div class="mt-10">
+          <button class="base-green text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+            <a href="#contact-form">
+              <span data-language="spanish">Consultar Productos</span>
+              <span data-language="english" class="hidden">Ask About Our Products</span>
+            </a>
+          </button>
+        </section>
         <!-- Our Work -->
         <section id="ourwork" class="bg-transparent w-full flex flex-col gap-8 justify-center items-center py-24 relative">
+          <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
           <!-- Background -->
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/ourwork.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black bg-opacity-30"></div>
@@ -1515,8 +1519,8 @@
               </p>
             </li>
           </ul>
+          <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
         </section>
-
         <!-- Companies -->
         <section id="companies" class="bg-black text-white w-full h-auto flex  flex-col gap-16 justify-center items-center p-16 text-shadow shadow-gray-500">
           <h4 class="font-bold text-2xl md:text-3xl text-center" data-aos="fade-in">
@@ -1539,9 +1543,70 @@
             </li>
           </ul>
         </section>
+        <!-- Contact -->
+        <section id="contact" class="bg-slate-300 w-full flex flex-col gap-24 justify-center items-center py-24 rel relative">
+          <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
+          <ul class="grid grid-cols-1 md:grid-cols-3 gap-11 text-lg w-2/3">
+            <li class="flex flex-col justify-center items-center gap-5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+                <span data-language="spanish">Ubicación</span>
+                <span data-language="english" class="hidden">Location</span>
+              </h5>
+              <div class="text-center font-light">
+                <p>Fake Street 123</p>
+                <p>Buenos Aires, Argentina</p>
+              </div>
+            </li>
+            <li class="flex flex-col justify-center items-center gap-5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>              
+              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+                <span data-language="spanish">Horarios</span>
+                <span data-language="english" class="hidden">Business Hours</span>
+              </h5>
+              <div class="text-center font-light">
+                <p>
+                  <span data-language="spanish">Lunes a viernes</span>
+                  <span data-language="english" class="hidden">Monday to Friday</span>
+                </p>
+                <p>
+                  <span data-language="spanish">10:00 hs a 18:00 hs</span>
+                  <span data-language="english" class="hidden">10:00 hs to 18:00 hs</span>
+                </p>
+              </div>
+              
+            </li>
+            <li class="flex flex-col justify-center items-center gap-5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>              
+              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+                <span data-language="spanish">Contacto</span>
+                <span data-language="english" class="hidden">Contact</span>
+              </h5>
+              <div class="text-center font-light">
+                <p>
+                  +54 9 11 22334455
+                </p>
+                <p>
+                  mail@gmail.com
+                </p>
+              </div>
+            </li>
+          </ul>
 
+          <img class="absolute w-full h-1/5 bottom-0 z-10 object-cover object-center opacity-20 hidden md:flex" src="img/contact.png" >
+          <img class="absolute w-full bottom-0 z-10 opacity-20 md:hidden" src="img/contactmobile.png" >
+          <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
+        </section>
+        
         <!-- Gallery -->
-        <section id="gallery" class="bg-gray-900 text-white w-full h-auto flex flex-col gap-16 justify-center items-center pt-16 pb-32 px-5 text-shadow shadow-gray-500">
+        <section id="gallery" class="bg-black text-white w-full h-auto flex flex-col gap-16 justify-center items-center pt-16 pb-32 px-5 text-shadow shadow-gray-500">
           <h4 class="font-bold text-2xl md:text-3xl text-center" data-aos="fade-in">
             <span data-language="spanish">Galeria</span>
             <span data-language="english" class="hidden">Gallery</span>
@@ -1608,68 +1673,9 @@
           </div> -->
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="bg-slate-300 w-full flex flex-col gap-24 justify-center items-center py-24 rel relative text-shadow shadow-gray-500">
-          <ul class="grid grid-cols-1 md:grid-cols-3 gap-11 text-lg w-2/3">
-            <li class="flex flex-col justify-center items-center gap-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-              <h5 class="text-2xl font-bold">
-                <span data-language="spanish">Ubicación</span>
-                <span data-language="english" class="hidden">Location</span>
-              </h5>
-              <div class="text-center font-light">
-                <p>Fake Street 123</p>
-                <p>Buenos Aires, Argentina</p>
-              </div>
-            </li>
-            <li class="flex flex-col justify-center items-center gap-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>              
-              <h5 class="text-2xl font-bold">
-                <span data-language="spanish">Horarios</span>
-                <span data-language="english" class="hidden">Business Hours</span>
-              </h5>
-              <div class="text-center font-light">
-                <p>
-                  <span data-language="spanish">Lunes a viernes</span>
-                  <span data-language="english" class="hidden">Monday to Friday</span>
-                </p>
-                <p>
-                  <span data-language="spanish">10:00 hs a 18:00 hs</span>
-                  <span data-language="english" class="hidden">10:00 hs to 18:00 hs</span>
-                </p>
-              </div>
-              
-            </li>
-            <li class="flex flex-col justify-center items-center gap-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>              
-              <h5 class="text-2xl font-bold">
-                <span data-language="spanish">Contacto</span>
-                <span data-language="english" class="hidden">Contact</span>
-              </h5>
-              <div class="text-center font-light">
-                <p>
-                  +54 9 11 22334455
-                </p>
-                <p>
-                  mail@gmail.com
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <img class="absolute w-full h-1/5 bottom-0 z-10 object-cover object-center opacity-20 hidden md:flex" src="img/contact.png" >
-          <img class="absolute w-full bottom-0 z-10 opacity-20 md:hidden" src="img/contactmobile.png" >
-        </section>
-
         <!-- Concact Form -->
         <section id="contact-form" class="bg-transparent flex items-center justify-center relative w-full py-8">
+          <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
@@ -1712,6 +1718,7 @@
               </span>
             </button>
           </form>
+          <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
         </section>
     </main>
 
@@ -1728,7 +1735,7 @@
         <p>Fake Street 123</p>
       </div>
     </footer>
-
+    </div>
    
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
