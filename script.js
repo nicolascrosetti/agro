@@ -164,7 +164,7 @@ setTimeout(() => {
       
     });
   }); */
-}, 500); 
+}, 1000); 
 
 const handleActiveSlideMouseEnter = () => {
   isMouseEnterTrack = true;
