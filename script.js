@@ -12,6 +12,7 @@ const mobileNavButton = document.getElementById('mobile-nav-button');
 const mobileNav = document.getElementById('mobile-nav');
 const navbarMobile = document.getElementById('navbarMobile');
 //Grass Modal
+const productsSection = document.getElementById('products');
 const grassModal = document.getElementById('grass-modal');
 const closeModal = document.getElementById('close-modal');
 const grassButton = document.getElementById('grass-button');
@@ -25,7 +26,7 @@ const grassModalPageTwo = document.getElementById('grass-modal-page-two');
 const grassModalPageOneNavigation = document.getElementById('grass-modal-page-one-navigation');
 const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-two-navigation');
 
-//navbar links scroll
+//navbar links scroll and carrousel init
 window.onload = function() {
   new Glide('.glide', {
     type: 'carousel',
@@ -62,163 +63,226 @@ let isMouseEnterTrack = false;
 const glideCarrousel = document.querySelector('#gallery');
 const glideArrows = document.querySelectorAll('.glide__arrows');
 
-glideCarrousel.addEventListener('mouseenter', () => {
-  console.log('triggered');
-  isMouseEnterTrack = true;
+setTimeout(() => {
+  let activeSlide = document.querySelector('.glide__slide--active img');
 
-  if(!isNewImage){
-  //seleccionar slide del medio
-  const activeSlide = document.querySelector('.glide__slide--active img');
-  //obtener src, coordenadas y width y height de slide del medio
-  const src = activeSlide.getAttribute('src');
-  const imageRect = activeSlide.getBoundingClientRect();
-  const imageX = imageRect.left + window.scrollX;
-  const imageY = imageRect.top + window.scrollY;
-  const imageWidth = imageRect.width;
-  const imageHeight = imageRect.height;
-
-  //crear la nueva imagen con las mismas propiedades que la imagen original
-  const newImage = document.createElement('img');
-  newImage.classList.add('hover-image');
-  newImage.src = src;
-  newImage.style.position = 'absolute';
-  newImage.style.left = `${imageX}px`;
-  newImage.style.top = `${imageY}px`;
-  newImage.style.width = `${imageWidth}px`;
-  newImage.style.height = `${imageHeight}px`;
-
-  setTimeout(() => {
-    newImage.classList.add('hover-image-scaled');
-  }, 100);
-
-  // Agregar la nueva imagen al cuerpo del documento
-  document.body.appendChild(newImage);
-
-  newImage.addEventListener('mouseenter', () =>{
-    console.log('adentro de nueva imagen');
-    isMouseEnterNewImage = true;
-  });
-
-  newImage.addEventListener('mouseleave', () =>{
-    console.log('fuera de nueva imagen');
-    isMouseEnterNewImage = false;
-
-    setTimeout(() => {
-      if(isMouseEnterTrack){
-        console.log('salio de nueva imagen pero sigue en track');
-      }else{
-        console.log('eliminar al salir de nueva imagen');
-        newImage.classList.remove('hover-image-scaled');
-        setTimeout(() => {
-          newImage.remove();
-        }, 500);
-        isNewImage = false;
-      }
-    }, 100);
-  });
-
-  isNewImage = true;
-  }
-});
-
-glideCarrousel.addEventListener('mouseleave', () => {
-  isMouseEnterTrack = false;
-
-  setTimeout(() => {
-    if (isMouseEnterNewImage) {
-      console.log('moouse entro en nueva imagen!');
-    }else{
-      console.log('eliminar');
-      const newImage = document.querySelector('.hover-image');
-      newImage.classList.remove('hover-image-scaled');
+  activeSlide.addEventListener('mouseenter', handleActiveSlideMouseEnter);
+  activeSlide.addEventListener('mouseleave', handleActiveSlideMouseLeave);
+  
+  glideArrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
       setTimeout(() => {
-        newImage.remove();
+        activeSlide.removeEventListener('mouseenter', handleActiveSlideMouseEnter);
+        activeSlide.removeEventListener('mouseleave', handleActiveSlideMouseLeave);
+        activeSlide = document.querySelector('.glide__slide--active img');
+        activeSlide.addEventListener('mouseenter', handleActiveSlideMouseEnter);
+        activeSlide.addEventListener('mouseleave', handleActiveSlideMouseLeave);
+        console.log(activeSlide);
+
       }, 500);
-      isNewImage = false;
-    }
-  }, 100);
-});
-
-glideArrows.forEach((arrow) => {
-  arrow.addEventListener('click', () => {
-
-    const removeCurrentImage = () => {
-      const newImage = document.querySelector('.hover-image');
-
-      if(newImage){
-        //eliminar imagen actual
-        console.log('eliminar al clickear flecha');
-        newImage.classList.remove('hover-image-scaled');
-        setTimeout(() => {
-          newImage.remove();
-        }, 500);
-        isNewImage = false;
-      }
-    }
-    const createNewImage = () =>{
-      //reemplazarla por imagen siguiente
-    if(!isNewImage){
-      //seleccionar slide del medio
-      const activeSlide = document.querySelector('.glide__slide--active img');
-      //obtener src, coordenadas y width y height de slide del medio
-      const src = activeSlide.getAttribute('src');
-      const imageRect = activeSlide.getBoundingClientRect();
-      const imageX = imageRect.left + window.scrollX;
-      const imageY = imageRect.top + window.scrollY;
-      const imageWidth = imageRect.width;
-      const imageHeight = imageRect.height;
-    
-      //crear la nueva imagen con las mismas propiedades que la imagen original
-      const newImage = document.createElement('img');
-      newImage.classList.add('hover-image');
-      newImage.src = src;
-      newImage.style.position = 'absolute';
-      newImage.style.left = `${imageX}px`;
-      newImage.style.top = `${imageY}px`;
-      newImage.style.width = `${imageWidth}px`;
-      newImage.style.height = `${imageHeight}px`;
-    
-      setTimeout(() => {
-        document.body.appendChild(newImage);
-        setTimeout(() => {  
-          newImage.classList.add('hover-image-scaled');
-        }, 100);
-      }, 100);
-
-      // Agregar la nueva imagen al cuerpo del documento  
-      newImage.addEventListener('mouseenter', () =>{
-        console.log('adentro de nueva imagen');
-        isMouseEnterNewImage = true;
-      });
-    
-      newImage.addEventListener('mouseleave', () =>{
-        console.log('fuera de nueva imagen');
-        isMouseEnterNewImage = false;
-    
-        setTimeout(() => {
-          if(isMouseEnterTrack){
-            console.log('salio de nueva imagen pero sigue en track');
-          }else{
-            console.log('eliminar al salir de nueva imagen');
-            newImage.classList.remove('hover-image-scaled');
-            setTimeout(() => {
-              newImage.remove();
-              isNewImage = false;
-            }, 200);
-          }
-        }, 100);
-      });
-    
-      isNewImage = true;
-      }
-    }
-    removeCurrentImage();
-    setTimeout(() => {
-      createNewImage();
-    }, 400);
-    
+    });
   });
-});
+
+  /* glideArrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+  
+      const removeCurrentImage = () => {
+        const newImage = document.querySelector('.hover-image');
+  
+        if(newImage){
+          //eliminar imagen actual
+          console.log('eliminar al clickear flecha');
+          newImage.classList.remove('hover-image-scaled');
+          setTimeout(() => {
+            newImage.remove();
+          }, 500);
+          isNewImage = false;
+        }
+      }
+      const createNewImage = () =>{
+        //reemplazarla por imagen siguiente
+      if(!isNewImage){
+        //seleccionar slide del medio
+        activeSlide = document.querySelector('.glide__slide--active img');
+        //obtener src, coordenadas y width y height de slide del medio
+        const src = activeSlide.getAttribute('src');
+        const imageRect = activeSlide.getBoundingClientRect();
+        const imageX = imageRect.left + window.scrollX;
+        const imageY = imageRect.top + window.scrollY;
+        const imageWidth = imageRect.width;
+        const imageHeight = imageRect.height;
+      
+        //crear la nueva imagen con las mismas propiedades que la imagen original
+        const newImage = document.createElement('img');
+        newImage.classList.add('hover-image');
+        newImage.src = src;
+        newImage.style.position = 'absolute';
+        newImage.style.left = `${imageX}px`;
+        newImage.style.top = `${imageY}px`;
+        newImage.style.width = `${imageWidth}px`;
+        newImage.style.height = `${imageHeight}px`;
+      
+        setTimeout(() => {
+          document.body.appendChild(newImage);
+          setTimeout(() => {  
+            newImage.classList.add('hover-image-scaled');
+          }, 100);
+        }, 100);
+  
+        // Agregar la nueva imagen al cuerpo del documento  
+        newImage.addEventListener('mouseenter', () =>{
+          console.log('adentro de nueva imagen');
+          isMouseEnterNewImage = true;
+        });
+      
+        newImage.addEventListener('mouseleave', () =>{
+          console.log('fuera de nueva imagen');
+          isMouseEnterNewImage = false;
+      
+          setTimeout(() => {
+            if(isMouseEnterTrack){
+              console.log('salio de nueva imagen pero sigue en track');
+            }else{
+              console.log('eliminar al salir de nueva imagen');
+              newImage.classList.remove('hover-image-scaled');
+              setTimeout(() => {
+                newImage.remove();
+                isNewImage = false;
+              }, 200);
+            }
+          }, 100);
+        });
+      
+        isNewImage = true;
+        }
+      }
+
+      removeCurrentImage();
+      setTimeout(() => {
+        createNewImage();
+      }, 400);
+      
+    });
+  }); */
+}, 500); 
+
+const handleActiveSlideMouseEnter = () => {
+  isMouseEnterTrack = true;
+  
+    if(!isNewImage){
+    //seleccionar slide del medio
+    activeSlide = document.querySelector('.glide__slide--active img');
+    //obtener src, coordenadas y width y height de slide del medio
+    const src = activeSlide.getAttribute('src');
+    const imageRect = activeSlide.getBoundingClientRect();
+    const imageX = imageRect.left + window.scrollX;
+    const imageY = imageRect.top + window.scrollY;
+    const imageWidth = imageRect.width;
+    const imageHeight = imageRect.height;
+  
+    //crear la nueva imagen con las mismas propiedades que la imagen original
+    const newImage = document.createElement('img');
+    newImage.classList.add('hover-image');
+    newImage.src = src;
+    newImage.style.position = 'absolute';
+    newImage.style.left = `${imageX}px`;
+    newImage.style.top = `${imageY}px`;
+    newImage.style.width = `${imageWidth}px`;
+    newImage.style.height = `${imageHeight}px`;
+  
+    setTimeout(() => {
+      newImage.classList.add('hover-image-scaled');
+    }, 100);
+  
+    // Agregar la nueva imagen al cuerpo del documento
+    document.body.appendChild(newImage);
+  
+    newImage.addEventListener('mouseenter', () =>{
+      console.log('adentro de nueva imagen');
+      isMouseEnterNewImage = true;
+    });
+  
+    newImage.addEventListener('mouseleave', () =>{
+      console.log('fuera de nueva imagen');
+      isMouseEnterNewImage = false;
+  
+      setTimeout(() => {
+        if(isMouseEnterTrack){
+          console.log('salio de nueva imagen pero sigue en track');
+        }else{
+          console.log('eliminar al salir de nueva imagen');
+          newImage.classList.remove('hover-image-scaled');
+          setTimeout(() => {
+            newImage.remove();
+          }, 500);
+          isNewImage = false;
+        }
+      }, 100);
+    });
+  
+    isNewImage = true;
+    }
+}
+
+const handleActiveSlideMouseLeave = () => {
+  isMouseEnterTrack = false;
+  
+    if(!isNewImage){
+    //seleccionar slide del medio
+    activeSlide = document.querySelector('.glide__slide--active img');
+    //obtener src, coordenadas y width y height de slide del medio
+    const src = activeSlide.getAttribute('src');
+    const imageRect = activeSlide.getBoundingClientRect();
+    const imageX = imageRect.left + window.scrollX;
+    const imageY = imageRect.top + window.scrollY;
+    const imageWidth = imageRect.width;
+    const imageHeight = imageRect.height;
+  
+    //crear la nueva imagen con las mismas propiedades que la imagen original
+    const newImage = document.createElement('img');
+    newImage.classList.add('hover-image');
+    newImage.src = src;
+    newImage.style.position = 'absolute';
+    newImage.style.left = `${imageX}px`;
+    newImage.style.top = `${imageY}px`;
+    newImage.style.width = `${imageWidth}px`;
+    newImage.style.height = `${imageHeight}px`;
+  
+    setTimeout(() => {
+      newImage.classList.add('hover-image-scaled');
+    }, 100);
+  
+    // Agregar la nueva imagen al cuerpo del documento
+    document.body.appendChild(newImage);
+  
+    newImage.addEventListener('mouseenter', () =>{
+      console.log('adentro de nueva imagen');
+      isMouseEnterNewImage = true;
+    });
+  
+    newImage.addEventListener('mouseleave', () =>{
+      console.log('fuera de nueva imagen');
+      isMouseEnterNewImage = false;
+  
+      setTimeout(() => {
+        if(isMouseEnterTrack){
+          console.log('salio de nueva imagen pero sigue en track');
+        }else{
+          console.log('eliminar al salir de nueva imagen');
+          newImage.classList.remove('hover-image-scaled');
+          setTimeout(() => {
+            newImage.remove();
+          }, 500);
+          isNewImage = false;
+        }
+      }, 100);
+    });
+  
+    isNewImage = true;
+    }
+}
+
+
 
 //#endregion
 
@@ -461,39 +525,59 @@ setInterval(() => {
 
 //#endregion
 
-//#region Grass Modal
-grassButton.addEventListener('click', () => {
+//#region Modals
+const bodySection = document.getElementById('body');
+const modalsSection = document.getElementById('modals');
+const closeCurrentModal = (currentModal) => {
+  currentModal.classList.add('opacity-0');
+  bodyBackdrop.classList.add('opacity-0');
+  
+  window.setTimeout(() => {
+    bodyBackdrop.classList.add('hidden');
+    currentModal.classList.add('hidden');
+  }, 500);
+
+  bodySection.classList.remove('hidden');
+  modalsSection.classList.add('hidden');
+  modalsSection.classList.remove('flex');
+
+  let target = productsSection;
+  if (target) {
+    let targetPos = target.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: targetPos,
+      behavior: 'auto'
+    });
+  }
+}
+const showCurrentModal = (currentModal) => {
+  bodySection.classList.add('hidden');
+  modalsSection.classList.add('flex');
+  modalsSection.classList.remove('hidden');
+
   bodyBackdrop.classList.remove('hidden');
-  grassModal.classList.remove('hidden');
-  grassModal.classList.add('flex');
+  currentModal.classList.remove('hidden');
+  currentModal.classList.add('flex');
 
   window.setTimeout(() => {
-    grassModal.classList.remove('opacity-0');
+    currentModal.classList.remove('opacity-0');
     bodyBackdrop.classList.remove('opacity-0');
   }, 1);
+}
+
+//#region Grass Modal
+grassButton.addEventListener('click', () => {
+  showCurrentModal(grassModal);
 });
 
 closeModal.addEventListener('click', () => {
-    grassModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      grassModal.classList.add('hidden');
-    }, 500);
-  
+  closeCurrentModal(grassModal);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    grassModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      grassModal.classList.add('hidden');
-    }, 500);
+    closeCurrentModal(grassModal);
   }
 });
 
@@ -551,37 +635,18 @@ const closeLegumsModal = document.getElementById('close-legums-modal');
 const legumsButton = document.getElementById('legums-button');
 
 legumsButton.addEventListener('click', () => {
-  bodyBackdrop.classList.remove('hidden');
-  legumsModal.classList.remove('hidden');
-  legumsModal.classList.add('flex');
-
-  window.setTimeout(() => {
-    legumsModal.classList.remove('opacity-0');
-    bodyBackdrop.classList.remove('opacity-0');
-  }, 1);
+  showCurrentModal(legumsModal);
 });
 
 closeLegumsModal.addEventListener('click', () => {
-    legumsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      legumsModal.classList.add('hidden');
-    }, 500);
+    closeCurrentModal(legumsModal);
   
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    legumsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      legumsModal.classList.add('hidden');
-    }, 500);
+    closeCerealsModal(legumsModal);
   }
 });
 //#endregion
@@ -592,37 +657,17 @@ const closeCerealsModal = document.getElementById('close-cereals-modal');
 const cerealsButton = document.getElementById('cereals-button');
 
 cerealsButton.addEventListener('click', () => {
-  bodyBackdrop.classList.remove('hidden');
-  cerealsModal.classList.remove('hidden');
-  cerealsModal.classList.add('flex');
-
-  window.setTimeout(() => {
-    cerealsModal.classList.remove('opacity-0');
-    bodyBackdrop.classList.remove('opacity-0');
-  }, 1);
+  showCurrentModal(cerealsModal);
 });
 
 closeCerealsModal.addEventListener('click', () => {
-    cerealsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      cerealsModal.classList.add('hidden');
-    }, 500);
-  
+  closeCurrentModal(cerealsModal);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    cerealsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      cerealsModal.classList.add('hidden');
-    }, 500);
+    closeCurrentModal(cerealsModal);
   }
 });
 //#endregion
@@ -633,39 +678,21 @@ const closeNutsandseedsModal = document.getElementById('close-nutsandseeds-modal
 const nutsandseedsButton = document.getElementById('nutsandseeds-button');
 
 nutsandseedsButton.addEventListener('click', () => {
-  bodyBackdrop.classList.remove('hidden');
-  nutsandseedsModal.classList.remove('hidden');
-  nutsandseedsModal.classList.add('flex');
-
-  window.setTimeout(() => {
-    nutsandseedsModal.classList.remove('opacity-0');
-    bodyBackdrop.classList.remove('opacity-0');
-  }, 1);
+  showCurrentModal(nutsandseedsModal);
 });
 
 closeNutsandseedsModal.addEventListener('click', () => {
-    nutsandseedsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      nutsandseedsModal.classList.add('hidden');
-    }, 500);
-  
+  closeCurrentModal(nutsandseedsModal);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    nutsandseedsModal.classList.add('opacity-0');
-    bodyBackdrop.classList.add('opacity-0');
-
-    window.setTimeout(() => {
-      bodyBackdrop.classList.add('hidden');
-      nutsandseedsModal.classList.add('hidden');
-    }, 500);
+    closeCurrentModal(nutsandseedsModal);
   }
 });
+//#endregion
+
 //#endregion
 
 //#region Philosophy Cards

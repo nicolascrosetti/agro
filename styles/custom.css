@@ -1,7 +1,7 @@
+
 .triad-blue{
     background-color: #5D22C5;
 }
-
 .main-green{
     background-color: #5BC34A;
 }
@@ -60,13 +60,57 @@
 .hover-image-scaled{
     transform: scale(1.5);
 }
-/* .hover-image:hover {
-  transform: scale(1.5);
-} */
   
-  
-  
+.border-gradient-white-to-black{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+} 
+.border-gradient-black-to-white{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+}
+.border-gradient-black-to-slate300{
+    background: rgb(203,213,225);
+    background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(0,0,0,1) 100%);
+}
+.border-gradient-contactblue-to-black{
+    background: rgb(151, 183, 185);
+    background: linear-gradient(180deg, rgb(158, 195, 197) 0%, rgba(0,0,0,1) 100%);
+}
+.border-gradient-black50-to-white{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0.5) 100%);
+}
+.border-gradient-black-to-black50{
+    background: rgb(0,0,0);
+    background: linear-gradient(187deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.49343487394957986) 100%);
+}
+.border-gradient-black-to-black0{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.border-gradient-black50-to-black0{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+.border-gradient-black0-to-black{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.border-gradient-gray-to-blue{
+    background: rgb(167,153,142);
+    background: linear-gradient(101deg, rgba(167,153,142,1) 0%, rgba(34,139,160,1) 100%);
+}
+.border-gradient-black-to-ourworkblue{
+    background: rgb(14,36,57);
+    background: linear-gradient(0deg, rgba(20,24,35,1) 0%, rgba(0,0,0,1) 100%);
+}
 
+.border-gradient-ourworkbrown-to-black{
+    background: rgb(95,71,35);
+    background: linear-gradient(180deg, rgba(95,71,35,1) 0%, rgba(0,0,0,1) 100%);
+}
+  
 @media screen {
     @media only screen and (max-width: 1000px) {
     html, body {
