@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 </head>
 <body class="font-inter relative">
-    <div id="body-backdrop" class="z-40 bg-black absolute top-0 w-screen height100 bg-opacity-80 hidden opacity-0 ease-linear duration-300" ></div>
+    <div id="body-backdrop" class="z-40 bg-black absolute top-0 w-full height100 bg-opacity-80 hidden opacity-0 ease-linear duration-300" ></div>
     <div id="modals" class="bg-black min-h-screen h-auto py-12 hidden justify-center items-start relative">
       <div class="absolute top-0 h-auto w-full z-10 flex flex-col">
         <img src="img/modals/twosections.png" alt="" class="hidden xl:block">
@@ -1624,7 +1624,7 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides">
                 <li class="glide__slide">
-                  <img src="img/gallery/1b.jpeg" alt="Slide 1" class="border-white border-2 rounded-md target-image">
+                  <img src="img/gallery/1b.jpeg" alt="Slide 1" class="border-white border-2 rounded-md target-image" id="first-active-slide">
                 </li>
                 <li class="glide__slide">
                   <img src="img/gallery/2.jpeg" alt="Slide 2" class="border-white border-2 rounded-r-md target-image">
