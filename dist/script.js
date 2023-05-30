@@ -55,6 +55,25 @@ window.onload = function() {
   }
 };
 
+//#region whatsapp icon
+const whatsappText = document.getElementById('whatsapp-text');
+const whatsappIcon = document.getElementById('whatsapp-icon');
+
+whatsappIcon.addEventListener('mouseenter', () => {
+  whatsappText.classList.remove('hidden');
+  setTimeout(() => {
+    whatsappText.classList.remove('opacity-0');
+  }, 300);
+});
+
+whatsappIcon.addEventListener('mouseleave', () => {
+  whatsappText.classList.add('opacity-0');
+  setTimeout(() => {
+    whatsappText.classList.add('hidden');
+  }, 300);
+});
+//#endregion
+
 //#region carrousel
 let isMouseEnterNewImage = false;
 let isNewImage = false;
@@ -443,7 +462,9 @@ setInterval(() => {
 //#region Modals
 const bodySection = document.getElementById('body');
 const modalsSection = document.getElementById('modals');
-const closeCurrentModal = (currentModal) => {
+const headerSection = document.getElementById('header');
+
+const closeCurrentModal = (currentModal, target) => {
   currentModal.classList.add('opacity-0');
   bodyBackdrop.classList.add('opacity-0');
   
@@ -456,7 +477,6 @@ const closeCurrentModal = (currentModal) => {
   modalsSection.classList.add('hidden');
   modalsSection.classList.remove('flex');
 
-  let target = productsSection;
   if (target) {
     let targetPos = target.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({
@@ -486,13 +506,13 @@ grassButton.addEventListener('click', () => {
 });
 
 closeModal.addEventListener('click', () => {
-  closeCurrentModal(grassModal);
+  closeCurrentModal(grassModal, productsSection);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(grassModal);
+    closeCurrentModal(grassModal, productsSection);
   }
 });
 
@@ -554,14 +574,14 @@ legumsButton.addEventListener('click', () => {
 });
 
 closeLegumsModal.addEventListener('click', () => {
-    closeCurrentModal(legumsModal);
+    closeCurrentModal(legumsModal, productsSection);
   
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCerealsModal(legumsModal);
+    closeCerealsModal(legumsModal, productsSection);
   }
 });
 //#endregion
@@ -576,13 +596,13 @@ cerealsButton.addEventListener('click', () => {
 });
 
 closeCerealsModal.addEventListener('click', () => {
-  closeCurrentModal(cerealsModal);
+  closeCurrentModal(cerealsModal, productsSection);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(cerealsModal);
+    closeCurrentModal(cerealsModal, productsSection);
   }
 });
 //#endregion
@@ -597,13 +617,38 @@ nutsandseedsButton.addEventListener('click', () => {
 });
 
 closeNutsandseedsModal.addEventListener('click', () => {
-  closeCurrentModal(nutsandseedsModal);
+  closeCurrentModal(nutsandseedsModal, productsSection);
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(nutsandseedsModal);
+    closeCurrentModal(nutsandseedsModal, productsSection);
+  }
+});
+//#endregion
+
+//#region Work With Us Modal
+const workwithusModal = document.getElementById('workwithus-modal');
+const closeWorkwithusModal = document.getElementById('close-workwithus-modal');
+const workwithusButton = document.getElementById('workwithus-button');
+const modalsBgImg = document.getElementById('modals-bg-img');
+
+workwithusButton.addEventListener('click', () => {
+  modalsBgImg.src = "img/modals/headersection.png";
+  showCurrentModal(workwithusModal);
+});
+
+closeWorkwithusModal.addEventListener('click', () => {
+  modalsBgImg.src = "img/modals/twosections.png";
+  closeCurrentModal(workwithusModal, headerSection);
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    modalsBgImg.src = "img/modals/twosections.png";
+    closeCurrentModal(workwithusModal, headerSection);
   }
 });
 //#endregion
