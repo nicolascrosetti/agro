@@ -11,6 +11,12 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+      emailjs.init('Comg2ki_3Sg7CbNf5')
+    </script>
 </head>
 <body class="font-inter relative">
     <div id="body-backdrop" class="z-40 bg-black absolute top-0 w-full height100 bg-opacity-80 hidden opacity-0 ease-linear duration-300" ></div>
@@ -1264,7 +1270,7 @@
     </div>
     <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
     <!-- #region Whastapp Fixed Icon -->
-    <div id="whatsapp-text" class="fixed bottom-14 right-32 w-28 p-1 bg-white text-center rounded-md z-40 shadow-black shadow-md font-light bg-opacity-50 hidden opacity-0 transition ease-linear duration-500"><p>
+    <div id="whatsapp-text" class="fixed bottom-14 right-32 w-28 p-1 bg-white text-center rounded-md z-40 shadow-black shadow-md font-light bg-opacity-70 hidden opacity-0 transition ease-linear duration-500"><p>
       <span data-language="spanish">Contactanos!</span>
       <span data-language="english" class="hidden">Contact us!</span>
     </p></div>
@@ -1719,39 +1725,32 @@
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="contact-form" action="#" class="w-5/6 md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
+          <form id="form" action="#" class="w-5/6 md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-20 absolute top-0 left-0 opacity-0 md:opacity-100 bg-black bg-opacity-80 p-1 rounded-tl-md rounded-br-md">
               <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
             </div>
             <div class="flex flex-col">
-              <label for="name">
+              <label for="from_name">
                 <span data-language="spanish">Nombre</span>
                 <span data-language="english" class="hidden">Name</span>
               </label>
-              <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="First and Last Name">
+              <input name="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="First and Last Name">
             </div>
             <div class="flex flex-col">
-              <label for="name">
+              <label for="email_id">
                 Email
               </label>
-              <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="youremail@gmail.com">
-            </div>
-            <div class="flex flex-col">
-              <label for="name">
-                <span data-language="spanish">Asunto</span>
-                <span data-language="english" class="hidden">Subject</span>
-              </label>
-              <input id="name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="Product Inquiry">
+              <input name="email_id" id="email_id" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="youremail@gmail.com">
             </div>
             <div class="flex flex-col">
               <label for="message">
                 <span data-language="spanish">Mensaje</span>
                 <span data-language="english" class="hidden">Message</span>
               </label>
-              <textarea id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1 text-base" placeholder="Hello, I'm interested in learning more about your services"></textarea>
+              <textarea name="message" id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1 text-base" placeholder="Hello, I'm interested in learning more about your services"></textarea>
             </div>
-            <button class="main-green w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+            <button id="button" class="main-green w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span class="text-center m-auto">
                 <span data-language="spanish">Enviar</span>
                 <span data-language="english" class="hidden">Submit</span>
@@ -1759,6 +1758,15 @@
             </button>
           </form>
           <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
+          <div id="sent-message" class="absolute w-48 h-auto bg-white left-0 right-0 mr-auto ml-auto p-2 flex-col justify-center items-center gap-3 rounded-md shadow-lg shadow-black border-[1px] border-gray-200 font-extralight text-xl transition duration-500 ease-linear hidden opacity-0">
+              <p>
+                <span data-language="spanish">Mensaje enviado!</span>
+                <span data-language="english" class="hidden">Message sent!</span>
+              </p>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-green-700">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>            
+          </div>
         </section>
     </main>
 

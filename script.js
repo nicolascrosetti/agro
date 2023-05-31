@@ -55,6 +55,46 @@ window.onload = function() {
   }
 };
 
+//#region mail js functionality
+const btn = document.getElementById('button');
+const sentMessage = document.getElementById('sent-message');
+const buttonSpans = document.querySelectorAll('#button span span');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   buttonSpans[0].textContent = 'Enviando...';
+   buttonSpans[1].textContent = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_8z6l2x3';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      buttonSpans[0].textContent = 'Enviar';
+      buttonSpans[1].textContent = 'Submit';
+
+      sentMessage.classList.remove('hidden');
+      sentMessage.classList.add('flex');
+      setTimeout(() => {
+        sentMessage.classList.remove('opacity-0');
+        setTimeout(() => {
+          sentMessage.classList.add('opacity-0');
+          setTimeout(() => {
+            sentMessage.classList.add('hidden');
+            sentMessage.classList.remove('flex');
+          }, 300);
+        }, 1750);
+      }, 300);
+    }, (err) => {
+      buttonSpans[0].textContent = 'Enviar';
+      buttonSpans[1].textContent = 'Submit';
+      alert(JSON.stringify(err));
+    });
+});
+//#endregion
+
 //#region whatsapp icon
 const whatsappText = document.getElementById('whatsapp-text');
 const whatsappIcon = document.getElementById('whatsapp-icon');
