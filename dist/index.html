@@ -1143,6 +1143,16 @@
               <span data-language="english" class="hidden">Send us your resume: <a href="mailto:rrhh@agroamericanosrl.com" class="text-blue-500 hover:text-blue-600 font-bold">rrhh@agroamericanosrl.com</a></span>
             </p>  
           </div>  
+          <!-- View on Map Modal -->
+          <div id="viewonmap-modal" class="bg-slate-50 w-auto h-auto xl:h-11/12 z-50 flex-col p-4 md:p-8 rounded-md shadow-md shadow-black hidden opacity-0 ease-linear duration-500 relative text-lg visible:flex justify-center items-center">
+            <!--Close Modal Icon-->    
+            <svg id="close-viewonmap-modal" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black w-10 h-10 absolute top-2 right-2 cursor-pointer">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div class="w-full h-[600px] md:w-[750px]">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.798382407715!2d-58.680435723444795!3d-34.65979437293432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbf630284ff5f%3A0x2cedfb9b33e1f8ef!2sOmb%C3%BA%20494%2C%20B1714JRH%20Ituzaing%C3%B3%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1685973402505!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>   
+          </div>
     <!--#endregion -->
     </div>
     <div id="body">
@@ -1186,7 +1196,7 @@
                 <span data-language="english" class="hidden">Contact</span>
               </a>
             </li>
-            <li class="hover:text-blue-500 cursor-pointer" id="workwithus-button">
+            <li class="hover:text-blue-500 cursor-pointer workwithus-button">
                 <span data-language="spanish">Trabaja Con Nosotros</span>
                 <span data-language="english" class="hidden">Work With Us</span>
             </li>
@@ -1259,7 +1269,7 @@
               <span data-language="spanish">Contacto</span>
               <span data-language="english" class="hidden">Contact</span>
             </a></li>
-            <li class="hover:text-blue-500">
+            <li class="hover:text-blue-500 workwithus-button cursor-pointer">
               <span data-language="spanish">Trabaja con Nosotros</span>
               <span data-language="english" class="hidden">Work with Us</span>
             </li>
@@ -1270,10 +1280,12 @@
     </div>
     <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
     <!-- #region Whastapp Fixed Icon -->
-    <div id="whatsapp-text" class="fixed bottom-14 right-32 w-28 p-1 bg-white text-center rounded-md z-40 shadow-black shadow-md font-light bg-opacity-70 hidden opacity-0 transition ease-linear duration-500"><p>
+    <div id="whatsapp-text" class="fixed bottom-14 right-10 w-28 p-1 bg-white text-center rounded-md z-40 shadow-black shadow-md font-light bg-opacity-70 transform transition duration-500 ease-in scale-x-50 hidden">
+      <p>
       <span data-language="spanish">Contactanos!</span>
       <span data-language="english" class="hidden">Contact us!</span>
-    </p></div>
+      </p>
+    </div>
     <div id="whatsapp-icon" class="fixed bottom-5 right-5 p-2 md:p-3 md:bottom-11 md:right-11 h-11 w-11 md:h-16 md:w-16 cursor-pointer main-green text-white text-base md:text-lg rounded-full flex items-center shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 z-40 hover:transform hover:scale-125 transition duration-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1590,7 +1602,7 @@
         <section id="contact" class="bg-slate-300 w-full flex flex-col gap-24 justify-center items-center py-24 rel relative">
           <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
           <ul class="grid grid-cols-1 md:grid-cols-3 gap-11 text-lg w-2/3">
-            <li class="flex flex-col justify-center items-center gap-5">
+            <li class="flex flex-col justify-center items-center gap-5 relative">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
@@ -1603,6 +1615,16 @@
                 <p>Ombu 494, Ituzaingó</p>
                 <p>Buenos Aires, Argentina</p>
               </div>
+              <button id="viewonmap-button" class="absolute -bottom-10 base-green text-white p-2 text-lg rounded-[18px] px-5 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                </svg>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                </svg>  -->                               
+                <!-- <span data-language="spanish">Ver en Mapa</span>
+                <span data-language="english" class="hidden">View on Map</span> -->
+              </button>
             </li>
             <li class="flex flex-col justify-center items-center gap-5">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -1720,12 +1742,12 @@
         </section>
 
         <!-- Concact Form -->
-        <section id="contact-form" class="bg-transparent flex items-center justify-center relative w-full py-8">
+        <section id="contact-form" class="bg-transparent flex items-center justify-center relative w-full md:py-8">
           <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="form" action="#" class="w-5/6 md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rounded-lg shadow-black shadow-lg relative">
+          <form id="form" action="#" class="w-full md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rmd:rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-20 absolute top-0 left-0 opacity-0 md:opacity-100 bg-black bg-opacity-80 p-1 rounded-tl-md rounded-br-md">
               <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
@@ -1735,7 +1757,8 @@
                 <span data-language="spanish">Nombre</span>
                 <span data-language="english" class="hidden">Name</span>
               </label>
-              <input name="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="First and Last Name">
+              <input data-language="spanish" name="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="Nombre y Apellido">
+              <input data-language="english" Sname="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="First and Last Name">
             </div>
             <div class="flex flex-col">
               <label for="email_id">
@@ -1748,7 +1771,8 @@
                 <span data-language="spanish">Mensaje</span>
                 <span data-language="english" class="hidden">Message</span>
               </label>
-              <textarea name="message" id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1 text-base" placeholder="Hello, I'm interested in learning more about your services"></textarea>
+              <textarea data-language="spanish" name="message" id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1 text-base" placeholder="Hola, estoy interesado en conocer más sobre sus servicios"></textarea>
+              <textarea data-language="english" name="message" id="message" cols="30" rows="10" class="shadow-gray-500 shadow-md rounded-lg p-1 text-base hidden" placeholder="Hello, I'm interested in learning more about your services"></textarea>
             </div>
             <button id="button" class="main-green w-2/3 text-white p-2 m-auto text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
               <span class="text-center m-auto">
@@ -1771,7 +1795,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black flex flex-col md:flex-row items-start justify-around p-8 text-white">
+    <footer class="bg-black flex flex-col md:flex-row md:items-start justify-around p-8 text-white gap-7 md:gap-0">
       <div class="flex flex-col items-center">
         <p>+54 9 11 22334455</p>
         <p>
@@ -1781,7 +1805,7 @@
           manaya@agroamericanosrl.com
         </p>
       </div>
-      <div class="flex flex-col justify-start">
+      <div class="flex flex-col items-center md:justify-start">
         <p>AgroAmericano S.R.L.</p>
       </div>
       <div class="flex flex-col items-center">

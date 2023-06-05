@@ -102,15 +102,18 @@ const whatsappIcon = document.getElementById('whatsapp-icon');
 whatsappIcon.addEventListener('mouseenter', () => {
   whatsappText.classList.remove('hidden');
   setTimeout(() => {
-    whatsappText.classList.remove('opacity-0');
-  }, 300);
+    whatsappText.classList.add('-translate-x-20');
+    whatsappText.classList.add('scale-x-100');
+  }, 1);
+
 });
 
 whatsappIcon.addEventListener('mouseleave', () => {
-  whatsappText.classList.add('opacity-0');
+  whatsappText.classList.remove('-translate-x-20');
+  whatsappText.classList.remove('scale-x-100');
   setTimeout(() => {
     whatsappText.classList.add('hidden');
-  }, 300);
+  }, 500);
 });
 //#endregion
 
@@ -263,11 +266,14 @@ glideArrows.forEach((arrow) => {
 //#region language
 const englishButton = document.querySelectorAll('.english-button');
 const spanishButton = document.querySelectorAll('.spanish-button');
-const dataLanguage = document.querySelectorAll('[data-language]')
+const dataLanguage = document.querySelectorAll('[data-language]');
+let activeLanguage = 'spanish';
 
 englishButton.forEach((enButton) => {
   spanishButton.forEach((esButton) => {
     enButton.addEventListener('click', () => {
+      activeLanguage = 'english';
+
       englishButton.forEach((btn) => {
         btn.classList.add('text-blue-400');
       });
@@ -286,6 +292,8 @@ englishButton.forEach((enButton) => {
     });
 
     esButton.addEventListener('click', () => {
+      activeLanguage = 'spanish';
+
       englishButton.forEach((btn) => {
         btn.classList.remove('text-blue-400');
       });
@@ -671,12 +679,18 @@ document.addEventListener('keydown', function(event) {
 //#region Work With Us Modal
 const workwithusModal = document.getElementById('workwithus-modal');
 const closeWorkwithusModal = document.getElementById('close-workwithus-modal');
-const workwithusButton = document.getElementById('workwithus-button');
+const workwithusButtons = document.querySelectorAll('.workwithus-button');
 const modalsBgImg = document.getElementById('modals-bg-img');
 
-workwithusButton.addEventListener('click', () => {
-  modalsBgImg.src = "img/modals/headersection.png";
-  showCurrentModal(workwithusModal);
+workwithusButtons.forEach((workwithusButton) => {
+  workwithusButton.addEventListener('click', () => {
+    if(activeLanguage == 'spanish'){
+      modalsBgImg.src = "img/modals/headersection.png";
+    }else{
+      modalsBgImg.src = "img/modals/headersection-en.png";
+    }
+    showCurrentModal(workwithusModal);
+  });
 });
 
 closeWorkwithusModal.addEventListener('click', () => {
@@ -691,6 +705,37 @@ document.addEventListener('keydown', function(event) {
     closeCurrentModal(workwithusModal, headerSection);
   }
 });
+//#endregion
+
+//#region View on Map Modal
+const viewonmapButton = document.getElementById('viewonmap-button');
+const viewonmapModal = document.getElementById('viewonmap-modal');
+const closeViewonmapModal = document.getElementById('close-viewonmap-modal');
+const contactSection = document.getElementById('contact');
+const companiesSection = document.getElementById('companies');
+
+viewonmapButton.addEventListener('click', () => {
+  if(activeLanguage == 'spanish'){
+    modalsBgImg.src = "img/modals/contactsection.png";
+  }else{
+    modalsBgImg.src = "img/modals/contactsection-en.png";
+  }
+  showCurrentModal(viewonmapModal);
+});
+
+closeViewonmapModal.addEventListener('click', () => {
+  modalsBgImg.src = "img/modals/twosections.png";
+  closeCurrentModal(viewonmapModal, contactSection);
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    // Aquí puedes hacer lo que necesites al presionar Esc
+    modalsBgImg.src = "img/modals/twosections.png";
+    closeCurrentModal(viewonmapModal, contactSection);
+  }
+});
+
 //#endregion
 
 //#endregion
