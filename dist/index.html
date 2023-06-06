@@ -1157,9 +1157,9 @@
     </div>
     <div id="body">
     <!-- #region Navbar -->
-    <nav  id="navbar" class="justify-around text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
+    <nav  id="navbar" class="justify-around 2xl:text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
         <a href="#header"><img src="img/logo.png" alt="logo" class="h-[75px] rounded-md hover:transform hover:scale-110 transition duration-500"></a>     
-        <ul class="md:flex gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
+        <ul class="md:flex gap-3 2xl:gap-5 md:visible hidden p-8 text-white text-shadow shadow-black">
             <li class="hover:text-blue-500">
               <a href="#aboutus">
                 <span data-language="spanish">Quienes Somos</span>
@@ -1217,67 +1217,69 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>      
     </div>
-    <div id="drawer-nav" class="bg-gray-900 text-white w-3/5 md:w-1/3 lg:w-1/5 fixed -z-50 opacity-0">
-        <!--Close Drawer Icon-->     
-        <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>         
-        <ul class="flex flex-col gap-5 md:visible p-8 text-shadow text-lg shadow-black">
-            <div class="w-full flex items-center justify-center">
-              <img src="img/logo.png" alt="logo" class="h-20 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
-            </div>
-            <div class="text-lg w-full text-center italic font-bold">
-              <span data-language="spanish">"Trabajando para su progreso"</span>
-              <span data-language="english" class="hidden">"Working for your progress"</span>
-            </div>
-            <ul class="gap-5 p-2 text-white flex justify-center mb-6">
-              <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
-                EN
-                <img src="img/english.ico" alt="english" class="h-6 w-6">
-              </li>
-              <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
-                ES
-                <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
-              </li>
-            </ul>
-            <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
-              <span data-language="spanish">Inicio</span>
-              <span data-language="english" class="hidden">Home</span>
-            </a></li>  
-            <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item drawer-link">
-              <span data-language="spanish">Quienes Somos</span>
-              <span data-language="english" class="hidden">About Us</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#products" class="drawer-item drawer-link">
-              <span data-language="spanish">Productos</span>
-              <span data-language="english" class="hidden">Products</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item drawer-link">
-              <span data-language="spanish">Filosofía</span>
-              <span data-language="english" class="hidden">Philosophy</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#companies" class="drawer-item drawer-link">
-              <span data-language="spanish">Clientes</span>
-              <span data-language="english" class="hidden">Clients</span>
-            </a></li>
-            <li class="hover:text-blue-500"><a href="#gallery" class="drawer-item drawer-link">
-              <span data-language="spanish">Galería</span>
-              <span data-language="english" class="hidden">Gallery</span>
-            </a></li>
-            <!-- bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 -->
-            <li class="hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
-              <span data-language="spanish">Contacto</span>
-              <span data-language="english" class="hidden">Contact</span>
-            </a></li>
-            <li class="hover:text-blue-500 workwithus-button cursor-pointer">
-              <span data-language="spanish">Trabaja con Nosotros</span>
-              <span data-language="english" class="hidden">Work with Us</span>
+
+    <div id="drawer-nav" class="bg-gray-900 text-white w-3/4 md:w-1/3 xl:w-1/5 fixed -z-50 opacity-0">
+      <!--Close Drawer Icon-->     
+      <svg id="close-drawer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white w-6 h-6 absolute top-4 right-4 cursor-pointer">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>         
+      <ul class="flex flex-col gap-5 md:visible p-8 text-shadow text-base 2xl:text-lg shadow-black">
+          <div class="w-full flex items-center justify-center">
+            <img src="img/logo.png" alt="logo" class="h-20 rounded-md p-1 hover:transform hover:scale-110 transition duration-500">
+          </div>
+          <div class="text-lg w-full text-center italic font-bold">
+            <span data-language="spanish">"Trabajando para su progreso"</span>
+            <span data-language="english" class="hidden">"Working for your progress"</span>
+          </div>
+          <ul class="gap-5 p-2 text-white flex justify-center mb-6">
+            <li class="english-button cursor-pointer flex items-center gap-1 hover:text-blue-400">
+              EN
+              <img src="img/english.ico" alt="english" class="h-6 w-6">
             </li>
-            <div class="mt-36 text-xs  xl:mt-56 xl:text-base">
-              <p>Copyright © 2023 Agroamericano SRL</p>
-            </div>
-        </ul>
+            <li class="spanish-button cursor-pointer flex items-center gap-1 text-blue-400 hover:text-blue-400">
+              ES
+              <img src="img/spanish.ico" alt="spanish" class="h-6 w-6">
+            </li>
+          </ul>
+          <li class="hover:text-blue-500"><a href="#header" class="drawer-item drawer-link">
+            <span data-language="spanish">Inicio</span>
+            <span data-language="english" class="hidden">Home</span>
+          </a></li>  
+          <li class="hover:text-blue-500"><a href="#aboutus" class="drawer-item drawer-link">
+            <span data-language="spanish">Quienes Somos</span>
+            <span data-language="english" class="hidden">About Us</span>
+          </a></li>
+          <li class="hover:text-blue-500"><a href="#products" class="drawer-item drawer-link">
+            <span data-language="spanish">Productos</span>
+            <span data-language="english" class="hidden">Products</span>
+          </a></li>
+          <li class="hover:text-blue-500"><a href="#ourwork" class="drawer-item drawer-link">
+            <span data-language="spanish">Filosofía</span>
+            <span data-language="english" class="hidden">Philosophy</span>
+          </a></li>
+          <li class="hover:text-blue-500"><a href="#companies" class="drawer-item drawer-link">
+            <span data-language="spanish">Clientes</span>
+            <span data-language="english" class="hidden">Clients</span>
+          </a></li>
+          <li class="hover:text-blue-500"><a href="#gallery" class="drawer-item drawer-link">
+            <span data-language="spanish">Galería</span>
+            <span data-language="english" class="hidden">Gallery</span>
+          </a></li>
+          <!-- bg-violet-500 sm:bg-yellow-500 md:bg-green-500 lg:bg-blue-500 xl:bg-red-500 2xl:bg-orange-500 -->
+          <li class="hover:text-blue-500"><a href="#contact-form" class="drawer-item drawer-link">
+            <span data-language="spanish">Contacto</span>
+            <span data-language="english" class="hidden">Contact</span>
+          </a></li>
+          <li class="hover:text-blue-500 workwithus-button cursor-pointer">
+            <span data-language="spanish">Trabaja con Nosotros</span>
+            <span data-language="english" class="hidden">Work with Us</span>
+          </li>
+          <div class="mt-36 text-xs  xl:mt-56 xl:text-base">
+            <p>Copyright © 2023 Agroamericano SRL</p>
+          </div>
+      </ul>
     </div>
+    
     <div id="drawer-backdrop" class="w-screen z-40 bg-black opacity-50 fixed hidden"></div>
     <!-- #region Whastapp Fixed Icon -->
     <div id="whatsapp-text" class="fixed bottom-14 right-10 w-28 p-1 bg-white text-center rounded-md z-40 shadow-black shadow-md font-light bg-opacity-70 transform transition duration-500 ease-in scale-x-50 hidden">
@@ -1324,17 +1326,17 @@
         <div class="absolute w-full h-full -z-10 bg-black bg-opacity-30"></div>
 
         <!-- mt-48 md:mt-32 2xl:mt-64 md:ml-16 md:mr-16 -->
-        <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center mt-24">
-            <img src="img/logonowords.png" alt="agroamericano" class="h-20 png-shadow hover:transform hover:scale-125 transition duration-500">
-            <h1 class="text-4xl  md:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
-            <p class="text-3xl md:text-4xl text-white font-semibold italic text-center">
+        <div class="px-4 py-8 max-w-6xl flex flex-col gap-5 justify-center items-center md:mt-24">
+            <img src="img/logonowords.png" alt="agroamericano" class="h-16 md:h-20 png-shadow hover:transform hover:scale-125 transition duration-500">
+            <h1 class="text-3xl xl:text-5xl 2xl:text-6xl font-bold text-white text-center text-shadow shadow-black" >AgroAmericano S.R.L.</h1>
+            <p class="text-2xl xl:text-3xl 2xl:text-4xl text-white font-semibold italic text-center">
               <span data-language="spanish" class="text-shadow shadow-black">Trabajando para su progreso</span>
               <span data-language="english" class="text-shadow shadow-black hidden">Working for your progress</span>
             </p>
         </div>
         <div class="w-full md:mt-5 h-auto flex flex-col justify-start items-center">
           <a href="#aboutus" class="hover:transform hover:scale-125 transition duration-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-slate-100 cursor-pointer" data-aos="fade-down" data-aos-duration="2000">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 md:w-20 md:h-20 text-slate-100 cursor-pointer" data-aos="fade-down" data-aos-duration="2000">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg> 
           </a>
@@ -1356,7 +1358,7 @@
               <span data-language="spanish">¿Quiénes somos?</span>
               <span data-language="english" class="hidden">About Us</span>
             </h4>
-            <p class="font-light text-lg md:text-2xl text-center">
+            <p class="font-light text-lg xl:text-xl 2xl:text-2xl text-justify md:text-center">
               <span data-language="spanish">
                 Somos una empresa <strong class="font-bold">argentina</strong>, radicada en Buenos Aires, dedicada a la comercialización de productos agrícolas con los mayores estándares de calidad.
                 Nuestra amplia red de socios productores nos permite establecer relaciones comerciales solidas y duraderas con nuestros clientes. La transparencia, responsabilidad y celeridad de nuestra atención nos destaca,
@@ -1398,7 +1400,7 @@
                 <span data-language="spanish">Legumbres</span>
                 <span data-language="english" class="hidden">Legums</span>
               </p>
-              <a href="#products">
+              <a href="#modals">
                 <button id="legums-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   <span data-language="spanish">Ver Variedades</span>
                   <span data-language="english" class="hidden">Explore Varieties</span>
@@ -1414,7 +1416,7 @@
                 <span data-language="spanish">Cereales</span>
               <span data-language="english" class="hidden">Cereals</span>
               </p>
-              <a href="#products">
+              <a href="#modals">
                 <button id="cereals-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   <span data-language="spanish">Ver Variedades</span>
                   <span data-language="english" class="hidden">Explore Varieties</span>
@@ -1430,7 +1432,7 @@
                 <span data-language="spanish">Oleaginosas</span>
               <span data-language="english" class="hidden">Nuts and Seeds</span>
               </p>
-              <a href="#products">
+              <a href="#modals">
                 <button id="nutsandseeds-button" class="bg-blue-600 text-white p-2 text-lg rounded-[18px] px-6 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                   <span data-language="spanish">Ver Variedades</span>
                   <span data-language="english" class="hidden">Explore Varieties</span>
@@ -1583,17 +1585,17 @@
           <ul class="grid gap-16 grid-cols-1  lg:grid-cols-3 md:w-2/4" data-aos="zoom-in" data-aos-duration="2000">
             <li class="text-center m-auto">
               <a href="http://greenland.com.ar/" target="_blank">
-                <img class="w-40 h-40 rounded-md border-white border-4 cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/greenland.png" alt="company">
+                <img class="w-32 h-32 md:w-40 md:h-40 rounded-md border-white border-2 md:border-4 cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/greenland.png" alt="company">
               </a>
             </li>
             <li class="text-center m-auto">
               <a href="http://cosentinobros.com/" target="_blank">
-                <img class="w-40 h-40 rounded-md cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/cosentino.png" alt="company">
+                <img class="w-32 h-32 md:w-40 md:h-40 rounded-md cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/cosentino.png" alt="company">
               </a>
             </li>
             <li class="text-center m-auto">
               <a href="https://pronutweb.com.ar/" target="_blank">
-                <img class="w-40 h-40 rounded-md border-white border-4 cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/pronut.png" alt="company">
+                <img class="w-32 h-32 md:w-40 md:h-40 rounded-md border-white border-2 md:border-4 cursor-pointer hover:transform hover:scale-110 duration-500" src="img/companies/pronut.png" alt="company">
               </a>
             </li>
           </ul>
@@ -1607,7 +1609,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
-              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+              <h5 class="text-xl md:text-2xl font-bold text-shadow shadow-gray-500">
                 <span data-language="spanish">Ubicación</span>
                 <span data-language="english" class="hidden">Location</span>
               </h5>
@@ -1615,7 +1617,7 @@
                 <p>Ombu 494, Ituzaingó</p>
                 <p>Buenos Aires, Argentina</p>
               </div>
-              <button id="viewonmap-button" class="absolute -bottom-10 base-green text-white p-2 text-lg rounded-[18px] px-5 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+              <button id="viewonmap-button" class="md:absolute md:-bottom-10 base-green text-white p-2 text-lg rounded-[18px] px-5 flex items-center gap-2 shadow-gray-500 shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
                 </svg>
@@ -1630,7 +1632,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>              
-              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+              <h5 class="text-xl md:text-2xl font-bold text-shadow shadow-gray-500">
                 <span data-language="spanish">Horarios</span>
                 <span data-language="english" class="hidden">Business Hours</span>
               </h5>
@@ -1650,7 +1652,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>              
-              <h5 class="text-2xl font-bold text-shadow shadow-gray-500">
+              <h5 class="text-xl md:text-2xl font-bold text-shadow shadow-gray-500">
                 <span data-language="spanish">Contacto</span>
                 <span data-language="english" class="hidden">Contact</span>
               </h5>
@@ -1672,7 +1674,6 @@
           <img class="absolute w-full bottom-0 z-10 opacity-20 md:hidden" src="img/contactmobile.png" >
           <div class="border-gradient-black0-to-black h-2 w-full absolute bottom-0"></div>
         </section>
-        
         <!-- Gallery -->
         <section id="gallery" class="bg-black text-white w-full h-auto flex flex-col gap-16 justify-center items-center pt-16 pb-32 px-5 text-shadow shadow-gray-500">
           <h4 class="font-bold text-2xl md:text-3xl text-center" data-aos="fade-in">
@@ -1692,22 +1693,22 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides">
                 <li class="glide__slide">
-                  <img src="img/gallery/2.jpeg" alt="Slide 1" class="border-white border-2 rounded-md target-image" id="first-active-slide">
+                  <img src="img/gallery/2.jpeg" alt="Slide 1" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover" id="first-active-slide">
                 </li>
                 <li class="glide__slide">
-                  <img src="img/gallery/4.jpeg" alt="Slide 2" class="border-white border-2 rounded-r-md target-image">
+                  <img src="img/gallery/4.jpeg" alt="Slide 2" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover">
                 </li>
                 <li class="glide__slide">
-                  <img src="img/gallery/3b.jpeg" alt="Slide 3" class="border-white border-2 rounded-md target-image">
+                  <img src="img/gallery/3b.jpeg" alt="Slide 3" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover">
                 </li>
                 <li class="glide__slide">
-                  <img src="img/gallery/7.jpeg" alt="Slide 4" class="border-white border-2 rounded-md target-image">
+                  <img src="img/gallery/7.jpeg" alt="Slide 4" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover">
                 </li>
                 <li class="glide__slide">
-                  <img src="img/gallery/6.jpeg" alt="Slide 5" class="border-white border-2 rounded-md target-image">
+                  <img src="img/gallery/6.jpeg" alt="Slide 5" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover">
                 </li>
                 <li class="glide__slide">
-                  <img src="img/gallery/5.jpeg" alt="Slide 6" class="border-white border-2 rounded-md target-image">
+                  <img src="img/gallery/5.jpeg" alt="Slide 6" class="border-white border-2 rounded-md target-image w-full h-96 md:h-full object-cover">
                 </li>
               </ul>
             </div>
@@ -1740,17 +1741,16 @@
             </svg>
           </div> -->
         </section>
-
         <!-- Concact Form -->
         <section id="contact-form" class="bg-transparent flex items-center justify-center relative w-full md:py-8">
           <div class="border-gradient-black-to-black0 h-2 w-full absolute top-0"></div>
           <img class="absolute w-full h-full -z-50 object-cover object-center" src="img/form.jpg" >
           <div class="absolute w-full h-full -z-20 bg-black opacity-30"></div>
 
-          <form id="form" action="#" class="w-full md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-lg font-bold gap-5 bg-slate-50 py-4 md:py-20 md:px-28 bg-opacity-60 rmd:rounded-lg shadow-black shadow-lg relative">
+          <form id="form" action="#" class="w-full md:w-3/4 lg:w-1/2 2xl:w-2/5 px-8 flex flex-col text-base font-bold gap-5 bg-slate-50 py-11 md:py-20 md:px-28 bg-opacity-60 rmd:rounded-lg shadow-black shadow-lg relative">
             <div class="flex justify-center text-center">
               <img src="img/logo.png" alt="logo" class="h-20 absolute top-0 left-0 opacity-0 md:opacity-100 bg-black bg-opacity-80 p-1 rounded-tl-md rounded-br-md">
-              <h4 class="text-2xl md:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
+              <h4 class="text-xl md:text-2xl lg:text-4xl font-inter font-bold">AgroAmericano S.R.L.</h4>
             </div>
             <div class="flex flex-col">
               <label for="from_name">
@@ -1816,7 +1816,6 @@
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

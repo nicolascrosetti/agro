@@ -142,6 +142,7 @@ const handleActiveSlideMouseEnter = () => {
     //crear la nueva imagen con las mismas propiedades que la imagen original
     const newImage = document.createElement('img');
     newImage.classList.add('hover-image');
+    newImage.classList.add('object-cover');
     newImage.src = src;
     newImage.style.position = 'absolute';
     newImage.style.left = `${imageX}px`;
