@@ -103,6 +103,7 @@ whatsappIcon.addEventListener('mouseenter', () => {
   whatsappText.classList.remove('hidden');
   setTimeout(() => {
     whatsappText.classList.add('-translate-x-20');
+    whatsappText.classList.remove('scale-x-50');
     whatsappText.classList.add('scale-x-100');
   }, 1);
 
@@ -111,6 +112,7 @@ whatsappIcon.addEventListener('mouseenter', () => {
 whatsappIcon.addEventListener('mouseleave', () => {
   whatsappText.classList.remove('-translate-x-20');
   whatsappText.classList.remove('scale-x-100');
+  whatsappText.classList.add('scale-x-50');
   setTimeout(() => {
     whatsappText.classList.add('hidden');
   }, 500);
