@@ -766,10 +766,6 @@ video {
   margin-top: 2.5rem;
 }
 
-.mt-36 {
-  margin-top: 9rem;
-}
-
 .mt-48 {
   margin-top: 12rem;
 }
@@ -1914,10 +1910,6 @@ video {
 
   .xl\:right-3 {
     right: 0.75rem;
-  }
-
-  .xl\:mt-56 {
-    margin-top: 14rem;
   }
 
   .xl\:block {

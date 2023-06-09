@@ -110,6 +110,83 @@
     background: rgb(95,71,35);
     background: linear-gradient(180deg, rgba(95,71,35,1) 0%, rgba(0,0,0,1) 100%);
 }
+
+.gallery-container{
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.glide__slide img{
+    width: 100%;
+    height: 100%;
+}
+
+.glide__slide{
+    filter: blur(6px);
+    opacity: 0.7;
+    transition: .1s linear;
+}
+
+.glide__slide--active{
+    opacity: 1;
+    filter: none;
+    transition: .1s linear;
+    transform: scale(1.25);
+    z-index: 50;
+}
+
+.glide__slides{
+    overflow: visible !important;
+}
+
+.glide__slide{
+    overflow: visible;
+}
+
+.glide__track{
+    overflow: visible !important;
+}
+
+.glide{
+    width: 500px;
+    position: relative;
+}
+
+.glide__arrow{
+    height: 20%;
+    width: 5%;
+    font-size:xx-large;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.glide__arrow:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.2);
+}
+
+.glide__arrow--left{
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+.glide__arrow--right{
+    position: absolute;
+    top: 140px;
+    right: 150px;
+}
   
 @media screen {
     @media only screen and (max-width: 1000px) {
