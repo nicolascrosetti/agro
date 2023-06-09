@@ -30,9 +30,9 @@ const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-tw
 window.onload = function() {
   new Glide('.glide', {
     type: 'carousel',
-    perView: 3.5,
+    perView: 4.7,
     focusAt: 'center',
-    gap: 40,
+    gap: 60,
     breakpoints: {
       768: {
         perView: 1
@@ -369,6 +369,8 @@ setInterval(() => {
 const bodySection = document.getElementById('body');
 const modalsSection = document.getElementById('modals');
 const headerSection = document.getElementById('header');
+let isModalInContactSection = false;
+let isModalInHeaderSection = false;
 
 const closeCurrentModal = (currentModal, target) => {
   currentModal.classList.add('opacity-0');
@@ -542,6 +544,8 @@ const modalsBgImg = document.getElementById('modals-bg-img');
 
 workwithusButtons.forEach((workwithusButton) => {
   workwithusButton.addEventListener('click', () => {
+    isModalInHeaderSection = true;
+
     if(activeLanguage == 'spanish'){
       modalsBgImg.src = "img/modals/headersection.png";
     }else{
@@ -554,13 +558,17 @@ workwithusButtons.forEach((workwithusButton) => {
 closeWorkwithusModal.addEventListener('click', () => {
   modalsBgImg.src = "img/modals/twosections.png";
   closeCurrentModal(workwithusModal, headerSection);
+  isModalInHeaderSection = false;
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    modalsBgImg.src = "img/modals/twosections.png";
-    closeCurrentModal(workwithusModal, headerSection);
+    if(isModalInHeaderSection){
+      modalsBgImg.src = "img/modals/twosections.png";
+      closeCurrentModal(workwithusModal, headerSection);
+      isModalInHeaderSection = false;
+    }
   }
 });
 //#endregion
@@ -573,6 +581,8 @@ const contactSection = document.getElementById('contact');
 const companiesSection = document.getElementById('companies');
 
 viewonmapButton.addEventListener('click', () => {
+  isModalInContactSection = true;
+
   if(activeLanguage == 'spanish'){
     modalsBgImg.src = "img/modals/contactsection.png";
   }else{
@@ -584,13 +594,17 @@ viewonmapButton.addEventListener('click', () => {
 closeViewonmapModal.addEventListener('click', () => {
   modalsBgImg.src = "img/modals/twosections.png";
   closeCurrentModal(viewonmapModal, contactSection);
+  isModalInContactSection = false;
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    modalsBgImg.src = "img/modals/twosections.png";
-    closeCurrentModal(viewonmapModal, contactSection);
+    if(isModalInContactSection){
+      modalsBgImg.src = "img/modals/twosections.png";
+      closeCurrentModal(viewonmapModal, contactSection);
+      isModalInContactSection = false;
+    }
   }
 });
 
