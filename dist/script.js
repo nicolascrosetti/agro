@@ -371,6 +371,10 @@ const modalsSection = document.getElementById('modals');
 const headerSection = document.getElementById('header');
 let isModalInContactSection = false;
 let isModalInHeaderSection = false;
+let isGrassModalSection = false;
+let isCerealsModalSection = false;
+let isLegumsModalSection = false;
+let isNutsandseedsModalSection = false;
 
 const closeCurrentModal = (currentModal, target) => {
   currentModal.classList.add('opacity-0');
@@ -410,18 +414,13 @@ const showCurrentModal = (currentModal) => {
 
 //#region Grass Modal
 grassButton.addEventListener('click', () => {
+  isGrassModalSection = true;
   showCurrentModal(grassModal);
 });
 
 closeModal.addEventListener('click', () => {
   closeCurrentModal(grassModal, productsSection);
-});
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(grassModal, productsSection);
-  }
+  isGrassModalSection = false;
 });
 
 //#region Grass Modal Navigation
@@ -478,19 +477,14 @@ const closeLegumsModal = document.getElementById('close-legums-modal');
 const legumsButton = document.getElementById('legums-button');
 
 legumsButton.addEventListener('click', () => {
+  isLegumsModalSection = true;
   showCurrentModal(legumsModal);
 });
 
 closeLegumsModal.addEventListener('click', () => {
     closeCurrentModal(legumsModal, productsSection);
+    isLegumsModalSection = false;
   
-});
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCerealsModal(legumsModal, productsSection);
-  }
 });
 //#endregion
 
@@ -500,18 +494,13 @@ const closeCerealsModal = document.getElementById('close-cereals-modal');
 const cerealsButton = document.getElementById('cereals-button');
 
 cerealsButton.addEventListener('click', () => {
+  isCerealsModalSection = true;
   showCurrentModal(cerealsModal);
 });
 
 closeCerealsModal.addEventListener('click', () => {
   closeCurrentModal(cerealsModal, productsSection);
-});
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(cerealsModal, productsSection);
-  }
+  isCerealsModalSection = false;
 });
 //#endregion
 
@@ -521,17 +510,34 @@ const closeNutsandseedsModal = document.getElementById('close-nutsandseeds-modal
 const nutsandseedsButton = document.getElementById('nutsandseeds-button');
 
 nutsandseedsButton.addEventListener('click', () => {
+  isNutsandseedsModalSection = true;
   showCurrentModal(nutsandseedsModal);
 });
 
 closeNutsandseedsModal.addEventListener('click', () => {
   closeCurrentModal(nutsandseedsModal, productsSection);
+  isNutsandseedsModalSection = false;
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
-    closeCurrentModal(nutsandseedsModal, productsSection);
+    if(isGrassModalSection){
+      closeCurrentModal(grassModal, productsSection);
+      isGrassModalSection = false;
+    }
+    if(isCerealsModalSection){
+      closeCurrentModal(cerealsModal, productsSection);
+      isCerealsModalSection = false;
+    }
+    if(isLegumsModalSection){
+      closeCurrentModal(legumsModal, productsSection);
+      isLegumsModalSection = false;
+    }
+    if(isNutsandseedsModalSection){
+      closeCurrentModal(nutsandseedsModal, productsSection);
+      isNutsandseedsModalSection = false;
+    }
   }
 });
 //#endregion
