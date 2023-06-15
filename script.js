@@ -11,20 +11,8 @@ const closeDrawer = document.getElementById('close-drawer');
 const mobileNavButton = document.getElementById('mobile-nav-button');
 const mobileNav = document.getElementById('mobile-nav');
 const navbarMobile = document.getElementById('navbarMobile');
-//Grass Modal
+//Modal
 const productsSection = document.getElementById('products');
-const grassModal = document.getElementById('grass-modal');
-const closeModal = document.getElementById('close-modal');
-const grassButton = document.getElementById('grass-button');
-const toOneBack = document.getElementById('to-one-back');
-const toOneNumber = document.getElementById('to-one-number');
-const toTwoBack = document.getElementById('to-two-back');
-const toTwoNumber = document.getElementById('to-two-number');
-//Grass Modal Navigation
-const grassModalPageOne = document.getElementById('grass-modal-page-one');
-const grassModalPageTwo = document.getElementById('grass-modal-page-two');
-const grassModalPageOneNavigation = document.getElementById('grass-modal-page-one-navigation');
-const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-two-navigation');
 
 //navbar links scroll and carrousel init
 window.onload = function() {
@@ -413,9 +401,25 @@ const showCurrentModal = (currentModal) => {
 }
 
 //#region Grass Modal
-grassButton.addEventListener('click', () => {
-  isGrassModalSection = true;
-  showCurrentModal(grassModal);
+const grassModal = document.getElementById('grass-modal');
+const closeModal = document.getElementById('close-modal');
+const grassButtons = document.querySelectorAll('.grass-button');
+const toOneBack = document.getElementById('to-one-back');
+const toOneNumber = document.getElementById('to-one-number');
+const toTwoBack = document.getElementById('to-two-back');
+const toTwoNumber = document.getElementById('to-two-number');
+//Grass Modal Navigation
+const grassModalPageOne = document.getElementById('grass-modal-page-one');
+const grassModalPageTwo = document.getElementById('grass-modal-page-two');
+const grassModalPageOneNavigation = document.getElementById('grass-modal-page-one-navigation');
+const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-two-navigation');
+
+
+grassButtons.forEach((grassButton) => {
+  grassButton.addEventListener('click', () => {
+    isGrassModalSection = true;
+    showCurrentModal(grassModal);
+  });
 });
 
 closeModal.addEventListener('click', () => {
@@ -474,11 +478,13 @@ toOneNumber.addEventListener('click', () => {
 //#region Legums Modal
 const legumsModal = document.getElementById('legums-modal');
 const closeLegumsModal = document.getElementById('close-legums-modal');
-const legumsButton = document.getElementById('legums-button');
+const legumsButtons = document.querySelectorAll('.legums-button');
 
-legumsButton.addEventListener('click', () => {
-  isLegumsModalSection = true;
-  showCurrentModal(legumsModal);
+legumsButtons.forEach(legumsButton => {
+  legumsButton.addEventListener('click', () => {
+    isLegumsModalSection = true;
+    showCurrentModal(legumsModal);
+  });
 });
 
 closeLegumsModal.addEventListener('click', () => {
@@ -491,12 +497,15 @@ closeLegumsModal.addEventListener('click', () => {
 //#region Cereals Modal
 const cerealsModal = document.getElementById('cereals-modal');
 const closeCerealsModal = document.getElementById('close-cereals-modal');
-const cerealsButton = document.getElementById('cereals-button');
+const cerealsButtons = document.querySelectorAll('.cereals-button');
 
-cerealsButton.addEventListener('click', () => {
-  isCerealsModalSection = true;
-  showCurrentModal(cerealsModal);
+cerealsButtons.forEach(cerealsButton => {
+  cerealsButton.addEventListener('click', () => {
+    isCerealsModalSection = true;
+    showCurrentModal(cerealsModal);
+  });
 });
+
 
 closeCerealsModal.addEventListener('click', () => {
   closeCurrentModal(cerealsModal, productsSection);
@@ -507,12 +516,15 @@ closeCerealsModal.addEventListener('click', () => {
 //#region Nuts and Seeds Modal
 const nutsandseedsModal = document.getElementById('nutsandseeds-modal');
 const closeNutsandseedsModal = document.getElementById('close-nutsandseeds-modal');
-const nutsandseedsButton = document.getElementById('nutsandseeds-button');
+const nutsandseedsButtons = document.querySelectorAll('.nutsandseeds-button');
 
-nutsandseedsButton.addEventListener('click', () => {
-  isNutsandseedsModalSection = true;
-  showCurrentModal(nutsandseedsModal);
+nutsandseedsButtons.forEach((nutsandseedsButton) => {
+  nutsandseedsButton.addEventListener('click', () => {
+    isNutsandseedsModalSection = true;
+    showCurrentModal(nutsandseedsModal);
+  });
 });
+
 
 closeNutsandseedsModal.addEventListener('click', () => {
   closeCurrentModal(nutsandseedsModal, productsSection);

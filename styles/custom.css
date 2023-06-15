@@ -187,6 +187,11 @@
     top: 35%;
     right: 10%;
 }
+
+.rounded-t-xl{
+    border-top-left-radius: 0.72rem;
+    border-top-right-radius: 0.72rem;
+}
   
 @media screen {
     @media only screen and (max-width: 1024px) {
