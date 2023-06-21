@@ -17,10 +17,10 @@
     @apply w-60 h-60 md:w-80 md:h-80 rounded-full border-white border-4 caret-transparent relative;
 }
 .circle-black{
-    @apply w-full h-16 md:h-40 rounded-t-xl;
+    @apply w-full h-40 rounded-t-xl;
 }
 .product-description{
-    @apply flex flex-col text-sm font-extralight items-center w-full bg-slate-50 p-4 rounded-b-xl list-disc;
+    @apply flex flex-col text-sm font-extralight items-start w-5/6 bg-gray-200 p-4 rounded-lg mb-2;
 }
 .product-description-two{
     @apply flex flex-col text-sm font-extralight text-center text-black items-start bg-gray-200 p-4 rounded-lg mb-2;
