@@ -400,6 +400,14 @@ const showCurrentModal = (currentModal) => {
   }, 1);
 }
 
+const showProductsModalBackground = () => {
+  if(activeLanguage == 'spanish'){
+    modalsBgImg.src = "img/modals/twosections.png";
+  }else{
+    modalsBgImg.src = "img/modals/twosections-en.png";
+  }
+}
+
 //#region Grass Modal
 const grassModal = document.getElementById('grass-modal');
 const closeModal = document.getElementById('close-modal');
@@ -417,6 +425,8 @@ const grassModalPageTwoNavigation = document.getElementById('grass-modal-page-tw
 
 grassButtons.forEach((grassButton) => {
   grassButton.addEventListener('click', () => {
+    showProductsModalBackground();
+
     isGrassModalSection = true;
     showCurrentModal(grassModal);
   });
@@ -501,6 +511,8 @@ const cerealsButtons = document.querySelectorAll('.cereals-button');
 
 cerealsButtons.forEach(cerealsButton => {
   cerealsButton.addEventListener('click', () => {
+    showProductsModalBackground();
+
     isCerealsModalSection = true;
     showCurrentModal(cerealsModal);
   });
@@ -520,6 +532,7 @@ const nutsandseedsButtons = document.querySelectorAll('.nutsandseeds-button');
 
 nutsandseedsButtons.forEach((nutsandseedsButton) => {
   nutsandseedsButton.addEventListener('click', () => {
+    showProductsModalBackground();
     isNutsandseedsModalSection = true;
     showCurrentModal(nutsandseedsModal);
   });
@@ -562,6 +575,7 @@ const modalsBgImg = document.getElementById('modals-bg-img');
 
 workwithusButtons.forEach((workwithusButton) => {
   workwithusButton.addEventListener('click', () => {
+
     isModalInHeaderSection = true;
 
     if(activeLanguage == 'spanish'){
@@ -574,7 +588,7 @@ workwithusButtons.forEach((workwithusButton) => {
 });
 
 closeWorkwithusModal.addEventListener('click', () => {
-  modalsBgImg.src = "img/modals/twosections.png";
+  showProductsModalBackground();
   closeCurrentModal(workwithusModal, headerSection);
   isModalInHeaderSection = false;
 });
@@ -583,7 +597,7 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
     if(isModalInHeaderSection){
-      modalsBgImg.src = "img/modals/twosections.png";
+      showProductsModalBackground();
       closeCurrentModal(workwithusModal, headerSection);
       isModalInHeaderSection = false;
     }
@@ -610,7 +624,7 @@ viewonmapButton.addEventListener('click', () => {
 });
 
 closeViewonmapModal.addEventListener('click', () => {
-  modalsBgImg.src = "img/modals/twosections.png";
+  showProductsModalBackground();
   closeCurrentModal(viewonmapModal, contactSection);
   isModalInContactSection = false;
 });
@@ -619,7 +633,7 @@ document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     // Aquí puedes hacer lo que necesites al presionar Esc
     if(isModalInContactSection){
-      modalsBgImg.src = "img/modals/twosections.png";
+      showProductsModalBackground();
       closeCurrentModal(viewonmapModal, contactSection);
       isModalInContactSection = false;
     }
