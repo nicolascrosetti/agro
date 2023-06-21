@@ -1165,6 +1165,10 @@
           </div>
     <!--#endregion -->
     </div>
+    <!-- Loading Screen -->
+    <!-- <div class="bg-black w-full h-screen flex justify-center items-center">
+      <p class="text-white">Loading</p>
+    </div> -->
     <div id="body">
     <!-- #region Navbar -->
     <nav  id="navbar" class="justify-around 2xl:text-xl items-center fixed bg-black bg-opacity-80 w-full ease-linear duration-500 z-40 p-2 hidden lg:flex text-shadow shadow-gray-500">
@@ -1746,14 +1750,41 @@
                 <span data-language="english" class="hidden">Name</span>
               </label>
               <input data-language="spanish" name="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="Nombre y Apellido">
-              <input data-language="english" Sname="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="First and Last Name">
+              <input data-language="english" name="from_name" id="from_name" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="First and Last Name">
             </div>
-            <div class="flex flex-col">
-              <label for="email_id">
-                Email
-              </label>
-              <input data-language="spanish" name="email_id" id="email_id" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="tuemail@gmail.com">
-              <input data-language="english" name="email_id" id="email_id" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="youremail@gmail.com">
+            <div class="flex justify-between">
+              <div class="flex flex-col w-5/12">
+                <label for="company">
+                  <span data-language="spanish">Empresa</span>
+                  <span data-language="english" class="hidden">Company</span>
+                </label>
+                <input data-language="spanish" name="company" id="company" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="Empresa">
+                <input data-language="english" name="company" id="company" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="Company">
+              </div>
+              <div class="flex flex-col w-1/2">
+                <label for="phone_number">
+                  <span data-language="spanish">Télefono</span>
+                  <span data-language="english" class="hidden">Phone Number</span>
+                </label>
+                <input name="phone_number" id="phone_number" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="1122334455">
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <div class="flex flex-col w-5/12">
+                <label for="email_id">
+                  Email
+                </label>
+                <input data-language="spanish" name="email_id" id="email_id" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="tuemail@gmail.com">
+                <input data-language="english" name="email_id" id="email_id" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="youremail@gmail.com">
+              </div>
+              <div class="flex flex-col w-1/2">
+                <label for="country">
+                  <span data-language="spanish">País</span>
+                  <span data-language="english" class="hidden">Country</span>
+                </label>
+                <input data-language="spanish" name="country" id="country" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base" placeholder="Argentina">
+                <input data-language="english" name="country" id="country" type="text" class="shadow-gray-500 shadow-md rounded-lg p-2 text-base hidden" placeholder="USA">
+              </div>
             </div>
             <div class="flex flex-col">
               <label for="message">
