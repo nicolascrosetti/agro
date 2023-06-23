@@ -205,19 +205,21 @@
         overflow: scroll;  
     }
     .glide__arrow{
-        background-color: white;
-        color: black;
+        background-color: transparent;
+        color: white;
     }
     .glide__arrow:hover{
-        background-color: white;
-        color: black;
+        background-color: transparent;
+        color: white;
         transform: scale(1);
     }
     .glide__arrow--left{
         left: 0;
+        top: 42.5%;
     }
     .glide__arrow--right{
         right: 0;
+        top: 42.5%;
     }
     .glide__slide{
         display: flex;
@@ -225,14 +227,8 @@
         align-items: center;
     }
     .glide__slide img{
-        width: 225px;
-        height: 350px;
+        width: 270px;
+        height: 360px;
     }
-    }
-    @media only screen and (max-width: 1200px) {
-        .glide__slide img{
-            width: 275px;
-            height: 300px;
-        }
     }
 }
